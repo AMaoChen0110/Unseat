@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (person.threshold && person.target) {
                 const goalInfo = document.createElement('div');
                 goalInfo.className = 'goal-info';
-                goalInfo.textContent = `目標：${person.target.toLocaleString()}　門檻：${person.threshold.toLocaleString()}`;
+                goalInfo.textContent = `門檻：${person.threshold.toLocaleString()}　目標：${person.target.toLocaleString()}`;
                 personName.append(goalInfo);
             }
 

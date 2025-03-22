@@ -1,0 +1,131 @@
+body {
+    font-family: 'Microsoft JhengHei', Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #8B0000;
+    font-size: 24px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hourglass {
+    font-size: 28px;
+}
+
+.subtitle {
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.person-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.person-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+}
+
+.person-name {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.progress-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.progress-bar {
+    flex-grow: 1;
+    height: 20px;
+    background-color: #f0e6d2;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress {
+    height: 100%;
+    background-color: #cc4b4b;
+    border-radius: 5px 0 0 5px;
+}
+
+.day-info {
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.special-case {
+    color: #666;
+    font-size: 14px;
+}
+
+.info-section {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.info-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.info-title .sun {
+    color: #FFD700;
+    font-size: 24px;
+}
+
+.info-item {
+    display: flex;
+    margin-bottom: 8px;
+    align-items: center;
+}
+
+.check-mark {
+    color: #4CAF50;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.cross-mark {
+    color: #F44336;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.important {
+    color: #cc0000;
+    font-weight: bold;
+}
+
+.goal-info {
+    font-size: 13px;
+    color: #555;
+    margin-top: 4px;
+}

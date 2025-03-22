@@ -139,6 +139,35 @@ document.addEventListener('DOMContentLoaded', function () {
                 countInfo.className = 'count-info';
                 countInfo.textContent = `目前收件：${person.count}`;
                 personName.append(countInfo);
+
+                // 👉 新增的收件進度條放這裡
+                const countNum = parseInt(person.count.replace(/,/g, '')); // 若有逗號分隔
+                const thresholdNum = typeof person.threshold === 'number' ? person.threshold : parseInt(person.threshold.toString().replace(/\D/g, ''));
+
+                if (!isNaN(countNum) && !isNaN(thresholdNum) && thresholdNum > 0) {
+                    const receiptProgress = Math.min((countNum / thresholdNum) * 100, 100);
+
+                    const receiptProgressContainer = document.createElement('div');
+                    receiptProgressContainer.className = 'progress-container';
+
+                    const receiptBarContainer = document.createElement('div');
+                    receiptBarContainer.className = 'progress-bar';
+
+                    const receiptProgressBar = document.createElement('div');
+                    receiptProgressBar.className = 'progress';
+                    receiptProgressBar.style.width = `${receiptProgress}%`;
+
+                    const receiptLabel = document.createElement('div');
+                    receiptLabel.className = 'day-info';
+                    receiptLabel.textContent = `收件進度：${receiptProgress.toFixed(1)}%`;
+
+                    receiptBarContainer.appendChild(receiptProgressBar);
+                    receiptProgressContainer.appendChild(receiptBarContainer);
+                    receiptProgressContainer.appendChild(receiptLabel);
+                    personName.append(receiptProgressContainer);
+                    receiptBarContainer.classList.add('receipt');
+                }
+
             }
 
             personListElement.appendChild(personItem);

@@ -146,3 +146,17 @@ h1 {
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
     background-color: #fdf5f1;
 }
+
+.count-info {
+    font-size: 13px;
+    color: #006400;
+    margin-top: 4px;
+}
+
+.progress-bar.receipt {
+    background-color: #e8f5e9; /* 比較淡的底 */
+}
+
+.progress-bar.receipt .progress {
+    background-color: #4caf50; /* 綠色代表進度 */
+}

@@ -33,16 +33,36 @@ h1 {
     margin-bottom: 20px;
 }
 
+/* 資料表單主div */
 .person-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
 }
 
+/* @media (max-width: 600px) {
+    .person-list {
+        grid-template-columns: 1fr;
+    }
+} */
+
 .person-item {
     display: flex;
     flex-direction: column;
     margin-bottom: 5px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.person-item:hover {
+    transform: translateY(-8px) rotateX(3deg) rotateY(2deg);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+    background-color: #fdf5f1;
 }
 
 .person-name {
@@ -56,6 +76,22 @@ h1 {
     gap: 5px;
 }
 
+/* 收件數量的樣式 */
+.count-info {
+    font-size: 13px;
+    color: #006400;
+    margin-top: 4px;
+}
+
+.progress-bar.receipt {
+    background-color: #e8f5e9; /* 比較淡的底 */
+}
+
+.progress-bar.receipt .progress {
+    background-color: #4caf50; /* 綠色代表進度 */
+}
+
+/* 天數讀取條樣式 */
 .progress-bar {
     flex-grow: 1;
     height: 20px;
@@ -71,16 +107,20 @@ h1 {
     border-radius: 5px 0 0 5px;
 }
 
+/* 讀取條後面的文字樣式 */
 .day-info {
     font-size: 14px;
     white-space: nowrap;
 }
 
-.special-case {
-    color: #666;
-    font-size: 14px;
+/* 門檻目標的樣式 */
+.goal-info {
+    font-size: 13px;
+    color: #555;
+    margin-top: 4px;
 }
 
+/* 下方資訊所使用的樣式 */
 .info-section {
     margin-top: 20px;
     padding-top: 15px;
@@ -100,6 +140,18 @@ h1 {
     color: #FFD700;
     font-size: 24px;
 }
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 30px;
+}
+
+/* @media (max-width: 600px) {
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+} */
 
 .info-item {
     display: flex;
@@ -122,41 +174,4 @@ h1 {
 .important {
     color: #cc0000;
     font-weight: bold;
-}
-
-.goal-info {
-    font-size: 13px;
-    color: #555;
-    margin-top: 4px;
-}
-
-
-.person-item {
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 12px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    transform-style: preserve-3d;
-    perspective: 1000px;
-}
-
-.person-item:hover {
-    transform: translateY(-8px) rotateX(3deg) rotateY(2deg);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
-    background-color: #fdf5f1;
-}
-
-.count-info {
-    font-size: 13px;
-    color: #006400;
-    margin-top: 4px;
-}
-
-.progress-bar.receipt {
-    background-color: #e8f5e9; /* 比較淡的底 */
-}
-
-.progress-bar.receipt .progress {
-    background-color: #4caf50; /* 綠色代表進度 */
 }

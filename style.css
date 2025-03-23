@@ -81,11 +81,11 @@ h1 {
     gap: 10px;
 }
 
-/* @media (max-width: 600px) {
+@media (max-width: 600px) {
     .person-list {
         grid-template-columns: 1fr;
     }
-} */
+}
 
 .person-item {
     display: flex;
@@ -211,11 +211,11 @@ h1 {
     gap: 10px 30px;
 }
 
-/* @media (max-width: 600px) {
+@media (max-width: 600px) {
     .info-grid {
         grid-template-columns: 1fr;
     }
-} */
+}
 
 .info-item {
     display: flex;

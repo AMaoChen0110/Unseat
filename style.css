@@ -134,10 +134,27 @@ h1 {
     margin-bottom: 5px;
 }
 
+.progress-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+}
+
 .progress-container {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     gap: 5px;
+    flex: 1;
+    min-width: 0;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: space-between;
+    min-width: 100px; /* 可依需要調整 */
 }
 
 /* 收件數量的樣式 */

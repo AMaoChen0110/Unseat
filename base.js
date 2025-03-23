@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { name: '臺北市羅智強', status: '第7天', totalDays: 40, threshold: 23313, target: '4萬', url: 'https://www.daanreboot.tw/?ltclid=862efe8d-1a53-40df-995a-2c560e728367' },
         { name: '臺北市徐巧芯', status: '第6天', totalDays: 40, threshold: 23482, target: '4萬', url: 'https://linktr.ee/recall.hsu900?ltclid=bc86ea44-4a64-4063-be1c-d4c8dc4efa79' },
         { name: '臺北市賴士葆', status: '第6天', totalDays: 40, threshold: 24832, target: '3萬2', url: 'https://linktr.ee/banish.laishyhbao?ltclid=b7d4e8a4-3541-484f-a95b-1111dc362d14' },
-        { name: '基隆市林沛祥', status: '還未開始', totalDays: 40, threshold: "X", target: "X", url: 'https://linktr.ee/keelungreplay?ltclid=eea0bb9c-2a22-4766-891b-3d0ac9722407' },
+        { name: '基隆市林沛祥', status: '還未開始', totalDays: 40, threshold: 30394, target: "4萬", url: 'https://linktr.ee/keelungreplay?ltclid=eea0bb9c-2a22-4766-891b-3d0ac9722407' },
         { name: '臺中市顏寬恒', status: '第11天', totalDays: 40, threshold: 30278, target: '4萬', url: 'https://bento.me/taichung2jyen?ltclid=ee3a2801-5333-438b-89eb-b99c7949db9e' },
         { name: '臺中市楊瓊瓔', status: '第11天', totalDays: 40, threshold: 26026, target: '6萬5', url: 'https://linktr.ee/recallvote_taichung3rd?ltclid=7f33be9a-35bc-4bbe-baa5-4a4482985454' },
         { name: '臺中市廖偉翔', status: '第12天', totalDays: 40, threshold: 32921, target: '5萬', url: 'https://linktr.ee/tc4.recall?ltclid=9b3843c8-3703-40da-bf97-ecd8444556a0' },
@@ -153,19 +153,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
             personItem.appendChild(personName);
 
+            const progressBlock = document.createElement('div');
+            progressBlock.className = 'progress-block';
+
+            // Create the progress container
+            const progressContainer = document.createElement('div');
+            progressContainer.className = 'progress-container';
+
+            // Create the info container
+            const infoContainer = document.createElement('div');
+            infoContainer.className = 'info-container';
+
             // ⬇️ 顯示目前收件數（從 Google Sheets 來）
             if (person.count) {
-
                 // 👉 新增的收件進度條放這裡
                 const countNum = parseInt(person.count.replace(/,/g, '')); // 若有逗號分隔
                 const thresholdNum = typeof person.threshold === 'number' ? person.threshold : parseInt(person.threshold.toString().replace(/\D/g, ''));
 
                 if (!isNaN(countNum) && !isNaN(thresholdNum) && thresholdNum > 0) {
                     const receiptProgress = Math.min((countNum / thresholdNum) * 100, 100);
-
-                    const receiptProgressContainer = document.createElement('div');
-                    receiptProgressContainer.className = 'progress-container';
-                    receiptProgressContainer.style = 'margin-bottom: 5px;';
 
                     const receiptBarContainer = document.createElement('div');
                     receiptBarContainer.className = 'progress-bar';
@@ -180,15 +186,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     receiptLabel.textContent = `收件進度：${receiptProgress.toFixed(1)}%`;
 
                     receiptBarContainer.appendChild(receiptProgressBar);
-                    receiptProgressContainer.appendChild(receiptBarContainer);
-                    receiptProgressContainer.appendChild(receiptLabel);
-                    personItem.appendChild(receiptProgressContainer);
+                    progressContainer.appendChild(receiptBarContainer);
+                    infoContainer.appendChild(receiptLabel);
                 }
             }
-
-            // Create the progress container
-            const progressContainer = document.createElement('div');
-            progressContainer.className = 'progress-container';
 
             // Create the progress bar container
             const progressBarContainer = document.createElement('div');
@@ -207,9 +208,11 @@ document.addEventListener('DOMContentLoaded', function () {
             // Append all elements
             progressBarContainer.appendChild(progressBar);
             progressContainer.appendChild(progressBarContainer);
-            progressContainer.appendChild(dayInfo);
+            infoContainer.appendChild(dayInfo);
   
-            personItem.appendChild(progressContainer);
+            progressBlock.appendChild(progressContainer);
+            progressBlock.appendChild(infoContainer);
+            personItem.appendChild(progressBlock);
 
             personListElement.appendChild(personItem);
         });

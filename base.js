@@ -123,10 +123,24 @@ document.addEventListener('DOMContentLoaded', function () {
             const dayInfo = document.createElement('div');
             dayInfo.className = 'day-info';
             dayInfo.textContent = day === '還未開始' ? day : `${day}/${person.totalDays}天`;
+            
             if (person.threshold && person.target) {
                 const goalInfo = document.createElement('div');
                 goalInfo.className = 'goal-info';
-                goalInfo.textContent = `門檻：${person.threshold.toLocaleString()}　目標：${person.target.toLocaleString()}`;
+            
+                // 建立綠色的目前收件 span
+                const countSpan = document.createElement('span');
+                countSpan.style.color = 'green';
+                if (person.count) {
+                    countSpan.textContent = person.count > 0 ? `目前收件：${person.count}+　` : `目前收件：${person.count}　`;
+                }
+            
+                const thresholdText = `門檻：${person.threshold.toLocaleString()}　`;
+                const targetText = `目標：${person.target.toLocaleString()}`;
+            
+                goalInfo.appendChild(countSpan);
+                goalInfo.append(thresholdText + targetText);
+            
                 personName.append(goalInfo);
             }
 
@@ -140,10 +154,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // ⬇️ 顯示目前收件數（從 Google Sheets 來）
             if (person.count) {
-                const countInfo = document.createElement('div');
-                countInfo.className = 'count-info';
-                countInfo.textContent = `目前收件：${person.count}`;
-                personName.append(countInfo);
+                // const countInfo = document.createElement('div');
+                // countInfo.className = 'count-info';
+                // if (person.count != 0) {
+                //     countInfo.textContent = `目前收件：${person.count}+`;
+                // }
+                // else {
+                //     countInfo.textContent = `目前收件：${person.count}`;
+                // }
+                // personName.append(countInfo);
 
 
                 // 👉 新增的收件進度條放這裡

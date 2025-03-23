@@ -89,6 +89,11 @@ document.addEventListener('DOMContentLoaded', function () {
             const personItem = document.createElement('div');
             personItem.className = 'person-item';
 
+            const tooltip = document.createElement('div');
+            tooltip.className = 'tooltip';
+            tooltip.textContent = '點擊查看連署詳情';
+            personItem.appendChild(tooltip);
+
             if (person.url) {
                 personItem.style.cursor = 'pointer';
                 personItem.addEventListener('click', () => {

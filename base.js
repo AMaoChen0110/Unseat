@@ -130,9 +130,12 @@ document.addEventListener('DOMContentLoaded', function () {
             
                 // 建立綠色的目前收件 span
                 const countSpan = document.createElement('span');
-                countSpan.style.color = 'green';
+                countSpan.className = 'count-info';
+  
                 if (person.count) {
-                    countSpan.textContent = person.count > 0 ? `目前收件：${person.count}+　` : `目前收件：${person.count}　`;
+                    const countNum = parseInt(person.count.replace(/,/g, '')); // 若有逗號分隔
+                    const formattedCount = isNaN(countNum) ? rawCount : countNum.toLocaleString();
+                    countSpan.textContent = formattedCount != '0' ? `目前收件：${formattedCount}+　` : `目前收件：${formattedCount}　`;
                 }
             
                 const thresholdText = `門檻：${person.threshold.toLocaleString()}　`;
@@ -154,16 +157,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // ⬇️ 顯示目前收件數（從 Google Sheets 來）
             if (person.count) {
-                // const countInfo = document.createElement('div');
-                // countInfo.className = 'count-info';
-                // if (person.count != 0) {
-                //     countInfo.textContent = `目前收件：${person.count}+`;
-                // }
-                // else {
-                //     countInfo.textContent = `目前收件：${person.count}`;
-                // }
-                // personName.append(countInfo);
-
 
                 // 👉 新增的收件進度條放這裡
                 const countNum = parseInt(person.count.replace(/,/g, '')); // 若有逗號分隔

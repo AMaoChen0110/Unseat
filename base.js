@@ -77,6 +77,28 @@ document.addEventListener('DOMContentLoaded', function () {
         { name: '苗栗縣邱鎮軍', status: '第2天', totalDays: 40, threshold: 23187, target: '3萬', url: 'https://sites.google.com/view/ba-miaoli-lawmaker/index?authuser=0&ltclid=d58a4eb8-0f2b-4a95-bd38-e8335bd00e19' }
     ];
 
+    fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vQ1vJG_0a6Dl0UoEwjMBjJkfzHKjlVhu-gajL-RRTYP4rw9ocZiXT7xQAXy97Hv78xi5-2YYlZikpyM/pub?gid=0&single=true&output=csv')
+        .then(response => response.text())
+        .then(csvData => {
+            const rows = csvData.split('\n').map(row => row.split(',').map(cell => cell.trim()));
+
+            const nameToCountMap = {};
+            for (let i = 0; i < rows.length; i++) {
+                const [name, count] = rows[i];
+                if (name && count) {
+                    nameToCountMap[name] = count;
+                }
+            }
+
+            // 更新 personData 裡的每一筆資料，加上 count 欄位
+            personData.forEach(person => {
+                person.count = nameToCountMap[person.name] || null;
+            });
+
+            // 呼叫你原本顯示畫面邏輯
+            renderPersonList();
+        });
+
     function renderPersonList() {
         // Generate the person list HTML
         const personListElement = document.getElementById('person-list');
@@ -106,24 +128,6 @@ document.addEventListener('DOMContentLoaded', function () {
             personName.className = 'person-name';
             personName.textContent = person.name;
 
-            // Create the progress container
-            const progressContainer = document.createElement('div');
-            progressContainer.className = 'progress-container';
-
-            // Create the progress bar container
-            const progressBarContainer = document.createElement('div');
-            progressBarContainer.className = 'progress-bar';
-
-            // Create the progress bar
-            const progressBar = document.createElement('div');
-            progressBar.className = 'progress';
-            progressBar.style.width = `${progress}%`;
-
-            // Create the day info element
-            const dayInfo = document.createElement('div');
-            dayInfo.className = 'day-info';
-            dayInfo.textContent = day === '還未開始' ? day : `${day}/${person.totalDays}天`;
-            
             if (person.threshold && person.target) {
                 const goalInfo = document.createElement('div');
                 goalInfo.className = 'goal-info';
@@ -147,13 +151,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 personName.append(goalInfo);
             }
 
-            // Append all elements
-            progressBarContainer.appendChild(progressBar);
-            progressContainer.appendChild(progressBarContainer);
-            progressContainer.appendChild(dayInfo);
             personItem.appendChild(personName);
-            personItem.appendChild(progressContainer);
-            personListElement.appendChild(personItem);
 
             // ⬇️ 顯示目前收件數（從 Google Sheets 來）
             if (person.count) {
@@ -167,9 +165,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
                     const receiptProgressContainer = document.createElement('div');
                     receiptProgressContainer.className = 'progress-container';
+                    receiptProgressContainer.style = 'margin-bottom: 5px;';
 
                     const receiptBarContainer = document.createElement('div');
                     receiptBarContainer.className = 'progress-bar';
+                    receiptBarContainer.classList.add('receipt');
 
                     const receiptProgressBar = document.createElement('div');
                     receiptProgressBar.className = 'progress';
@@ -182,35 +182,36 @@ document.addEventListener('DOMContentLoaded', function () {
                     receiptBarContainer.appendChild(receiptProgressBar);
                     receiptProgressContainer.appendChild(receiptBarContainer);
                     receiptProgressContainer.appendChild(receiptLabel);
-                    personName.append(receiptProgressContainer);
-                    receiptBarContainer.classList.add('receipt');
+                    personItem.appendChild(receiptProgressContainer);
                 }
             }
+
+            // Create the progress container
+            const progressContainer = document.createElement('div');
+            progressContainer.className = 'progress-container';
+
+            // Create the progress bar container
+            const progressBarContainer = document.createElement('div');
+            progressBarContainer.className = 'progress-bar';
+
+            // Create the progress bar
+            const progressBar = document.createElement('div');
+            progressBar.className = 'progress';
+            progressBar.style.width = `${progress}%`;
+
+            // Create the day info element
+            const dayInfo = document.createElement('div');
+            dayInfo.className = 'day-info';
+            dayInfo.textContent = day === '還未開始' ? day : `${day}/${person.totalDays}天`;
+            
+            // Append all elements
+            progressBarContainer.appendChild(progressBar);
+            progressContainer.appendChild(progressBarContainer);
+            progressContainer.appendChild(dayInfo);
+  
+            personItem.appendChild(progressContainer);
 
             personListElement.appendChild(personItem);
         });
     }
-    fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vQ1vJG_0a6Dl0UoEwjMBjJkfzHKjlVhu-gajL-RRTYP4rw9ocZiXT7xQAXy97Hv78xi5-2YYlZikpyM/pub?gid=0&single=true&output=csv')
-        .then(response => response.text())
-        .then(csvData => {
-            const rows = csvData.split('\n').map(row => row.split(',').map(cell => cell.trim()));
-
-
-            const nameToCountMap = {};
-            for (let i = 0; i < rows.length; i++) {
-                const [name, count] = rows[i];
-                if (name && count) {
-                    nameToCountMap[name] = count;
-                }
-            }
-
-            // 更新 personData 裡的每一筆資料，加上 count 欄位
-            personData.forEach(person => {
-                person.count = nameToCountMap[person.name] || null;
-            });
-
-            // 呼叫你原本顯示畫面邏輯
-            renderPersonList();
-        });
-
 });

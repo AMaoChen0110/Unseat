@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { name: '臺北市羅智強', status: '第7天', totalDays: 40, threshold: 23313, target: '4萬', url: 'https://www.daanreboot.tw/?ltclid=862efe8d-1a53-40df-995a-2c560e728367' },
         { name: '臺北市徐巧芯', status: '第6天', totalDays: 40, threshold: 23482, target: '4萬', url: 'https://linktr.ee/recall.hsu900?ltclid=bc86ea44-4a64-4063-be1c-d4c8dc4efa79' },
         { name: '臺北市賴士葆', status: '第6天', totalDays: 40, threshold: 24832, target: '3萬2', url: 'https://linktr.ee/banish.laishyhbao?ltclid=b7d4e8a4-3541-484f-a95b-1111dc362d14' },
-        { name: '基隆市林沛祥', status: '還未開始', totalDays: 40, threshold: "X", target: "X", url: 'https://linktr.ee/keelungreplay?ltclid=eea0bb9c-2a22-4766-891b-3d0ac9722407' },
+        { name: '基隆市林沛祥', status: '還未開始', totalDays: 40, threshold: 30394, target: "4萬", url: 'https://linktr.ee/keelungreplay?ltclid=eea0bb9c-2a22-4766-891b-3d0ac9722407' },
         { name: '臺中市顏寬恒', status: '第11天', totalDays: 40, threshold: 30278, target: '4萬', url: 'https://bento.me/taichung2jyen?ltclid=ee3a2801-5333-438b-89eb-b99c7949db9e' },
         { name: '臺中市楊瓊瓔', status: '第11天', totalDays: 40, threshold: 26026, target: '6萬5', url: 'https://linktr.ee/recallvote_taichung3rd?ltclid=7f33be9a-35bc-4bbe-baa5-4a4482985454' },
         { name: '臺中市廖偉翔', status: '第12天', totalDays: 40, threshold: 32921, target: '5萬', url: 'https://linktr.ee/tc4.recall?ltclid=9b3843c8-3703-40da-bf97-ecd8444556a0' },
@@ -76,6 +76,28 @@ document.addEventListener('DOMContentLoaded', function () {
         { name: '苗栗縣陳超明', status: '第2天', totalDays: 40, threshold: 20586, target: '3萬', url: 'https://sites.google.com/view/ba-miaoli-lawmaker/index?authuser=0&ltclid=d58a4eb8-0f2b-4a95-bd38-e8335bd00e19' },
         { name: '苗栗縣邱鎮軍', status: '第2天', totalDays: 40, threshold: 23187, target: '3萬', url: 'https://sites.google.com/view/ba-miaoli-lawmaker/index?authuser=0&ltclid=d58a4eb8-0f2b-4a95-bd38-e8335bd00e19' }
     ];
+
+    fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vQ1vJG_0a6Dl0UoEwjMBjJkfzHKjlVhu-gajL-RRTYP4rw9ocZiXT7xQAXy97Hv78xi5-2YYlZikpyM/pub?gid=0&single=true&output=csv')
+        .then(response => response.text())
+        .then(csvData => {
+            const rows = csvData.split('\n').map(row => row.split(',').map(cell => cell.trim()));
+
+            const nameToCountMap = {};
+            for (let i = 0; i < rows.length; i++) {
+                const [name, count] = rows[i];
+                if (name && count) {
+                    nameToCountMap[name] = count;
+                }
+            }
+
+            // 更新 personData 裡的每一筆資料，加上 count 欄位
+            personData.forEach(person => {
+                person.count = nameToCountMap[person.name] || null;
+            });
+
+            // 呼叫你原本顯示畫面邏輯
+            renderPersonList();
+        });
 
     function renderPersonList() {
         // Generate the person list HTML
@@ -106,24 +128,6 @@ document.addEventListener('DOMContentLoaded', function () {
             personName.className = 'person-name';
             personName.textContent = person.name;
 
-            // Create the progress container
-            const progressContainer = document.createElement('div');
-            progressContainer.className = 'progress-container';
-
-            // Create the progress bar container
-            const progressBarContainer = document.createElement('div');
-            progressBarContainer.className = 'progress-bar';
-
-            // Create the progress bar
-            const progressBar = document.createElement('div');
-            progressBar.className = 'progress';
-            progressBar.style.width = `${progress}%`;
-
-            // Create the day info element
-            const dayInfo = document.createElement('div');
-            dayInfo.className = 'day-info';
-            dayInfo.textContent = day === '還未開始' ? day : `${day}/${person.totalDays}天`;
-            
             if (person.threshold && person.target) {
                 const goalInfo = document.createElement('div');
                 goalInfo.className = 'goal-info';
@@ -147,17 +151,21 @@ document.addEventListener('DOMContentLoaded', function () {
                 personName.append(goalInfo);
             }
 
-            // Append all elements
-            progressBarContainer.appendChild(progressBar);
-            progressContainer.appendChild(progressBarContainer);
-            progressContainer.appendChild(dayInfo);
             personItem.appendChild(personName);
-            personItem.appendChild(progressContainer);
-            personListElement.appendChild(personItem);
+
+            const progressBlock = document.createElement('div');
+            progressBlock.className = 'progress-block';
+
+            // Create the progress container
+            const progressContainer = document.createElement('div');
+            progressContainer.className = 'progress-container';
+
+            // Create the info container
+            const infoContainer = document.createElement('div');
+            infoContainer.className = 'info-container';
 
             // ⬇️ 顯示目前收件數（從 Google Sheets 來）
             if (person.count) {
-
                 // 👉 新增的收件進度條放這裡
                 const countNum = parseInt(person.count.replace(/,/g, '')); // 若有逗號分隔
                 const thresholdNum = typeof person.threshold === 'number' ? person.threshold : parseInt(person.threshold.toString().replace(/\D/g, ''));
@@ -165,11 +173,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (!isNaN(countNum) && !isNaN(thresholdNum) && thresholdNum > 0) {
                     const receiptProgress = Math.min((countNum / thresholdNum) * 100, 100);
 
-                    const receiptProgressContainer = document.createElement('div');
-                    receiptProgressContainer.className = 'progress-container';
-
                     const receiptBarContainer = document.createElement('div');
                     receiptBarContainer.className = 'progress-bar';
+                    receiptBarContainer.classList.add('receipt');
 
                     const receiptProgressBar = document.createElement('div');
                     receiptProgressBar.className = 'progress';
@@ -180,37 +186,35 @@ document.addEventListener('DOMContentLoaded', function () {
                     receiptLabel.textContent = `收件進度：${receiptProgress.toFixed(1)}%`;
 
                     receiptBarContainer.appendChild(receiptProgressBar);
-                    receiptProgressContainer.appendChild(receiptBarContainer);
-                    receiptProgressContainer.appendChild(receiptLabel);
-                    personName.append(receiptProgressContainer);
-                    receiptBarContainer.classList.add('receipt');
+                    progressContainer.appendChild(receiptBarContainer);
+                    infoContainer.appendChild(receiptLabel);
                 }
             }
+
+            // Create the progress bar container
+            const progressBarContainer = document.createElement('div');
+            progressBarContainer.className = 'progress-bar';
+
+            // Create the progress bar
+            const progressBar = document.createElement('div');
+            progressBar.className = 'progress';
+            progressBar.style.width = `${progress}%`;
+
+            // Create the day info element
+            const dayInfo = document.createElement('div');
+            dayInfo.className = 'day-info';
+            dayInfo.textContent = day === '還未開始' ? day : `${day}/${person.totalDays}天`;
+            
+            // Append all elements
+            progressBarContainer.appendChild(progressBar);
+            progressContainer.appendChild(progressBarContainer);
+            infoContainer.appendChild(dayInfo);
+  
+            progressBlock.appendChild(progressContainer);
+            progressBlock.appendChild(infoContainer);
+            personItem.appendChild(progressBlock);
 
             personListElement.appendChild(personItem);
         });
     }
-    fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vQ1vJG_0a6Dl0UoEwjMBjJkfzHKjlVhu-gajL-RRTYP4rw9ocZiXT7xQAXy97Hv78xi5-2YYlZikpyM/pub?gid=0&single=true&output=csv')
-        .then(response => response.text())
-        .then(csvData => {
-            const rows = csvData.split('\n').map(row => row.split(',').map(cell => cell.trim()));
-
-
-            const nameToCountMap = {};
-            for (let i = 0; i < rows.length; i++) {
-                const [name, count] = rows[i];
-                if (name && count) {
-                    nameToCountMap[name] = count;
-                }
-            }
-
-            // 更新 personData 裡的每一筆資料，加上 count 欄位
-            personData.forEach(person => {
-                person.count = nameToCountMap[person.name] || null;
-            });
-
-            // 呼叫你原本顯示畫面邏輯
-            renderPersonList();
-        });
-
 });

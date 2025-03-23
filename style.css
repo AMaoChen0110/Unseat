@@ -53,6 +53,17 @@ h1 {
     justify-content: space-between;
 }
 
+.notice {
+    font-size: 14px;
+    color: #cc0000;
+    margin-top: 10px;
+    line-height: 1.6;
+    background-color: #fff4f4;
+    padding: 10px 15px;
+    border-left: 4px solid #cc0000;
+    border-radius: 6px;
+}
+
 .hourglass {
     font-size: 28px;
 }

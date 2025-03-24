@@ -147,6 +147,7 @@ h1 {
     gap: 5px;
     flex: 1;
     min-width: 0;
+    width: 68%;
 }
 
 .info-container {
@@ -155,6 +156,7 @@ h1 {
     gap: 5px;
     justify-content: space-between;
     min-width: 100px; /* 可依需要調整 */
+    width: 32%;
 }
 
 /* 收件數量的樣式 */

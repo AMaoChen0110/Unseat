@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (person.count) {
                     const countNum = parseInt(person.count.replace(/,/g, '')); // 若有逗號分隔
                     const formattedCount = isNaN(countNum) ? rawCount : countNum.toLocaleString();
-                    countSpan.textContent = formattedCount != '0' ? `目前收件：${formattedCount}+　` : `目前收件：${formattedCount}　`;
+                    countSpan.textContent = formattedCount != '0' ? `目前收件：${formattedCount}+　` : `目前收件：${"尚未更新"}　`;
                 }
             
                 const thresholdText = `門檻：${person.threshold.toLocaleString()}　`;

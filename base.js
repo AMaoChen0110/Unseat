@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { name: '臺北市羅智強', status: '第7天', totalDays: 40, threshold: 23313, target: '4萬', url: 'https://www.daanreboot.tw/?ltclid=862efe8d-1a53-40df-995a-2c560e728367' },
         { name: '臺北市徐巧芯', status: '第6天', totalDays: 40, threshold: 23482, target: '4萬', url: 'https://linktr.ee/recall.hsu900?ltclid=bc86ea44-4a64-4063-be1c-d4c8dc4efa79' },
         { name: '臺北市賴士葆', status: '第6天', totalDays: 40, threshold: 24832, target: '3萬2', url: 'https://linktr.ee/banish.laishyhbao?ltclid=b7d4e8a4-3541-484f-a95b-1111dc362d14' },
-        { name: '基隆市林沛祥', status: '第-6天', totalDays: 40, threshold: 30394, target: "4萬", url: 'https://linktr.ee/keelungreplay?ltclid=eea0bb9c-2a22-4766-891b-3d0ac9722407' },
+        { name: '基隆市林沛祥', status: '第-5天', totalDays: 40, threshold: 30394, target: "4萬", url: 'https://linktr.ee/keelungreplay?ltclid=eea0bb9c-2a22-4766-891b-3d0ac9722407' },
         { name: '臺中市顏寬恒', status: '第11天', totalDays: 40, threshold: 30278, target: '4萬', url: 'https://bento.me/taichung2jyen?ltclid=ee3a2801-5333-438b-89eb-b99c7949db9e' },
         { name: '臺中市楊瓊瓔', status: '第11天', totalDays: 40, threshold: 26026, target: '6萬5', url: 'https://linktr.ee/recallvote_taichung3rd?ltclid=7f33be9a-35bc-4bbe-baa5-4a4482985454' },
         { name: '臺中市廖偉翔', status: '第12天', totalDays: 40, threshold: 32921, target: '5萬', url: 'https://linktr.ee/tc4.recall?ltclid=9b3843c8-3703-40da-bf97-ecd8444556a0' },

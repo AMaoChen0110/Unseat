@@ -140,9 +140,24 @@ document.addEventListener('DOMContentLoaded', function () {
                 countSpan.className = 'count-info';
   
                 if (person.count) {
-                    const countNum = parseInt(person.count.replace(/,/g, '')); // 若有逗號分隔
-                    const formattedCount = isNaN(countNum) ? rawCount : countNum.toLocaleString();
-                    countSpan.textContent = formattedCount != '0' ? `目前收件：${formattedCount}+　` : `目前收件：${"尚未更新"}　`;
+                    const countNum = parseInt(person.count.replace(/,/g, '')); // 去除千分位
+                    if (!isNaN(countNum) && countNum > 0) {
+                        let current = 0;
+                        const duration = 800; // 動畫總長度 (ms)
+                        const frameRate = 30; // 幾毫秒更新一次
+                        const step = Math.ceil(countNum / (duration / frameRate));
+            
+                        const interval = setInterval(() => {
+                            current += step;
+                            if (current >= countNum) {
+                                current = countNum;
+                                clearInterval(interval);
+                            }
+                            countSpan.textContent = `目前收件：${current.toLocaleString()}+　`;
+                        }, frameRate);
+                    } else {
+                        countSpan.textContent = `目前收件：尚未更新　`;
+                    }
                 }
             
                 const thresholdText = `門檻：${person.threshold.toLocaleString()}　`;
@@ -174,23 +189,42 @@ document.addEventListener('DOMContentLoaded', function () {
                 const thresholdNum = typeof person.threshold === 'number' ? person.threshold : parseInt(person.threshold.toString().replace(/\D/g, ''));
 
                 if (!isNaN(countNum) && !isNaN(thresholdNum) && thresholdNum > 0) {
-                    const receiptProgress = Math.min((countNum / thresholdNum) * 100, 100);
+                    const finalPercent = Math.min((countNum / thresholdNum) * 100, 100);
 
                     const receiptBarContainer = document.createElement('div');
-                    receiptBarContainer.className = 'progress-bar';
-                    receiptBarContainer.classList.add('receipt');
+                    receiptBarContainer.className = 'progress-bar receipt';
 
                     const receiptProgressBar = document.createElement('div');
                     receiptProgressBar.className = 'progress';
-                    receiptProgressBar.style.width = `${receiptProgress}%`;
+                    receiptProgressBar.style.width = `0%`; // 初始寬度設為 0
+
+                    // receiptProgressBar.style.width = `${receiptProgress}%`;
 
                     const receiptLabel = document.createElement('div');
                     receiptLabel.className = 'day-info';
-                    receiptLabel.textContent = `收件進度：${receiptProgress.toFixed(1)}%`;
+                    receiptLabel.textContent = `收件進度：0%`; // 初始為 0
+                    // receiptLabel.textContent = `收件進度：${receiptProgress.toFixed(1)}%`;
 
                     receiptBarContainer.appendChild(receiptProgressBar);
                     progressContainer.appendChild(receiptBarContainer);
                     infoContainer.appendChild(receiptLabel);
+
+                    let current = 0;
+                    const duration = 800;
+                    const frameRate = 30;
+                    const step = finalPercent / (duration / frameRate);
+    
+                    const interval = setInterval(() => {
+                        current += step;
+                        if (current >= finalPercent) {
+                            current = finalPercent;
+                            clearInterval(interval);
+                        }
+    
+                        receiptProgressBar.style.width = `${current}%`;
+                        receiptLabel.textContent = `收件進度：${current.toFixed(1)}%`;
+                    }, frameRate);    
+
                 }
             }
 
@@ -201,13 +235,49 @@ document.addEventListener('DOMContentLoaded', function () {
             // Create the progress bar
             const progressBar = document.createElement('div');
             progressBar.className = 'progress';
-            progressBar.style.width = `${progress}%`;
+            // 初始進度條設定為寬度 0
+            progressBar.style.width = `0%`; // 動畫從 0 開始
+            // progressBar.style.width = `${progress}%`;
 
             // Create the day info element
             const dayInfo = document.createElement('div');
             dayInfo.className = 'day-info';
-            dayInfo.textContent = day === '還未開始' ? day : `${day}/${person.totalDays}天`;
+            //dayInfo.textContent = day === '還未開始' ? day : `${day}/${person.totalDays}天`;
             
+            if (day === '還未開始') {
+                dayInfo.textContent = day;
+                progressBar.style.width = `0%`; // 不顯示進度
+            } else {
+                let currentPro = 0;
+                const frameRate = 30;
+                const stepPro = progress / (800 / frameRate);
+
+                const intervalPro = setInterval(() => {
+                    currentPro += stepPro;
+                    if (currentPro >= progress) {
+                        currentPro = progress;
+                        clearInterval(intervalPro);
+                    }
+
+                    progressBar.style.width = `${currentPro}%`;
+                }, frameRate);
+
+                dayInfo.textContent = `第0天/${person.totalDays}天`; // 初始為 0 天
+                let startDay = 0;
+                const finalDay = parseInt(day.replace('第', '').replace('天', ''));
+                const step = finalDay / (800 / frameRate);
+                
+                const interval = setInterval(() => {
+                    startDay += step;
+                    if (startDay >= finalDay) {
+                        startDay = finalDay;
+                        clearInterval(interval);
+                    }
+
+                    dayInfo.textContent = `第${Math.floor(startDay)}天/${person.totalDays}天`;
+                }, frameRate);
+             
+            }
             // Append all elements
             progressBarContainer.appendChild(progressBar);
             progressContainer.appendChild(progressBarContainer);

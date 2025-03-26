@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { name: '桃園市萬美玲', status: '第12天', totalDays: 40, threshold: 30233, target: '4萬5~5萬', url: 'https://linkgoods.com/wanbyela444?ltclid=d76b5baf-75b3-47eb-85a3-333686335c47' },
         { name: '桃園市呂玉玲', status: '第13天', totalDays: 40, threshold: 28064, target: '4萬5', url: 'https://linktr.ee/recalllu0604?ltclid=55b74e4d-a52d-4d77-8f59-9b25ecd7c638' },
         { name: '桃園市邱若華', status: '第12天', totalDays: 40, threshold: 28222, target: '4萬', url: 'https://linktr.ee/recallt6chiu?ltclid=419a7977-f426-42c9-99e9-d8176b7c7ba8' },
-        { name: '新竹市鄭正鈐', status: '第14天', totalDays: 40, threshold: 35465, target: '5萬', url: 'https://linktr.ee/recall.hccc?ltclid=ba5bc8dd-7375-482c-94f2-e46624ecf6c2' },
+        { name: '新竹市鄭正鈐', status: '第14天', totalDays: 40, threshold: 35465, target: '5萬', url: 'https://www.threads.net/@resident300hc.2024' },
         { name: '新竹縣徐欣瑩', status: '第7天', totalDays: 40, threshold: 21527, target: '4萬5', url: 'https://linktr.ee/recall.hsu.hsin.ying?ltclid=2a8b4147-4ed3-471d-b0cd-f53cf29915ea' },
         { name: '新竹縣林思銘', status: '第7天', totalDays: 40, threshold: 23287, target: '3萬', url: 'https://linktr.ee/recall.lsm?ltclid=0fdd5ae6-3c85-4124-a51e-3fc569f058d5' },
         { name: '苗栗縣陳超明', status: '第2天', totalDays: 40, threshold: 20586, target: '3萬', url: 'https://sites.google.com/view/ba-miaoli-lawmaker/index?authuser=0&ltclid=d58a4eb8-0f2b-4a95-bd38-e8335bd00e19' },

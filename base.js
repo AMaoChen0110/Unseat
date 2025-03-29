@@ -129,7 +129,17 @@ document.addEventListener('DOMContentLoaded', function () {
             // Create the person name element
             const personName = document.createElement('div');
             personName.className = 'person-name';
-            personName.textContent = person.name;
+
+            const firstPart = document.createElement('span');
+            firstPart.textContent = person.name.substring(0, 3);
+            firstPart.className = 'person-name-area';
+            
+            const secondPart = document.createElement('span');
+            secondPart.textContent = person.name.substring(3);
+            secondPart.className = 'person-name-fullname';
+            
+            personName.appendChild(firstPart);
+            personName.appendChild(secondPart);
 
             if (person.threshold && person.target) {
                 const goalInfo = document.createElement('div');

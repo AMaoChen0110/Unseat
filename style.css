@@ -134,6 +134,21 @@ h1 {
     margin-bottom: 5px;
 }
 
+.person-name-area {
+    background-color: #FAF3E0; /* 淡粉色背景 */
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .person-name-fullname {
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #333; /* 深灰色 */
+  }
+
 .progress-block {
     display: flex;
     justify-content: space-between;

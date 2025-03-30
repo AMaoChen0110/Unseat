@@ -1,10 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Define the base date - March 18, 2025
-    const baseDate = new Date(2025, 2, 18); // Month is 0-indexed, so 2 = March
-
     // Get current date when the page loads
     const currentDate = new Date();
-
+    //currentDate.setHours(0, 0, 0, 0);
+    
     // Format the current date for display
     const formattedDate = `${currentDate.getFullYear()}/${currentDate.getMonth() + 1}/${currentDate.getDate()}`;
 
@@ -13,24 +11,17 @@ document.addEventListener('DOMContentLoaded', function () {
         `${formattedDate} 全台大罷免第二階段連署時間條 <span class="hourglass">⌛</span>`;
 
     // Calculate days difference (current day is day 1, next day is day 2, etc.)
-    const calculateDayDifference = (startDate, person) => {
+    const calculateDayDifference = (person) => {
         // If hasn't started yet
         if (person.status === '還未開始') {
             return { day: person.status, progress: 0 };
         }
 
-        // Calculate the difference in days
-        const diffTime = Math.abs(currentDate - startDate);
-        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-
-        // Extract the person's starting day from their status
-        let startDay = parseInt(person.status.replace(/第(\d+)天/, '$1'));
-        if (person.name === '基隆市林沛祥') {
-            startDay = -5;
-        }
-
-        // Calculate the current day for this person
-        const currentDay = startDay + diffDays - 1; // -1 because we're counting from the reference date
+        // 使用 Math.abs() 確保不會有負數
+        const diffTime = Math.abs(currentDate - new Date(person.startDate));
+        
+        // 使用 Math.ceil() 並加1，確保換日即算一天
+        const currentDay = Math.ceil(diffTime / (1000 * 60 * 60 * 24)) + 1;
 
         // Ensure we don't exceed 40 days
         const finalDay = Math.min(currentDay, 40);
@@ -79,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
         personListElement.innerHTML = ''; // 清空前次渲染
         personData.forEach(person => {
             // Calculate the current day and progress for this person
-            const { day, progress } = calculateDayDifference(baseDate, person);
+            const { day, progress } = calculateDayDifference(person);
 
             // Create the person item element
             const personItem = document.createElement('div');

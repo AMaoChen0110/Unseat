@@ -198,6 +198,7 @@ h1 {
     border-radius: 8px;
     overflow: hidden;
     position: relative;
+    margin-top: 2px;
 }
 
 .progress {

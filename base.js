@@ -88,67 +88,71 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
             }
 
-//start
-
-// 建立 icon container
-const iconContainer = document.createElement('div');
-iconContainer.className = 'icon-container';
-
-// 當點擊 iconContainer 時阻止事件冒泡
-iconContainer.addEventListener('click', (e) => {
-    e.stopPropagation();
-  });
-
-// 定義 icon 資訊 (依需求替換 URL 與圖片來源)
-const icons = [
-  { href: person.url, src: 'link.png', alt: '官方' },
-  { href: person.facebook, src: 'facebook.png', alt: 'FB' },
-  { href: person.instagram, src: 'instagram.png', alt: 'Instagram' },
-  { href: person.threads, src: 'threads.png', alt: 'Threads' },
-  { href: person.line, src: 'line.png', alt: 'Line' },
-  { href: person.x, src: 'twitter.png', alt: 'X' },
-  { href: person.youtube, src: 'youtube.png', alt: 'Youtube' }
-];
-
-icons.forEach(iconData => {
-    if(iconData.href == "")
-    {
-        return;
-    }
-  const a = document.createElement('a');
-  a.href = iconData.href;
-  a.target = '_blank';
-  a.className = 'icon-link';
-
-  const img = document.createElement('img');
-  img.src = iconData.src;
-  img.alt = iconData.alt;
-  img.className = 'icon-image';
-
-  a.appendChild(img);
-  iconContainer.appendChild(a);
-});
-
-// 將 iconContainer 加入 personItem（右上角由 CSS 控制定位）
-personItem.appendChild(iconContainer);
-
-//end
-
-
             // Create the person name element
             const personName = document.createElement('div');
             personName.className = 'person-name';
 
+            const nameGroup = document.createElement('div');
+            nameGroup.className = 'name-text-group';
+
+            // 區域
             const firstPart = document.createElement('span');
             firstPart.textContent = person.name.substring(0, 3);
             firstPart.className = 'person-name-area';
 
+            // 姓名
             const secondPart = document.createElement('span');
             secondPart.textContent = person.name.substring(3);
             secondPart.className = 'person-name-fullname';
 
-            personName.appendChild(firstPart);
-            personName.appendChild(secondPart);
+            nameGroup.appendChild(firstPart);
+            nameGroup.appendChild(secondPart);
+            
+            personName.appendChild(nameGroup);
+            //start
+
+            // 建立 icon container
+            const iconContainer = document.createElement('div');
+            iconContainer.className = 'icon-container';
+
+            // 當點擊 iconContainer 時阻止事件冒泡
+            iconContainer.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+
+            // 定義 icon 資訊 (依需求替換 URL 與圖片來源)
+            const icons = [
+                { href: person.url, src: 'link.png', alt: '官方' },
+                { href: person.facebook, src: 'facebook.png', alt: 'FB' },
+                { href: person.instagram, src: 'instagram.png', alt: 'Instagram' },
+                { href: person.threads, src: 'threads.png', alt: 'Threads' },
+                { href: person.line, src: 'line.png', alt: 'Line' },
+                { href: person.x, src: 'twitter.png', alt: 'X' },
+                { href: person.youtube, src: 'youtube.png', alt: 'Youtube' }
+            ];
+
+            icons.forEach(iconData => {
+                if (iconData.href == "") {
+                    return;
+                }
+                const a = document.createElement('a');
+                a.href = iconData.href;
+                a.target = '_blank';
+                a.className = 'icon-link';
+
+                const img = document.createElement('img');
+                img.src = iconData.src;
+                img.alt = iconData.alt;
+                img.className = 'icon-image';
+
+                a.appendChild(img);
+                iconContainer.appendChild(a);
+            });
+
+            // 將 iconContainer 加入 personItem（右上角由 CSS 控制定位）
+            personName.appendChild(iconContainer);
+
+            //end
 
             if (person.threshold && person.target) {
                 const goalInfo = document.createElement('div');

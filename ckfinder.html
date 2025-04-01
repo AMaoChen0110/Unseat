@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>民生運勢站 - 據點公布</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+            background-color: #9ACD32;
+            padding: 20px;
+            border-radius: 10px;
+            background-image: radial-gradient(circle at center, #9ACD32 0%, #7CB71F 100%);
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            color: #333;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            margin: 0;
+            padding: 10px;
+            background-color: white;
+            display: inline-block;
+            border-radius: 15px;
+            transform: rotate(-5deg);
+            border: 3px solid #333;
+        }
+        
+        .subtitle {
+            font-size: 1.8em;
+            color: white;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section-header {
+            padding: 15px;
+            color: white;
+            font-weight: bold;
+            font-size: 1.5em;
+            display: flex;
+            align-items: center;
+        }
+        
+        .north {
+            background-color: #FF8C00;
+        }
+        
+        .central {
+            background-color: #32CD32;
+        }
+        
+        .south {
+            background-color: #DA70D6;
+        }
+        
+        .east {
+            background-color: #CD853F;
+        }
+        
+        .section-label {
+            writing-mode: horizontal-tb;
+            text-orientation: upright;
+            padding: 10px;
+            font-size: 1.8em;
+            letter-spacing: 5px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        tr {
+            border-bottom: 1px solid #eee;
+            transition: background-color 0.3s;
+        }
+        
+        tr:last-child {
+            border-bottom: none;
+        }
+        
+        tr:hover {
+            background-color: #f9f9d0;
+            cursor: pointer;
+        }
+        
+        td {
+            padding: 15px;
+            font-size: 16px;
+            vertical-align: middle;
+        }
+        
+        .location {
+            width: 15%;
+            font-weight: bold;
+            border-right: 1px dotted #ccc;
+        }
+        
+        .address {
+            width: 40%;
+        }
+        
+        .address a {
+            text-decoration: none;
+            color: #0066cc;
+        }
+        
+        .address a:hover {
+            text-decoration: underline;
+        }
+        
+        .phone {
+            width: 15%;
+            color: #333;
+            text-align: right;
+            border-right: 1px dotted #ccc;
+        }
+        
+        .map-container {
+            width: 30%;
+        }
+        
+        .map-iframe {
+            width: 100%;
+            height: 250px;
+            border: 0;
+            border-radius: 5px;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .footer img {
+            height: 20px;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+        
+        .date {
+            margin-top: 5px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .section-label {
+                writing-mode: horizontal-tb;
+                text-orientation: mixed;
+                letter-spacing: normal;
+                padding: 5px;
+            }
+            
+            td {
+                padding: 10px;
+                font-size: 14px;
+            }
+            
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .subtitle {
+                font-size: 1.4em;
+            }
+            
+            tr {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            
+            .location {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px dotted #ccc;
+            }
+            
+            .address {
+                width: 70%;
+            }
+            
+            .phone {
+                width: 30%;
+                text-align: right;
+                border-right: none;
+            }
+            
+            .map-container {
+                width: 100%;
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>民主連署站</h1>
+            <div class="subtitle">第一波據點公布</div>
+        </div>
+        
+        <!-- 北部區域 -->
+        <div class="section">
+            <div class="section-header north">
+                <div class="section-label">北部</div>
+            </div>
+            <table>
+                <tr>
+                    <td class="location">台北市黨部</td>
+                    <td class="address"><a href="https://maps.google.com/?q=台北市中山區建國北路二段115號7樓" target="_blank">台北市中山區建國北路二段115號7樓</a></td>
+                    <td class="phone">02-25018822</td>
+                    <td class="map-container">
+                        <iframe class="map-iframe" src="https://maps.google.com/maps?q=台北市中山區建國北路二段115號7樓&output=embed"></iframe>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="location">新北市黨部</td>
+                    <td class="address"><a href="https://maps.google.com/?q=新北市板橋區萬板路476號4樓" target="_blank">新北市板橋區萬板路476號4樓</a></td>
+                    <td class="phone">02-22528111</td>
+                    <td class="map-container">
+                        <iframe class="map-iframe" src="https://maps.google.com/maps?q=新北市板橋區萬板路476號4樓&output=embed"></iframe>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="location">基隆市黨部</td>
+                    <td class="address"><a href="https://maps.google.com/?q=基隆市中正區義一路59號5樓" target="_blank">基隆市中正區義一路59號5樓</a></td>
+                    <td class="phone">02-24201030</td>
+                    <td class="map-container">
+                        <iframe class="map-iframe" src="https://maps.google.com/maps?q=基隆市中正區義一路59號5樓&output=embed"></iframe>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="location">桃園市黨部</td>
+                    <td class="address"><a href="https://maps.google.com/?q=桃園市桃園區中平路102號15樓" target="_blank">桃園市桃園區中平路102號15樓</a></td>
+                    <td class="phone">03-2209325</td>
+                    <td class="map-container">
+                        <iframe class="map-iframe" src="https://maps.google.com/maps?q=桃園市桃園區中平路102號15樓&output=embed"></iframe>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="location">新竹市黨部</td>
+                    <td class="address"><a href="https://maps.google.com/?q=新竹市北區西大路772號2樓" target="_blank">新竹市北區西大路772號2樓</a></td>
+                    <td class="phone">03-5358595</td>
+                    <td class="map-container">
+                        <iframe class="map-iframe" src="https://maps.google.com/maps?q=新竹市北區西大路772號2樓&output=embed"></iframe>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="location">新竹縣黨部</td>
+                    <td class="address"><a href="https://maps.google.com/?q=新竹縣竹北市成功六街163號" target="_blank">新竹縣竹北市成功六街163號</a></td>
+                    <td class="phone">03-5505243</td>
+                    <td class="map-container">
+                        <iframe class="map-iframe" src="https://maps.google.com/maps?q=新竹縣竹北市成功六街163號&output=embed"></iframe>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="location">宜蘭縣黨部</td>
+                    <td class="address"><a href="https://maps.google.com/?q=宜蘭縣宜蘭市民權新路1-2號" target="_blank">宜蘭縣宜蘭市民權新路1-2號</a></td>
+                    <td class="phone">03-9354712</td>
+                    <td class="map-container">
+                        <iframe class="map-iframe" src="https://maps.google.com/maps?q=宜蘭縣宜蘭市民權新路1-2號&output=embed"></iframe>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- 中部區域 -->
+        <div class="section">
+            <div class="section-header central">
+                <div class="section-label">中部</div>
+            </div>
+            <table>
+                <tr>
+                    <td class="location">台中市黨部</td>
+                    <td class="address"><a href="https://maps.google.com/?q=台中市豐原區南陽路85號" target="_blank">台中市豐原區南陽路85號</a></td>
+                    <td class="phone">04-25293918</td>
+                    <td class="map-container">
+                        <iframe class="map-iframe" src="https://maps.google.com/maps?q=台中市豐原區南陽路85號&output=embed"></iframe>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="location">苗栗縣黨部</td>
+                    <td class="address"><a href="https://maps.google.com/?q=苗栗縣苗栗市北苗里站後南路13號" target="_blank">苗栗縣苗栗市北苗里站後南路13號</a></td>
+                    <td class="phone">037-7359437</td>
+                    <td class="map-container">
+                        <iframe class="map-iframe" src="https://maps.google.com/maps?q=苗栗縣苗栗市北苗里站後南路13號&output=embed"></iframe>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="location">彰化縣黨部</td>
+                    <td class="address"><a href="https://maps.google.com/?q=彰化縣彰化市中央路184號12樓-12" target="_blank">彰化縣彰化市中央路184號12樓-12</a></td>
+                    <td class="phone">049-7637779</td>
+                    <td class="map-container">
+                        <iframe class="map-iframe" src="https://maps.google.com/maps?q=彰化縣彰化市中央路184號12樓-12&output=embed"></iframe>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="location">南投縣黨部</td>
+                    <td class="address"><a href="https://maps.google.com/?q=南投縣南投市玉井街38號" target="_blank">南投縣南投市玉井街38號</a></td>
+                    <td class="phone">04-92225225-6</td>
+                    <td class="map-container">
+                        <iframe class="map-iframe" src="https://maps.google.com/maps?q=南投縣南投市玉井街38號&output=embed"></iframe>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="location">雲林縣黨部</td>
+                    <td class="address"><a href="https://maps.google.com/?q=雲林縣斗六市南京路426-1號" target="_blank">雲林縣斗六市南京路426-1號</a></td>
+                    <td class="phone">05-5348640</td>
+                    <td class="map-container">
+                        <iframe class="map-iframe" src="https://maps.google.com/maps?q=雲林縣斗六市南京路426-1號&output=embed"></iframe>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- 南部區域 -->
+        <div class="section">
+            <div class="section-header south">
+                <div class="section-label">南部</div>
+            </div>
+            <table>
+                <tr>
+                    <td class="location">高雄市黨部</td>
+                    <td class="address"><a href="https://maps.google.com/?q=高雄市鼓山區中華一路2300號" target="_blank">高雄市鼓山區中華一路2300號</a></td>
+                    <td class="phone">07-5552100</td>
+                    <td class="map-container">
+                        <iframe class="map-iframe" src="https://maps.google.com/maps?q=高雄市鼓山區中華一路2300號&output=embed"></iframe>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="location">台南市黨部</td>
+                    <td class="address"><a href="https://maps.google.com/?q=台南市南區中華西路一段137巷103號" target="_blank">台南市南區中華西路一段137巷103號</a></td>
+                    <td class="phone">06-2655120</td>
+                    <td class="map-container">
+                        <iframe class="map-iframe" src="https://maps.google.com/maps?q=台南市南區中華西路一段137巷103號&output=embed"></iframe>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="location">嘉義市黨部</td>
+                    <td class="address"><a href="https://maps.google.com/?q=嘉義市西區興達路226號" target="_blank">嘉義市西區興達路226號</a></td>
+                    <td class="phone">05-2343666</td>
+                    <td class="map-container">
+                        <iframe class="map-iframe" src="https://maps.google.com/maps?q=嘉義市西區興達路226號&output=embed"></iframe>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="location">嘉義縣黨部</td>
+                    <td class="address"><a href="https://maps.google.com/?q=嘉義縣太保市健康路181號" target="_blank">嘉義縣太保市健康路181號</a></td>
+                    <td class="phone">05-3625228</td>
+                    <td class="map-container">
+                        <iframe class="map-iframe" src="https://maps.google.com/maps?q=嘉義縣太保市健康路181號&output=embed"></iframe>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="location">屏東縣黨部</td>
+                    <td class="address"><a href="https://maps.google.com/?q=屏東縣屏東市瑞光路一段290號" target="_blank">屏東縣屏東市瑞光路一段290號</a></td>
+                    <td class="phone">08-7373456</td>
+                    <td class="map-container">
+                        <iframe class="map-iframe" src="https://maps.google.com/maps?q=屏東縣屏東市瑞光路一段290號&output=embed"></iframe>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- 東部及離島區域 -->
+        <div class="section">
+            <div class="section-header east">
+                <div class="section-label">東部離島</div>
+            </div>
+            <table>
+                <tr>
+                    <td class="location">花蓮縣黨部</td>
+                    <td class="address"><a href="https://maps.google.com/?q=花蓮縣花蓮市中原路374號" target="_blank">花蓮縣花蓮市中原路374號</a></td>
+                    <td class="phone">03-8359030</td>
+                    <td class="map-container">
+                        <iframe class="map-iframe" src="https://maps.google.com/maps?q=花蓮縣花蓮市中原路374號&output=embed"></iframe>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="location">台東縣黨部</td>
+                    <td class="address"><a href="https://maps.google.com/?q=台東縣台東市四維路一段381號" target="_blank">台東縣台東市四維路一段381號</a></td>
+                    <td class="phone">08-9359359</td>
+                    <td class="map-container">
+                        <iframe class="map-iframe" src="https://maps.google.com/maps?q=台東縣台東市四維路一段381號&output=embed"></iframe>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="location">金門縣黨部</td>
+                    <td class="address"><a href="https://maps.google.com/?q=金門縣金湖鎮伯玉路三段379號" target="_blank">金門縣金湖鎮伯玉路三段379號</a></td>
+                    <td class="phone">08-2373895</td>
+                    <td class="map-container">
+                        <iframe class="map-iframe" src="https://maps.google.com/maps?q=金門縣金湖鎮伯玉路三段379號&output=embed"></iframe>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="location">澎湖縣黨部</td>
+                    <td class="address"><a href="https://maps.google.com/?q=澎湖縣馬公市朝陽路146號1樓" target="_blank">澎湖縣馬公市朝陽路146號1樓</a></td>
+                    <td class="phone">06-9272748</td>
+                    <td class="map-container">
+                        <iframe class="map-iframe" src="https://maps.google.com/maps?q=澎湖縣馬公市朝陽路146號1樓&output=embed"></iframe>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="location">連江縣黨部</td>
+                    <td class="address"><a href="https://maps.google.com/?q=連江縣南竿鄉馬祖村42號" target="_blank">連江縣南竿鄉馬祖村42號</a></td>
+                    <td class="phone">08-3623310</td>
+                    <td class="map-container">
+                        <iframe class="map-iframe" src="https://maps.google.com/maps?q=連江縣南竿鄉馬祖村42號&output=embed"></iframe>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="footer">
+        </div>
+    </div>
+</body>
+</html>

@@ -2,7 +2,38 @@ body {
     font-family: 'Microsoft JhengHei', Arial, sans-serif;
     margin: 0;
     padding: 20px;
+    background: linear-gradient(to bottom, #e9f2e3, #f7e9d3);
     background-color: #f5f5f5;
+}
+
+.main-nav {
+    max-width: 840px;
+    margin: 0 auto;
+    background-color: #333333;
+    padding: 12px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+
+.nav-container {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.nav-container a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+}
+
+.nav-container a:hover {
+    background-color: #574d4d;
 }
 
 .container {
@@ -23,6 +54,17 @@ h1 {
     justify-content: space-between;
 }
 
+.notice {
+    font-size: 14px;
+    color: #cc0000;
+    margin-top: 10px;
+    line-height: 1.6;
+    background-color: #fff4f4;
+    padding: 10px 15px;
+    border-left: 4px solid #cc0000;
+    border-radius: 6px;
+}
+
 .hourglass {
     font-size: 28px;
 }
@@ -33,16 +75,59 @@ h1 {
     margin-bottom: 20px;
 }
 
+/* 資料表單主div */
 .person-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
 }
 
+@media (max-width: 600px) {
+    .person-list {
+        grid-template-columns: 1fr;
+    }
+}
+
 .person-item {
     display: flex;
     flex-direction: column;
     margin-bottom: 5px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    position: relative;
+}
+
+.person-item:hover {
+    transform: translateY(-8px) rotateX(3deg) rotateY(2deg);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+    background-color: #fdf5f1;
+}
+
+.tooltip {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #333;
+    color: #fff;
+    padding: 4px 8px;
+    font-size: 12px;
+    border-radius: 6px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    transform: translateY(-5px);
+    z-index: 1;
+    white-space: nowrap;
+}
+
+.person-item:hover .tooltip {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .person-name {
@@ -50,37 +135,92 @@ h1 {
     margin-bottom: 5px;
 }
 
-.progress-container {
+.person-name-area {
+    background-color: #FAF3E0; /* 淡粉色背景 */
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .person-name-fullname {
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #333; /* 深灰色 */
+  }
+
+.progress-block {
     display: flex;
-    align-items: center;
-    gap: 5px;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
 }
 
+.progress-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex: 1;
+    min-width: 0;
+    width: 68%;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: space-between;
+    min-width: 100px; /* 可依需要調整 */
+    width: 32%;
+}
+
+/* 收件數量的樣式 */
+.count-info {
+    font-size: 13px;
+    color: #006400;
+    margin-top: 4px;
+}
+
+.progress-bar.receipt {
+    background-color: #e8f5e9; /* 比較淡的底 */
+}
+
+.progress-bar.receipt .progress {
+    background: linear-gradient(90deg, #4caf50, #81c784);/* 綠色代表進度 */
+}
+
+/* 天數讀取條樣式 */
 .progress-bar {
     flex-grow: 1;
     height: 20px;
     background-color: #f0e6d2;
-    border-radius: 5px;
+    border-radius: 8px;
     overflow: hidden;
     position: relative;
+    margin-top: 2px;
 }
 
 .progress {
     height: 100%;
-    background-color: #cc4b4b;
-    border-radius: 5px 0 0 5px;
+    background: linear-gradient(90deg, #cc4b4b, #e39393);
+    border-radius: 8px 0 0 8px;
 }
 
+/* 讀取條後面的文字樣式 */
 .day-info {
     font-size: 14px;
     white-space: nowrap;
 }
 
-.special-case {
-    color: #666;
-    font-size: 14px;
+/* 門檻目標的樣式 */
+.goal-info {
+    font-size: 13px;
+    color: #555;
+    margin-top: 4px;
 }
 
+/* 下方資訊所使用的樣式 */
 .info-section {
     margin-top: 20px;
     padding-top: 15px;
@@ -99,6 +239,18 @@ h1 {
 .info-title .sun {
     color: #FFD700;
     font-size: 24px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 30px;
+}
+
+@media (max-width: 600px) {
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .info-item {
@@ -122,41 +274,4 @@ h1 {
 .important {
     color: #cc0000;
     font-weight: bold;
-}
-
-.goal-info {
-    font-size: 13px;
-    color: #555;
-    margin-top: 4px;
-}
-
-
-.person-item {
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 12px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    transform-style: preserve-3d;
-    perspective: 1000px;
-}
-
-.person-item:hover {
-    transform: translateY(-8px) rotateX(3deg) rotateY(2deg);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
-    background-color: #fdf5f1;
-}
-
-.count-info {
-    font-size: 13px;
-    color: #006400;
-    margin-top: 4px;
-}
-
-.progress-bar.receipt {
-    background-color: #e8f5e9; /* 比較淡的底 */
-}
-
-.progress-bar.receipt .progress {
-    background-color: #4caf50; /* 綠色代表進度 */
 }

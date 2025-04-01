@@ -145,9 +145,21 @@ h1 {
 }
 
 .person-name {
+    margin-top: -5px;
     font-size: 16px;
-    margin-bottom: 5px;
-}
+    display: flex;
+    justify-content: space-between; /* 左右分散 */
+    align-items: center;
+    flex-wrap: wrap; /* 這行讓 icon 會換行 */
+    position: relative;
+  }
+  
+/* 包住區域和人名的容器 */
+.name-text-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
 
 .person-name-area {
     background-color: #FAF3E0; /* 淡粉色背景 */
@@ -231,7 +243,8 @@ h1 {
 .goal-info {
     font-size: 13px;
     color: #555;
-    margin-top: 4px;
+    margin-top: 2px;
+    margin-bottom: 4px;
 }
 
 /* 下方資訊所使用的樣式 */
@@ -290,26 +303,26 @@ h1 {
     font-weight: bold;
 }
 
-.icon-container {
-    position: absolute;
-    top: 8px;
-    right: 8px;
+  .icon-container {
     display: flex;
-    gap: 4px;
+    flex-wrap: wrap;
+    gap: 0px;
   }
   
   .icon-link {
-    display: block;
-    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
     border-radius: 4px;
-    border: 1.5px solid transparent;  /* 預設透明 border */
+    border: 1.5px solid transparent;
     transition: border 0.2s ease;
   }
   
   .icon-link:hover {
-    border: 1.5px solid #000000;
+    border: 1.5px solid #000;
   }
-
+  
   .icon-image {
     width: 20px;
     height: 20px;

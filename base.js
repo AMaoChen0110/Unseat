@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Get current date when the page loads
     const currentDate = new Date();
-    //currentDate.setHours(0, 0, 0, 0);
-
+    currentDate.setHours(0, 0, 0, 0);
+    
     // Format the current date for display
     const formattedDate = `${currentDate.getFullYear()}/${currentDate.getMonth() + 1}/${currentDate.getDate()}`;
 

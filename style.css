@@ -335,10 +335,11 @@ h1 {
     position: fixed;
     top: 50%;
     right: 0;
-    width: 50px;
-    height: 50px;
-    background-color: #8B0000;
-    color: white;
+    width: 45px;
+    height: 45px;
+    background: radial-gradient(circle, #fdf6e3 0%, #e3dccc 100%);
+    border: 3px solid #9e8b74;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
     font-weight: bold;
     border-radius: 50%;
     display: flex;
@@ -346,58 +347,61 @@ h1 {
     justify-content: center;
     cursor: move;
     z-index: 9999;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     user-select: none;
     font-family: 'Microsoft JhengHei', sans-serif;
-}
-
-#floating-menu:hover {
-    background-color: #a31a1a;
+    font-size: 12px;
+  }
+  
+  #floating-menu:hover {
+    transform: scale(1.1);
     box-shadow: 0 6px 14px rgba(0,0,0,0.25);
-}
-
-#floating-panel {
+  }
+  
+  #floating-panel {
     position: fixed;
     top: 50%;
     right: 70px;
     transform: translateY(-10%);
-    background-color: white;
-    border-radius: 12px;
-    padding: 0px 6px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+    background: #fffaf0;
+    border: 2px dashed #aaa07c;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 6px 6px;
+    font-family: 'Microsoft JhengHei', sans-serif;
     display: none;
     z-index: 9998;
     min-width: 180px;
     font-family: 'Microsoft JhengHei', sans-serif;
-}
-
-#floating-panel.show {
+  }
+  
+  #floating-panel.show {
     display: block;
-}
-
-.floating-panel-list {
+  }
+  
+  .floating-panel-list {
+    list-style: none;
     margin: 0;
     padding: 0;
-    list-style: none;
-}
-
-.floating-panel-list li {
-    margin: 8px 0;
-}
-
-.floating-panel-list a {
+  }
+  
+  .floating-panel-list li {
+    margin-bottom: 10px;
+  }
+  
+  .floating-panel-list a {
     text-decoration: none;
-    color: #333;
     font-size: 15px;
+    padding: 6px 12px;
     display: block;
-    padding: 6px 10px;
-    border-radius: 6px;
-    transition: background-color 0.2s;
-}
-
-.floating-panel-list a:hover {
-    background-color: #f0e6d2;
-    color: #8B0000;
+    border-radius: 8px;
+    background-color: #f5f0e1;
+    color: #5a4e3c;
+    transition: background-color 0.2s ease;
+  }
+  
+  .floating-panel-list a:hover {
+    background-color: #e6d9b3;
     font-weight: bold;
-}
+  }

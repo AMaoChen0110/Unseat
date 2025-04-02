@@ -110,20 +110,34 @@ h1 {
 
 .tooltip {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: #333;
+    top: -30px;
+    right: 5px;
+    background-color: #333;  /* 淡粉紅色 */
     color: #fff;
-    padding: 4px 8px;
-    font-size: 12px;
-    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 14px;
+    border-radius: 4px 4px 0 0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.2s ease, transform 0.2s ease;
-    transform: translateY(-5px);
-    z-index: 1;
-    white-space: nowrap;
-}
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  .tooltip::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 10px 10px 0 10px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+  }
+  
+  .person-item:hover .tooltip {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
 .person-item:hover .tooltip {
     opacity: 1;
@@ -131,9 +145,21 @@ h1 {
 }
 
 .person-name {
+    margin-top: -5px;
     font-size: 16px;
-    margin-bottom: 5px;
-}
+    display: flex;
+    justify-content: space-between; /* 左右分散 */
+    align-items: center;
+    flex-wrap: wrap; /* 這行讓 icon 會換行 */
+    position: relative;
+  }
+  
+/* 包住區域和人名的容器 */
+.name-text-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
 
 .person-name-area {
     background-color: #FAF3E0; /* 淡粉色背景 */
@@ -217,7 +243,8 @@ h1 {
 .goal-info {
     font-size: 13px;
     color: #555;
-    margin-top: 4px;
+    margin-top: 2px;
+    margin-bottom: 4px;
 }
 
 /* 下方資訊所使用的樣式 */
@@ -275,3 +302,31 @@ h1 {
     color: #cc0000;
     font-weight: bold;
 }
+
+  .icon-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0px;
+  }
+  
+  .icon-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    border-radius: 4px;
+    border: 1.5px solid transparent;
+    transition: border 0.2s ease;
+  }
+  
+  .icon-link:hover {
+    border: 1.5px solid #000;
+  }
+  
+  .icon-image {
+    width: 20px;
+    height: 20px;
+    display: block;
+    pointer-events: none;
+  }
+

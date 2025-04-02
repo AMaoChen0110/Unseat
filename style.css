@@ -330,3 +330,74 @@ h1 {
     pointer-events: none;
   }
 
+/* 改良的浮動按鈕樣式，搭配現有網站風格 */
+#floating-menu {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    background-color: #8B0000;
+    color: white;
+    font-weight: bold;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: move;
+    z-index: 9999;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    user-select: none;
+    font-family: 'Microsoft JhengHei', sans-serif;
+}
+
+#floating-menu:hover {
+    background-color: #a31a1a;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+}
+
+#floating-panel {
+    position: fixed;
+    top: 50%;
+    right: 70px;
+    transform: translateY(-10%);
+    background-color: white;
+    border-radius: 12px;
+    padding: 0px 6px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+    display: none;
+    z-index: 9998;
+    min-width: 180px;
+    font-family: 'Microsoft JhengHei', sans-serif;
+}
+
+#floating-panel.show {
+    display: block;
+}
+
+.floating-panel-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.floating-panel-list li {
+    margin: 8px 0;
+}
+
+.floating-panel-list a {
+    text-decoration: none;
+    color: #333;
+    font-size: 15px;
+    display: block;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+}
+
+.floating-panel-list a:hover {
+    background-color: #f0e6d2;
+    color: #8B0000;
+    font-weight: bold;
+}

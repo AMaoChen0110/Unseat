@@ -69,6 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   document.addEventListener('touchmove', (e) => {
     if (!isDragging) return;
+    e.preventDefault(); // ✅ 阻止畫面滑動
     hasMoved = true;
     const touch = e.touches[0];
     const x = touch.clientX - offsetX;

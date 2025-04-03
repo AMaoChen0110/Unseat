@@ -112,4 +112,18 @@ document.addEventListener('DOMContentLoaded', function () {
     if (hasMoved) return;
     panel.classList.toggle('show');
   });
+
+  // 桌機：點擊其他地方時關閉選單
+  document.addEventListener('click', (e) => {
+    if (!panel.contains(e.target) && !button.contains(e.target)) {
+      panel.classList.remove('show');
+    }
+  });
+
+  // 手機：觸控其他地方時關閉選單
+  document.addEventListener('touchstart', (e) => {
+    if (!panel.contains(e.target) && !button.contains(e.target)) {
+      panel.classList.remove('show');
+    }
+  }, { passive: true });
 });

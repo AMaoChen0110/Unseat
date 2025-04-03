@@ -122,13 +122,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // 定義 icon 資訊 (依需求替換 URL 與圖片來源)
             const icons = [
-                { href: person.url, src: 'link.png', alt: '官方' },
-                { href: person.facebook, src: 'facebook.png', alt: 'FB' },
-                { href: person.instagram, src: 'instagram.png', alt: 'Instagram' },
-                { href: person.threads, src: 'threads.png', alt: 'Threads' },
-                { href: person.line, src: 'line.png', alt: 'Line' },
-                { href: person.x, src: 'twitter.png', alt: 'X' },
-                { href: person.youtube, src: 'youtube.png', alt: 'Youtube' }
+                { href: person.url, src: 'images/link.png', alt: '官方' },
+                { href: person.facebook, src: 'images/facebook.png', alt: 'FB' },
+                { href: person.instagram, src: 'images/instagram.png', alt: 'Instagram' },
+                { href: person.threads, src: 'images/threads.png', alt: 'Threads' },
+                { href: person.line, src: 'images/line.png', alt: 'Line' },
+                { href: person.x, src: 'images/twitter.png', alt: 'X' },
+                { href: person.youtube, src: 'images/youtube.png', alt: 'Youtube' }
             ];
 
             icons.forEach(iconData => {
@@ -313,4 +313,5 @@ document.addEventListener('DOMContentLoaded', function () {
             personListElement.appendChild(personItem);
         });
     }
+
 });

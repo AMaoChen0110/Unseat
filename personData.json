@@ -1,527 +1,1309 @@
 [
-    {
-        "name": "新北市洪孟楷",
-        "status": "第5天",
-        "startDate": "2025-03-14",
-        "totalDays": 40,
-        "threshold": 38764,
-        "target": "5萬",
-        "url": "https://linktr.ee/nomorered?ltclid=fa4a25f8-4565-4499-8c17-32513b13a4b7",
-        "threads": "https://www.threads.net/@getridofred",
-        "facebook": "https://www.facebook.com/profile.php?id=61571350425662",
-        "instagram": "https://www.instagram.com/getridofred",
-        "line": "https://line.me/R/ti/p/@getridofred?from=page&searchId=getridofred",
-        "youtube": "https://www.youtube.com/@getridofred",
-        "x": ""
+  {
+    "facebook": "https://www.facebook.com/profile.php?id=61571350425662",
+    "instagram": "https://www.instagram.com/getridofred",
+    "line": "https://line.me/R/ti/p/@getridofred?from=page&searchId=getridofred",
+    "name": "新北市洪孟楷",
+    "startDate": "2025-03-14",
+    "status": "第5天",
+    "target": "5萬",
+    "threads": "https://www.threads.net/@getridofred",
+    "threshold": 38764,
+    "totalDays": 40,
+    "twacda": {
+      "image_url": "https://framerusercontent.com/images/XqPSp474nyHLZVJLjaN8KRZk.jpg",
+      "progress": "44.9%",
+      "region": {
+        "city": "新北",
+        "districts": "淡水、石門、三芝、八里、林口、泰山"
+      },
+      "statistics": {
+        "progress": {
+          "unit": "%",
+          "value": 44.9
+        },
+        "received_copies": {
+          "unit": "份",
+          "value": 17421
+        },
+        "threshold": {
+          "unit": "份",
+          "value": 38764
+        }
+      },
+      "status": "緊急"
     },
-    {
-        "name": "新北市葉元之",
-        "status": "第11天",
-        "startDate": "2025-03-08",
-        "totalDays": 40,
-        "threshold": 23313,
-        "target": "4萬",
-        "url": "https://linktr.ee/banqiaobigsanyuan?ltclid=e6bad381-4713-4283-8c83-f81013013a40",
-        "threads": "https://www.threads.net/@banqiao_east_recall",
-        "facebook": "https://www.facebook.com/groups/476948311366589",
-        "instagram": "https://www.instagram.com/banqiao_east_recall",
-        "line": "https://line.me/ti/g2/w4h4E3nUKv0IgjnW6E2HyaOyRnlnU9Zatqyu6w?utm_source=invitation&utm_medium=QR_code&utm_campaign=default",
-        "youtube": "",
-        "x": ""
+    "url": "https://linktr.ee/nomorered?ltclid=fa4a25f8-4565-4499-8c17-32513b13a4b7",
+    "x": "",
+    "youtube": "https://www.youtube.com/@getridofred"
+  },
+  {
+    "facebook": "https://www.facebook.com/groups/476948311366589",
+    "instagram": "https://www.instagram.com/banqiao_east_recall",
+    "line": "https://line.me/ti/g2/w4h4E3nUKv0IgjnW6E2HyaOyRnlnU9Zatqyu6w?utm_source=invitation&utm_medium=QR_code&utm_campaign=default",
+    "name": "新北市葉元之",
+    "startDate": "2025-03-08",
+    "status": "第11天",
+    "target": "4萬",
+    "threads": "https://www.threads.net/@banqiao_east_recall",
+    "threshold": 23313,
+    "totalDays": 40,
+    "twacda": {
+      "image_url": "https://framerusercontent.com/images/ghluhuDSm1piK4MmZLevSjw53Co.jpg",
+      "progress": "統計中",
+      "region": {
+        "city": "新北",
+        "districts": "板橋東"
+      },
+      "statistics": {
+        "progress": {
+          "unit": "%",
+          "value": 0.0
+        },
+        "received_copies": {
+          "unit": "份",
+          "value": 0
+        },
+        "threshold": {
+          "unit": "份",
+          "value": 23313
+        }
+      },
+      "status": "緊急"
     },
-    {
-        "name": "新北市張智倫",
-        "status": "第4天",
-        "startDate": "2025-03-15",
-        "totalDays": 40,
-        "threshold": 28766,
-        "target": "3萬5",
-        "url": "https://linktr.ee/bettershuanghe?ltclid=8936793b-96be-4330-ad63-7d9df48abd4e",
-        "threads": "https://www.threads.net/@betterzhonghe",
-        "facebook": "https://www.facebook.com/betterzhonghe?mibextid=wwXIfr&rdid=I1un4QqMcfCU0qVN&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1Y5uGrL9zj%2F%3Fmibextid%3DwwXIfr#",
-        "instagram": "https://www.instagram.com/betterzhonghe/",
-        "line": "https://line.me/R/ti/p/@170xrijk?from=page&searchId=170xrijk",
-        "youtube": "https://www.youtube.com/@bettershuanghe",
-        "x": ""
+    "url": "https://linktr.ee/banqiaobigsanyuan?ltclid=e6bad381-4713-4283-8c83-f81013013a40",
+    "x": "",
+    "youtube": ""
+  },
+  {
+    "facebook": "https://www.facebook.com/betterzhonghe?mibextid=wwXIfr&rdid=I1un4QqMcfCU0qVN&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1Y5uGrL9zj%2F%3Fmibextid%3DwwXIfr#",
+    "instagram": "https://www.instagram.com/betterzhonghe/",
+    "line": "https://line.me/R/ti/p/@170xrijk?from=page&searchId=170xrijk",
+    "name": "新北市張智倫",
+    "startDate": "2025-03-15",
+    "status": "第4天",
+    "target": "3萬5",
+    "threads": "https://www.threads.net/@betterzhonghe",
+    "threshold": 28766,
+    "totalDays": 40,
+    "twacda": {
+      "image_url": "https://framerusercontent.com/images/SnlgnNUpnSdXxiQ2NoGuSgsy4.jpg",
+      "progress": "34.8",
+      "region": {
+        "city": "新北",
+        "districts": "中和"
+      },
+      "statistics": {
+        "progress": {
+          "unit": "%",
+          "value": 34.8
+        },
+        "received_copies": {
+          "unit": "份",
+          "value": 10000
+        },
+        "threshold": {
+          "unit": "份",
+          "value": 28766
+        }
+      },
+      "status": "緊急"
     },
-    {
-        "name": "新北市林德福",
-        "status": "第4天",
-        "startDate": "2025-03-15",
-        "totalDays": 40,
-        "threshold": 23830,
-        "target": "3萬",
-        "url": "https://linktr.ee/bettershuanghe?ltclid=36136451-fbf3-4907-b7f8-3d4dd2569466",
-        "threads": "https://www.threads.net/@betteryonghe",
-        "facebook": "https://www.facebook.com/betteryonghe?mibextid=wwXIfr&rdid=78rnKiTfoLjE9zer&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1KWF3Z9m14%2F%3Fmibextid%3DwwXIfr#",
-        "instagram": "https://www.instagram.com/betteryonghe/",
-        "line": "https://line.me/R/ti/p/@502jatuj?from=page&searchId=502jatuj",
-        "youtube": "https://www.youtube.com/@bettershuanghe",
-        "x": ""
+    "url": "https://linktr.ee/bettershuanghe?ltclid=8936793b-96be-4330-ad63-7d9df48abd4e",
+    "x": "",
+    "youtube": "https://www.youtube.com/@bettershuanghe"
+  },
+  {
+    "facebook": "https://www.facebook.com/betteryonghe?mibextid=wwXIfr&rdid=78rnKiTfoLjE9zer&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1KWF3Z9m14%2F%3Fmibextid%3DwwXIfr#",
+    "instagram": "https://www.instagram.com/betteryonghe/",
+    "line": "https://line.me/R/ti/p/@502jatuj?from=page&searchId=502jatuj",
+    "name": "新北市林德福",
+    "startDate": "2025-03-15",
+    "status": "第4天",
+    "target": "3萬",
+    "threads": "https://www.threads.net/@betteryonghe",
+    "threshold": 23830,
+    "totalDays": 40,
+    "twacda": {
+      "image_url": "https://framerusercontent.com/images/I02c5BGJmzpXD8d89MdPSp8fM.jpg",
+      "progress": "36.5%",
+      "region": {
+        "city": "新北",
+        "districts": "永和"
+      },
+      "statistics": {
+        "progress": {
+          "unit": "%",
+          "value": 36.5
+        },
+        "received_copies": {
+          "unit": "份",
+          "value": 8700
+        },
+        "threshold": {
+          "unit": "份",
+          "value": 23830
+        }
+      },
+      "status": "緊急"
     },
-    {
-        "name": "新北市羅明才",
-        "status": "第6天",
-        "startDate": "2025-03-13",
-        "totalDays": 40,
-        "threshold": 29664,
-        "target": "4萬",
-        "url": "https://linktr.ee/baluobo1111?ltclid=92a842ef-ae1a-41ee-bdb1-c3874c116bc6",
-        "threads": "https://www.threads.net/@baluobo1111",
-        "facebook": "https://www.facebook.com/baluobo1111/",
-        "instagram": "https://www.instagram.com/baluobo1111/",
-        "line": "https://line.me/ti/g2/bcHt7pLk7XM4SkMcejjm8R6fg6YOLuarHScYGw?utm_source=invitation&utm_medium=link_copy&utm_campaign=default",
-        "youtube": "",
-        "x": ""
+    "url": "https://linktr.ee/bettershuanghe?ltclid=36136451-fbf3-4907-b7f8-3d4dd2569466",
+    "x": "",
+    "youtube": "https://www.youtube.com/@bettershuanghe"
+  },
+  {
+    "facebook": "https://www.facebook.com/baluobo1111/",
+    "instagram": "https://www.instagram.com/baluobo1111/",
+    "line": "https://line.me/ti/g2/bcHt7pLk7XM4SkMcejjm8R6fg6YOLuarHScYGw?utm_source=invitation&utm_medium=link_copy&utm_campaign=default",
+    "name": "新北市羅明才",
+    "startDate": "2025-03-13",
+    "status": "第6天",
+    "target": "4萬",
+    "threads": "https://www.threads.net/@baluobo1111",
+    "threshold": 29664,
+    "totalDays": 40,
+    "twacda": {
+      "image_url": "https://framerusercontent.com/images/D57BlH0J0Iq0lry60fgSUvkoYSI.jpg",
+      "progress": "23.6%",
+      "region": {
+        "city": "新北",
+        "districts": "新店、深坑、石碇、坪林、烏來"
+      },
+      "statistics": {
+        "progress": {
+          "unit": "%",
+          "value": 23.6
+        },
+        "received_copies": {
+          "unit": "份",
+          "value": 7000
+        },
+        "threshold": {
+          "unit": "份",
+          "value": 29664
+        }
+      },
+      "status": "緊急"
     },
-    {
-        "name": "新北市廖先翔",
-        "status": "第5天",
-        "startDate": "2025-03-14",
-        "totalDays": 40,
-        "threshold": 26512,
-        "target": "4萬5",
-        "url": "https://linktr.ee/12scissorkick?ltclid=79b5be4d-e7e7-4427-b756-9992ccf813b7",
-        "threads": "https://www.threads.net/@12scissorkick",
-        "facebook": "https://www.facebook.com/groups/490765340263160/",
-        "instagram": "https://www.instagram.com/12scissorkick",
-        "line": "https://line.me/ti/g2/M2sjZ7WYKVPZgFgPriUBPApH_CdEQit8wbL5GQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default",
-        "youtube": "",
-        "x": ""
+    "url": "https://linktr.ee/baluobo1111?ltclid=92a842ef-ae1a-41ee-bdb1-c3874c116bc6",
+    "x": "",
+    "youtube": ""
+  },
+  {
+    "facebook": "https://www.facebook.com/groups/490765340263160/",
+    "instagram": "https://www.instagram.com/12scissorkick",
+    "line": "https://line.me/ti/g2/M2sjZ7WYKVPZgFgPriUBPApH_CdEQit8wbL5GQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default",
+    "name": "新北市廖先翔",
+    "startDate": "2025-03-14",
+    "status": "第5天",
+    "target": "4萬5",
+    "threads": "https://www.threads.net/@12scissorkick",
+    "threshold": 26512,
+    "totalDays": 40,
+    "twacda": {
+      "image_url": "https://framerusercontent.com/images/9wZItY7hRjqYMwuULOjBSPo9dLw.jpg",
+      "progress": "53.3%",
+      "region": {
+        "city": "新北",
+        "districts": "汐金萬、平雙溪、瑞芳、貢寮"
+      },
+      "statistics": {
+        "progress": {
+          "unit": "%",
+          "value": 53.3
+        },
+        "received_copies": {
+          "unit": "份",
+          "value": 14121
+        },
+        "threshold": {
+          "unit": "份",
+          "value": 26512
+        }
+      },
+      "status": "緊急"
     },
-    {
-        "name": "臺北市王鴻薇",
-        "status": "第6天",
-        "startDate": "2025-03-13",
-        "totalDays": 40,
-        "threshold": 27733,
-        "target": "4萬5",
-        "url": "https://linktr.ee/wanghongwei2025gg?utm_source=linktree_profile_share&ltsid=1ecda328-baa8-4ab0-aeb0-8c3403043c76&ltclid=55162d4b-90bc-4c32-80b8-a159309299e5",
-        "threads": "https://www.threads.net/@wanghongwei2025gg",
-        "facebook": "https://www.facebook.com/profile.php?id=61562100179251&mibextid=LQQJ4d&rdid=7TTHlsRIIGNcl4mG&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2FzSDFNMY1xQU9coNx%2F%3Fmibextid%3DLQQJ4d#",
-        "instagram": "https://www.instagram.com/wanghongwei2025gg?igsh=MWY2Zmw1M2kwb205dg%3D%3D&utm_source=qr",
-        "line": "https://line.me/R/ti/p/@964sdkpn?from=page&liff.referrer=https%3A%2F%2Flinktr.ee%2F&searchId=964sdkpn",
-        "youtube": "",
-        "x": "https://x.com/hongwei2025gg?s=21&t=8B_gi9Wyc8zrqgBtscUmGQ"
+    "url": "https://linktr.ee/12scissorkick?ltclid=79b5be4d-e7e7-4427-b756-9992ccf813b7",
+    "x": "",
+    "youtube": ""
+  },
+  {
+    "facebook": "https://www.facebook.com/profile.php?id=61562100179251&mibextid=LQQJ4d&rdid=7TTHlsRIIGNcl4mG&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2FzSDFNMY1xQU9coNx%2F%3Fmibextid%3DLQQJ4d#",
+    "instagram": "https://www.instagram.com/wanghongwei2025gg?igsh=MWY2Zmw1M2kwb205dg%3D%3D&utm_source=qr",
+    "line": "https://line.me/R/ti/p/@964sdkpn?from=page&liff.referrer=https%3A%2F%2Flinktr.ee%2F&searchId=964sdkpn",
+    "name": "臺北市王鴻薇",
+    "startDate": "2025-03-13",
+    "status": "第6天",
+    "target": "4萬5",
+    "threads": "https://www.threads.net/@wanghongwei2025gg",
+    "threshold": 27733,
+    "totalDays": 40,
+    "twacda": {
+      "image_url": "https://framerusercontent.com/images/hheNmgqDqSPDnQrukrcI6DjQ9k.jpeg",
+      "progress": "統計中",
+      "region": {
+        "city": "台北",
+        "districts": "中山、北松山"
+      },
+      "statistics": {
+        "progress": {
+          "unit": "%",
+          "value": 0.0
+        },
+        "received_copies": {
+          "unit": "份",
+          "value": 0
+        },
+        "threshold": {
+          "unit": "份",
+          "value": 27733
+        }
+      },
+      "status": "緊急"
     },
-    {
-        "name": "臺北市李彥秀",
-        "status": "第7天",
-        "startDate": "2025-03-12",
-        "totalDays": 40,
-        "threshold": 31809,
-        "target": "6萬",
-        "url": "https://linktr.ee/recall.giansiu?ltclid=255f239f-980e-4105-938e-ee9a4bb4051e",
-        "threads": "https://www.threads.net/@recall.giansiu",
-        "facebook": "https://www.facebook.com/profile.php?id=61560521985801",
-        "instagram": "https://www.instagram.com/recall.giansiu",
-        "line": "https://line.me/R/ti/p/@894ryraf?oat_content=url&ts=12170158",
-        "youtube": "https://www.youtube.com/@%E7%BD%B7%E5%85%8D%E6%9D%8E%E5%BD%A5%E7%A7%80",
-        "x": "https://x.com/recall_giansiu"
+    "url": "https://linktr.ee/wanghongwei2025gg?utm_source=linktree_profile_share&ltsid=1ecda328-baa8-4ab0-aeb0-8c3403043c76&ltclid=55162d4b-90bc-4c32-80b8-a159309299e5",
+    "x": "https://x.com/hongwei2025gg?s=21&t=8B_gi9Wyc8zrqgBtscUmGQ",
+    "youtube": ""
+  },
+  {
+    "facebook": "https://www.facebook.com/profile.php?id=61560521985801",
+    "instagram": "https://www.instagram.com/recall.giansiu",
+    "line": "https://line.me/R/ti/p/@894ryraf?oat_content=url&ts=12170158",
+    "name": "臺北市李彥秀",
+    "startDate": "2025-03-12",
+    "status": "第7天",
+    "target": "6萬",
+    "threads": "https://www.threads.net/@recall.giansiu",
+    "threshold": 31809,
+    "totalDays": 40,
+    "twacda": {
+      "image_url": "https://framerusercontent.com/images/bNgR5NGdmoVzeBMhzRSz9ckjWg.jpg",
+      "progress": "62.9%",
+      "region": {
+        "city": "台北",
+        "districts": "內湖、南港"
+      },
+      "statistics": {
+        "progress": {
+          "unit": "%",
+          "value": 62.9
+        },
+        "received_copies": {
+          "unit": "份",
+          "value": 20000
+        },
+        "threshold": {
+          "unit": "份",
+          "value": 31809
+        }
+      },
+      "status": "緊急"
     },
-    {
-        "name": "臺北市羅智強",
-        "status": "第7天",
-        "startDate": "2025-03-12",
-        "totalDays": 40,
-        "threshold": 23313,
-        "target": "4萬",
-        "url": "https://www.daanreboot.tw/?ltclid=862efe8d-1a53-40df-995a-2c560e728367",
-        "threads": "https://www.threads.net/@daanreboot",
-        "facebook": "https://www.facebook.com/people/%E5%A4%A7%E5%AE%89%E5%BC%B7%E5%BC%B7%E6%BB%BE/61565515457231/",
-        "instagram": "https://www.instagram.com/daanreboot/",
-        "line": "https://line.me/R/ti/p/@387ncqrk?oat_content=qr",
-        "youtube": "https://www.youtube.com/@%E5%A4%A7%E5%AE%89%E5%BC%B7%E5%BC%B7%E6%BB%BE",
-        "x": ""
+    "url": "https://linktr.ee/recall.giansiu?ltclid=255f239f-980e-4105-938e-ee9a4bb4051e",
+    "x": "https://x.com/recall_giansiu",
+    "youtube": "https://www.youtube.com/@%E7%BD%B7%E5%85%8D%E6%9D%8E%E5%BD%A5%E7%A7%80"
+  },
+  {
+    "facebook": "https://www.facebook.com/people/%E5%A4%A7%E5%AE%89%E5%BC%B7%E5%BC%B7%E6%BB%BE/61565515457231/",
+    "instagram": "https://www.instagram.com/daanreboot/",
+    "line": "https://line.me/R/ti/p/@387ncqrk?oat_content=qr",
+    "name": "臺北市羅智強",
+    "startDate": "2025-03-12",
+    "status": "第7天",
+    "target": "4萬",
+    "threads": "https://www.threads.net/@daanreboot",
+    "threshold": 23313,
+    "totalDays": 40,
+    "twacda": {
+      "image_url": "https://framerusercontent.com/images/rceXeKGQ2XAUfcHpOnebdtIVNk.jpg",
+      "progress": "42.9%",
+      "region": {
+        "city": "台北",
+        "districts": "大安"
+      },
+      "statistics": {
+        "progress": {
+          "unit": "%",
+          "value": 42.9
+        },
+        "received_copies": {
+          "unit": "份",
+          "value": 10000
+        },
+        "threshold": {
+          "unit": "份",
+          "value": 23313
+        }
+      },
+      "status": "緊急"
     },
-    {
-        "name": "臺北市徐巧芯",
-        "status": "第6天",
-        "startDate": "2025-03-13",
-        "totalDays": 40,
-        "threshold": 23482,
-        "target": "4萬",
-        "url": "https://linktr.ee/recall.hsu900?ltclid=bc86ea44-4a64-4063-be1c-d4c8dc4efa79",
-        "threads": "https://www.threads.net/@songxin.recall2025",
-        "facebook": "https://www.facebook.com/profile.php?id=61560491200228",
-        "instagram": "https://www.instagram.com/songxin.recall2025",
-        "line": "https://line.me/R/ti/p/@487nqbev?oat_content=url&ts=07220135",
-        "youtube": "https://www.youtube.com/@%E5%89%B7%E9%99%A4%E9%BB%91%E8%8A%AF",
-        "x": ""
+    "url": "https://www.daanreboot.tw/?ltclid=862efe8d-1a53-40df-995a-2c560e728367",
+    "x": "",
+    "youtube": "https://www.youtube.com/@%E5%A4%A7%E5%AE%89%E5%BC%B7%E5%BC%B7%E6%BB%BE"
+  },
+  {
+    "facebook": "https://www.facebook.com/profile.php?id=61560491200228",
+    "instagram": "https://www.instagram.com/songxin.recall2025",
+    "line": "https://line.me/R/ti/p/@487nqbev?oat_content=url&ts=07220135",
+    "name": "臺北市徐巧芯",
+    "startDate": "2025-03-13",
+    "status": "第6天",
+    "target": "4萬",
+    "threads": "https://www.threads.net/@songxin.recall2025",
+    "threshold": 23482,
+    "totalDays": 40,
+    "twacda": {
+      "image_url": "https://framerusercontent.com/images/GEkZWXwYXIN9BjBabDW9CXrOMhA.jpg",
+      "progress": "63.9%",
+      "region": {
+        "city": "台北",
+        "districts": "信義、南松山"
+      },
+      "statistics": {
+        "progress": {
+          "unit": "%",
+          "value": 63.9
+        },
+        "received_copies": {
+          "unit": "份",
+          "value": 15000
+        },
+        "threshold": {
+          "unit": "份",
+          "value": 23482
+        }
+      },
+      "status": "緊急"
     },
-    {
-        "name": "臺北市賴士葆",
-        "status": "第6天",
-        "startDate": "2025-03-13",
-        "totalDays": 40,
-        "threshold": 24832,
-        "target": "3萬2",
-        "url": "https://linktr.ee/banish.laishyhbao?ltclid=b7d4e8a4-3541-484f-a95b-1111dc362d14",
-        "threads": "https://www.threads.net/@banibao1226",
-        "facebook": "https://www.facebook.com/p/%E6%96%87%E5%B1%B1%E9%80%80%E8%91%86-%E5%8F%B0%E5%8C%97%E5%B8%82%E6%96%87%E5%B1%B1%E5%8D%97%E4%B8%AD%E6%AD%A3%E7%BD%B7%E5%85%8D%E5%9C%98%E9%9A%8A-61571266298678/",
-        "instagram": "https://www.instagram.com/banibao1226",
-        "line": "https://line.me/ti/g2/Q740A9VJfH49lmtN194kgSsC00us8oSLG3Efbw?utm_source=invitation&utm_medium=link_copy&utm_campaign=default",
-        "youtube": "",
-        "x": "https://x.com/golci651358"
+    "url": "https://linktr.ee/recall.hsu900?ltclid=bc86ea44-4a64-4063-be1c-d4c8dc4efa79",
+    "x": "",
+    "youtube": "https://www.youtube.com/@%E5%89%B7%E9%99%A4%E9%BB%91%E8%8A%AF"
+  },
+  {
+    "facebook": "https://www.facebook.com/p/%E6%96%87%E5%B1%B1%E9%80%80%E8%91%86-%E5%8F%B0%E5%8C%97%E5%B8%82%E6%96%87%E5%B1%B1%E5%8D%97%E4%B8%AD%E6%AD%A3%E7%BD%B7%E5%85%8D%E5%9C%98%E9%9A%8A-61571266298678/",
+    "instagram": "https://www.instagram.com/banibao1226",
+    "line": "https://line.me/ti/g2/Q740A9VJfH49lmtN194kgSsC00us8oSLG3Efbw?utm_source=invitation&utm_medium=link_copy&utm_campaign=default",
+    "name": "臺北市賴士葆",
+    "startDate": "2025-03-13",
+    "status": "第6天",
+    "target": "3萬2",
+    "threads": "https://www.threads.net/@banibao1226",
+    "threshold": 24832,
+    "totalDays": 40,
+    "twacda": {
+      "image_url": "https://framerusercontent.com/images/Zi7GOZLHbcx5RGXfwgM4iBglEQ.jpg",
+      "progress": "60.4%",
+      "region": {
+        "city": "台北",
+        "districts": "文山、南中正"
+      },
+      "statistics": {
+        "progress": {
+          "unit": "%",
+          "value": 60.4
+        },
+        "received_copies": {
+          "unit": "份",
+          "value": 15000
+        },
+        "threshold": {
+          "unit": "份",
+          "value": 24832
+        }
+      },
+      "status": "緊急"
     },
-    {
-        "name": "基隆市林沛祥",
-        "status": "第-5天",
-        "startDate": "2025-03-24",
-        "totalDays": 40,
-        "threshold": 30394,
-        "target": "4萬",
-        "url": "https://linktr.ee/keelungreplay?ltclid=eea0bb9c-2a22-4766-891b-3d0ac9722407",
-        "threads": "https://www.threads.net/@keelungreplay25",
-        "facebook": "https://www.facebook.com/profile.php?id=61571985991019",
-        "instagram": "https://www.instagram.com/keelungreplay25",
-        "line": "https://line.me/R/ti/p/@022hirgj?from=page&searchId=022hirgj",
-        "youtube": "",
-        "x": "https://x.com/keelungreplay"
+    "url": "https://linktr.ee/banish.laishyhbao?ltclid=b7d4e8a4-3541-484f-a95b-1111dc362d14",
+    "x": "https://x.com/golci651358",
+    "youtube": ""
+  },
+  {
+    "facebook": "https://www.facebook.com/profile.php?id=61571985991019",
+    "instagram": "https://www.instagram.com/keelungreplay25",
+    "line": "https://line.me/R/ti/p/@022hirgj?from=page&searchId=022hirgj",
+    "name": "基隆市林沛祥",
+    "startDate": "2025-03-24",
+    "status": "第-5天",
+    "target": "4萬",
+    "threads": "https://www.threads.net/@keelungreplay25",
+    "threshold": 30394,
+    "totalDays": 40,
+    "twacda": {
+      "image_url": "https://framerusercontent.com/images/OlcCO6WvBWgFTjc6cJr1iEzEg.jpg",
+      "progress": "統計中",
+      "region": {
+        "city": "基隆市選舉區",
+        "districts": ""
+      },
+      "statistics": {
+        "progress": {
+          "unit": "%",
+          "value": 0.0
+        },
+        "received_copies": {
+          "unit": "份",
+          "value": 0
+        },
+        "threshold": {
+          "unit": "份",
+          "value": 30394
+        }
+      },
+      "status": "緊急"
     },
-    {
-        "name": "桃園市牛煦庭",
-        "status": "第12天",
-        "startDate": "2025-03-07",
-        "totalDays": 40,
-        "threshold": 33956,
-        "target": "8萬",
-        "url": "https://linktr.ee/birdcrushcow?ltclid=0b030171-1f95-4e59-8c90-524e4bf93e22",
-        "threads": "https://www.threads.net/@byebyecow777",
-        "facebook": "https://www.facebook.com/byebyecow2025",
-        "instagram": "https://www.instagram.com/byebyecow777/profilecard/?igsh=bnVwNzFrb240bDll",
-        "line": "https://line.me/R/ti/p/@692hblmx",
-        "youtube": "",
-        "x": ""
+    "url": "https://linktr.ee/keelungreplay?ltclid=eea0bb9c-2a22-4766-891b-3d0ac9722407",
+    "x": "https://x.com/keelungreplay",
+    "youtube": ""
+  },
+  {
+    "facebook": "https://www.facebook.com/byebyecow2025",
+    "instagram": "https://www.instagram.com/byebyecow777/profilecard/?igsh=bnVwNzFrb240bDll",
+    "line": "https://line.me/R/ti/p/@692hblmx",
+    "name": "桃園市牛煦庭",
+    "startDate": "2025-03-07",
+    "status": "第12天",
+    "target": "8萬",
+    "threads": "https://www.threads.net/@byebyecow777",
+    "threshold": 33956,
+    "totalDays": 40,
+    "twacda": {
+      "image_url": "https://framerusercontent.com/images/ySfBPwOSPS9HTSsu37gpZKqaCHI.jpg",
+      "progress": "48.6%",
+      "region": {
+        "city": "桃園",
+        "districts": "蘆竹、龜山、北桃園"
+      },
+      "statistics": {
+        "progress": {
+          "unit": "%",
+          "value": 48.6
+        },
+        "received_copies": {
+          "unit": "份",
+          "value": 16500
+        },
+        "threshold": {
+          "unit": "份",
+          "value": 33956
+        }
+      },
+      "status": "緊急"
     },
-    {
-        "name": "桃園市涂權吉",
-        "status": "第13天",
-        "startDate": "2025-03-06",
-        "totalDays": 40,
-        "threshold": 30872,
-        "target": "5萬",
-        "url": "https://linktr.ee/taoyuanboxerrecall?ltclid=64724a9c-5e5e-4f0b-8227-c7a77bfec203",
-        "threads": "https://www.threads.net/@taoyuanboxer.recall",
-        "facebook": "https://www.facebook.com/taoyuanboxer.recall?mibextid=LQQJ4d&rdid=ZiX5rrDOV1I8LSbZ&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2FVTiZfywZ7xVb9yLA%2F%3Fmibextid%3DLQQJ4d#",
-        "instagram": "https://www.instagram.com/taoyuanboxer.recall?igsh=Mnp3dDU2a3F1d2lq&utm_source=qr",
-        "line": "https://line.me/ti/g2/fsqG9xsN1zaMqQ0VsPDgzIbzODxgWKUKCbxG1A?utm_source=invitation&utm_medium=link_copy&utm_campaign=default",
-        "youtube": "",
-        "x": ""
+    "url": "https://linktr.ee/birdcrushcow?ltclid=0b030171-1f95-4e59-8c90-524e4bf93e22",
+    "x": "",
+    "youtube": ""
+  },
+  {
+    "facebook": "https://www.facebook.com/taoyuanboxer.recall?mibextid=LQQJ4d&rdid=ZiX5rrDOV1I8LSbZ&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2FVTiZfywZ7xVb9yLA%2F%3Fmibextid%3DLQQJ4d#",
+    "instagram": "https://www.instagram.com/taoyuanboxer.recall?igsh=Mnp3dDU2a3F1d2lq&utm_source=qr",
+    "line": "https://line.me/ti/g2/fsqG9xsN1zaMqQ0VsPDgzIbzODxgWKUKCbxG1A?utm_source=invitation&utm_medium=link_copy&utm_campaign=default",
+    "name": "桃園市涂權吉",
+    "startDate": "2025-03-06",
+    "status": "第13天",
+    "target": "5萬",
+    "threads": "https://www.threads.net/@taoyuanboxer.recall",
+    "threshold": 30872,
+    "totalDays": 40,
+    "twacda": {
+      "image_url": "https://framerusercontent.com/images/LOudtu1gHZ7vGTNul2JAWht6dA.jpg",
+      "progress": "57.5%",
+      "region": {
+        "city": "桃園",
+        "districts": "楊梅、新屋、觀音、大園"
+      },
+      "statistics": {
+        "progress": {
+          "unit": "%",
+          "value": 57.7
+        },
+        "received_copies": {
+          "unit": "份",
+          "value": 17737
+        },
+        "threshold": {
+          "unit": "份",
+          "value": 30872
+        }
+      },
+      "status": "緊急"
     },
-    {
-        "name": "桃園市魯明哲",
-        "status": "第13天",
-        "startDate": "2025-03-06",
-        "totalDays": 40,
-        "threshold": 30122,
-        "target": "4萬5",
-        "url": "https://linktr.ee/chunglirecall?ltclid=0dec0585-a07a-4aaa-9a7d-2753e27b2c68",
-        "threads": "https://www.threads.net/@chunglirecall",
-        "facebook": "https://www.facebook.com/chunglirecall/",
-        "instagram": "https://www.instagram.com/chunglirecall",
-        "line": "https://line.me/R/ti/p/@347bgorl?ts=02171829&oat_content=url",
-        "youtube": "",
-        "x": ""
+    "url": "https://linktr.ee/taoyuanboxerrecall?ltclid=64724a9c-5e5e-4f0b-8227-c7a77bfec203",
+    "x": "",
+    "youtube": ""
+  },
+  {
+    "facebook": "https://www.facebook.com/chunglirecall/",
+    "instagram": "https://www.instagram.com/chunglirecall",
+    "line": "https://line.me/R/ti/p/@347bgorl?ts=02171829&oat_content=url",
+    "name": "桃園市魯明哲",
+    "startDate": "2025-03-06",
+    "status": "第13天",
+    "target": "4萬5",
+    "threads": "https://www.threads.net/@chunglirecall",
+    "threshold": 30122,
+    "totalDays": 40,
+    "twacda": {
+      "image_url": "https://framerusercontent.com/images/xctt8zbL7ltLLzbrlZ3R855WoHc.jpg",
+      "progress": "39.8%",
+      "region": {
+        "city": "桃園",
+        "districts": "中壢"
+      },
+      "statistics": {
+        "progress": {
+          "unit": "%",
+          "value": 39.8
+        },
+        "received_copies": {
+          "unit": "份",
+          "value": 12000
+        },
+        "threshold": {
+          "unit": "份",
+          "value": 30122
+        }
+      },
+      "status": "緊急"
     },
-    {
-        "name": "桃園市萬美玲",
-        "status": "第12天",
-        "startDate": "2025-03-07",
-        "totalDays": 40,
-        "threshold": 30233,
-        "target": "4萬5~5萬",
-        "url": "https://linkgoods.com/wanbyela444?ltclid=d76b5baf-75b3-47eb-85a3-333686335c47",
-        "threads": "https://www.threads.net/@wanbyela444?igshid=NTc4MTIwNjQ2YQ%3D%3D",
-        "facebook": "https://www.facebook.com/groups/1118179093340762",
-        "instagram": "https://www.instagram.com/wanbyela444?igsh=cnduYzFnbHhzaWp4&utm_source=qr",
-        "line": "https://line.me/R/ti/p/@204muyrz",
-        "youtube": "",
-        "x": ""
+    "url": "https://linktr.ee/chunglirecall?ltclid=0dec0585-a07a-4aaa-9a7d-2753e27b2c68",
+    "x": "",
+    "youtube": ""
+  },
+  {
+    "facebook": "https://www.facebook.com/groups/1118179093340762",
+    "instagram": "https://www.instagram.com/wanbyela444?igsh=cnduYzFnbHhzaWp4&utm_source=qr",
+    "line": "https://line.me/R/ti/p/@204muyrz",
+    "name": "桃園市萬美玲",
+    "startDate": "2025-03-07",
+    "status": "第12天",
+    "target": "4萬5~5萬",
+    "threads": "https://www.threads.net/@wanbyela444?igshid=NTc4MTIwNjQ2YQ%3D%3D",
+    "threshold": 30233,
+    "totalDays": 40,
+    "twacda": {
+      "image_url": "https://framerusercontent.com/images/qZ4OXp5ZcrsnpxGFH1q5zK7796Q.jpg",
+      "progress": "39.7%",
+      "region": {
+        "city": "桃園",
+        "districts": "桃園區"
+      },
+      "statistics": {
+        "progress": {
+          "unit": "%",
+          "value": 39.7
+        },
+        "received_copies": {
+          "unit": "份",
+          "value": 12000
+        },
+        "threshold": {
+          "unit": "份",
+          "value": 30233
+        }
+      },
+      "status": "緊急"
     },
-    {
-        "name": "桃園市呂玉玲",
-        "status": "第13天",
-        "startDate": "2025-03-06",
-        "totalDays": 40,
-        "threshold": 28064,
-        "target": "4萬5",
-        "url": "https://linktr.ee/recalllu0604?ltclid=55b74e4d-a52d-4d77-8f59-9b25ecd7c638",
-        "threads": "https://www.threads.net/@recallqueenlu",
-        "facebook": "https://www.facebook.com/profile.php?id=61571558401664&mibextid=wwXIfr&rdid=lLM5EEAFMvq2tivV&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1DJwhiwHKu%2F%3Fmibextid%3DwwXIfr#",
-        "instagram": "https://www.instagram.com/recallqueenlu",
-        "line": "https://line.me/ti/g2/q7cPnQMyipqMTNlX83DYsTb5xbSTX2COGu0dGw?utm_source=invitation&utm_medium=link_copy&utm_campaign=default",
-        "youtube": "https://www.youtube.com/watch?v=2wzvohFdGOA",
-        "x": ""
+    "url": "https://linkgoods.com/wanbyela444?ltclid=d76b5baf-75b3-47eb-85a3-333686335c47",
+    "x": "",
+    "youtube": ""
+  },
+  {
+    "facebook": "https://www.facebook.com/profile.php?id=61571558401664&mibextid=wwXIfr&rdid=lLM5EEAFMvq2tivV&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1DJwhiwHKu%2F%3Fmibextid%3DwwXIfr#",
+    "instagram": "https://www.instagram.com/recallqueenlu",
+    "line": "https://line.me/ti/g2/q7cPnQMyipqMTNlX83DYsTb5xbSTX2COGu0dGw?utm_source=invitation&utm_medium=link_copy&utm_campaign=default",
+    "name": "桃園市呂玉玲",
+    "startDate": "2025-03-06",
+    "status": "第13天",
+    "target": "4萬5",
+    "threads": "https://www.threads.net/@recallqueenlu",
+    "threshold": 28064,
+    "totalDays": 40,
+    "twacda": {
+      "image_url": "https://framerusercontent.com/images/5tnEjk1ank3yjPjulfKL5QKzTkg.jpg",
+      "progress": "35.6%",
+      "region": {
+        "city": "桃園",
+        "districts": "平鎮、龍潭"
+      },
+      "statistics": {
+        "progress": {
+          "unit": "%",
+          "value": 35.6
+        },
+        "received_copies": {
+          "unit": "份",
+          "value": 10000
+        },
+        "threshold": {
+          "unit": "份",
+          "value": 28064
+        }
+      },
+      "status": "緊急"
     },
-    {
-        "name": "桃園市邱若華",
-        "status": "第12天",
-        "startDate": "2025-03-07",
-        "totalDays": 40,
-        "threshold": 28222,
-        "target": "4萬",
-        "url": "https://linktr.ee/recallt6chiu?ltclid=419a7977-f426-42c9-99e9-d8176b7c7ba8",
-        "threads": "https://www.threads.net/@recallt6chiu",
-        "facebook": "https://www.facebook.com/groups/911797637397340/?ref=share&mibextid=NSMWBT",
-        "instagram": "https://www.instagram.com/recallt6chiu?igsh=N2hqbzJqNndwczJh",
-        "line": "https://line.me/R/ti/p/@823fwvfz?oat__id=4979716",
-        "youtube": "",
-        "x": ""
+    "url": "https://linktr.ee/recalllu0604?ltclid=55b74e4d-a52d-4d77-8f59-9b25ecd7c638",
+    "x": "",
+    "youtube": "https://www.youtube.com/watch?v=2wzvohFdGOA"
+  },
+  {
+    "facebook": "https://www.facebook.com/groups/911797637397340/?ref=share&mibextid=NSMWBT",
+    "instagram": "https://www.instagram.com/recallt6chiu?igsh=N2hqbzJqNndwczJh",
+    "line": "https://line.me/R/ti/p/@823fwvfz?oat__id=4979716",
+    "name": "桃園市邱若華",
+    "startDate": "2025-03-07",
+    "status": "第12天",
+    "target": "4萬",
+    "threads": "https://www.threads.net/@recallt6chiu",
+    "threshold": 28222,
+    "totalDays": 40,
+    "twacda": {
+      "image_url": "https://framerusercontent.com/images/eAVoLarSUzqGfUTxCM73VvTV9U.jpg",
+      "progress": "35.4%",
+      "region": {
+        "city": "桃園",
+        "districts": "八德、大溪、復興、東中壢"
+      },
+      "statistics": {
+        "progress": {
+          "unit": "%",
+          "value": 35.4
+        },
+        "received_copies": {
+          "unit": "份",
+          "value": 10000
+        },
+        "threshold": {
+          "unit": "份",
+          "value": 28222
+        }
+      },
+      "status": "緊急"
     },
-    {
-        "name": "新竹市鄭正鈐",
-        "status": "第14天",
-        "startDate": "2025-03-05",
-        "totalDays": 40,
-        "threshold": 35465,
-        "target": "5萬",
-        "url": "https://www.threads.net/@resident300hc.2024",
-        "threads": "https://www.threads.net/@resident300hc.2024",
-        "facebook": "https://www.facebook.com/profile.php?id=61560814498258",
-        "instagram": "",
-        "line": "https://liff.line.me/1573545970-LlNdaE20?to=squareCover&id=Th-mDaczNM1OEF_er6JF9EXde2GpyYnTWsEzcWfHfGl7m9wt95Em-IMdocA&isJoinImmediately=1&utm_source=line-openchat-seo&utm_medium=category&utm_campaign=default",
-        "youtube": "",
-        "x": ""
+    "url": "https://linktr.ee/recallt6chiu?ltclid=419a7977-f426-42c9-99e9-d8176b7c7ba8",
+    "x": "",
+    "youtube": ""
+  },
+  {
+    "facebook": "https://www.facebook.com/profile.php?id=61560814498258",
+    "instagram": "",
+    "line": "https://liff.line.me/1573545970-LlNdaE20?to=squareCover&id=Th-mDaczNM1OEF_er6JF9EXde2GpyYnTWsEzcWfHfGl7m9wt95Em-IMdocA&isJoinImmediately=1&utm_source=line-openchat-seo&utm_medium=category&utm_campaign=default",
+    "name": "新竹市鄭正鈐",
+    "startDate": "2025-03-05",
+    "status": "第14天",
+    "target": "5萬",
+    "threads": "https://www.threads.net/@resident300hc.2024",
+    "threshold": 35465,
+    "totalDays": 40,
+    "twacda": {
+      "image_url": "https://framerusercontent.com/images/Jfl053vyET0ODbjkzz44RjtjEXc.jpg",
+      "progress": "統計中",
+      "region": {
+        "city": "新竹市",
+        "districts": ""
+      },
+      "statistics": {
+        "progress": {
+          "unit": "%",
+          "value": 0.0
+        },
+        "received_copies": {
+          "unit": "份",
+          "value": 0
+        },
+        "threshold": {
+          "unit": "份",
+          "value": 35465
+        }
+      },
+      "status": "緊急"
     },
-    {
-        "name": "新竹縣徐欣瑩",
-        "status": "第7天",
-        "startDate": "2025-03-12",
-        "totalDays": 40,
-        "threshold": 21527,
-        "target": "4萬5",
-        "url": "https://linktr.ee/recall.hsu.hsin.ying?ltclid=2a8b4147-4ed3-471d-b0cd-f53cf29915ea",
-        "threads": "https://www.threads.net/@recall_hsu.hsin.ying",
-        "facebook": "https://www.facebook.com/profile.php?id=61572289447274",
-        "instagram": "",
-        "line": "https://line.me/R/ti/p/@482pppye",
-        "youtube": "",
-        "x": ""
+    "url": "https://www.threads.net/@resident300hc.2024",
+    "x": "",
+    "youtube": ""
+  },
+  {
+    "facebook": "https://www.facebook.com/profile.php?id=61572289447274",
+    "instagram": "",
+    "line": "https://line.me/R/ti/p/@482pppye",
+    "name": "新竹縣徐欣瑩",
+    "startDate": "2025-03-12",
+    "status": "第7天",
+    "target": "4萬5",
+    "threads": "https://www.threads.net/@recall_hsu.hsin.ying",
+    "threshold": 21527,
+    "totalDays": 40,
+    "twacda": {
+      "image_url": "https://framerusercontent.com/images/01eqyn1b9WWrQbWAfoQFdWRuwN4.jpg",
+      "progress": "19.5%",
+      "region": {
+        "city": "竹縣",
+        "districts": "湖口、新豐、新埔、關西、芎林、尖石、竹北西"
+      },
+      "statistics": {
+        "progress": {
+          "unit": "%",
+          "value": 19.5
+        },
+        "received_copies": {
+          "unit": "份",
+          "value": 4200
+        },
+        "threshold": {
+          "unit": "份",
+          "value": 21527
+        }
+      },
+      "status": "緊急"
     },
-    {
-        "name": "新竹縣林思銘",
-        "status": "第7天",
-        "startDate": "2025-03-12",
-        "totalDays": 40,
-        "threshold": 23287,
-        "target": "3萬",
-        "url": "https://linktr.ee/recall.lsm?ltclid=0fdd5ae6-3c85-4124-a51e-3fc569f058d5",
-        "threads": "https://www.threads.net/@recall_lin_szu_ming",
-        "facebook": "https://www.facebook.com/profile.php?id=61562287105967",
-        "instagram": "https://www.instagram.com/recall_lin_szu_ming",
-        "line": "https://line.me/R/ti/p/@441zjxex?oat_content=url&ts=03130405",
-        "youtube": "",
-        "x": ""
+    "url": "https://linktr.ee/recall.hsu.hsin.ying?ltclid=2a8b4147-4ed3-471d-b0cd-f53cf29915ea",
+    "x": "",
+    "youtube": ""
+  },
+  {
+    "facebook": "https://www.facebook.com/profile.php?id=61562287105967",
+    "instagram": "https://www.instagram.com/recall_lin_szu_ming",
+    "line": "https://line.me/R/ti/p/@441zjxex?oat_content=url&ts=03130405",
+    "name": "新竹縣林思銘",
+    "startDate": "2025-03-12",
+    "status": "第7天",
+    "target": "3萬",
+    "threads": "https://www.threads.net/@recall_lin_szu_ming",
+    "threshold": 23287,
+    "totalDays": 40,
+    "twacda": {
+      "image_url": "https://framerusercontent.com/images/iyebxDrgpzrzmrlFPkxxkEOhVU.jpg",
+      "progress": "30.9%",
+      "region": {
+        "city": "竹縣",
+        "districts": "竹東、寶山、北埔、峨眉、橫山、五峰、竹北東"
+      },
+      "statistics": {
+        "progress": {
+          "unit": "%",
+          "value": 30.9
+        },
+        "received_copies": {
+          "unit": "份",
+          "value": 7200
+        },
+        "threshold": {
+          "unit": "份",
+          "value": 23287
+        }
+      },
+      "status": "緊急"
     },
-    {
-        "name": "苗栗縣陳超明",
-        "status": "第2天",
-        "startDate": "2025-03-17",
-        "totalDays": 40,
-        "threshold": 20586,
-        "target": "3萬",
-        "url": "https://sites.google.com/view/ba-miaoli-lawmaker/index?authuser=0&ltclid=d58a4eb8-0f2b-4a95-bd38-e8335bd00e19",
-        "threads": "https://www.threads.net/@ba_miaoli_lawmakers",
-        "facebook": "https://www.facebook.com/baMiaoliLawmakers?locale=zh_TW",
-        "instagram": "https://www.instagram.com/ba_miaoli_lawmakers/",
-        "line": "https://line.me/ti/g2/bpau1XnvVaB44lsWJIEgTomY8D7FcFOCXi9viw?utm_source=invitation&utm_medium=QR_code&utm_campaign=default",
-        "youtube": "",
-        "x": ""
+    "url": "https://linktr.ee/recall.lsm?ltclid=0fdd5ae6-3c85-4124-a51e-3fc569f058d5",
+    "x": "",
+    "youtube": ""
+  },
+  {
+    "facebook": "https://www.facebook.com/baMiaoliLawmakers?locale=zh_TW",
+    "instagram": "https://www.instagram.com/ba_miaoli_lawmakers/",
+    "line": "https://line.me/ti/g2/bpau1XnvVaB44lsWJIEgTomY8D7FcFOCXi9viw?utm_source=invitation&utm_medium=QR_code&utm_campaign=default",
+    "name": "苗栗縣陳超明",
+    "startDate": "2025-03-17",
+    "status": "第2天",
+    "target": "3萬",
+    "threads": "https://www.threads.net/@ba_miaoli_lawmakers",
+    "threshold": 20586,
+    "totalDays": 40,
+    "twacda": {
+      "image_url": "https://framerusercontent.com/images/cCQxhJNVNyHUD2NyTKqJXsmYO4w.jpg",
+      "progress": "統計中",
+      "region": {
+        "city": "苗栗",
+        "districts": "竹南、後龍、苑裡、通霄、造橋、西湖、銅鑼、三義"
+      },
+      "statistics": {
+        "progress": {
+          "unit": "%",
+          "value": 0.0
+        },
+        "received_copies": {
+          "unit": "份",
+          "value": 0
+        },
+        "threshold": {
+          "unit": "份",
+          "value": 14745
+        }
+      },
+      "status": "緊急"
     },
-    {
-        "name": "苗栗縣邱鎮軍",
-        "status": "第2天",
-        "startDate": "2025-03-17",
-        "totalDays": 40,
-        "threshold": 23187,
-        "target": "3萬",
-        "url": "https://sites.google.com/view/ba-miaoli-lawmaker/index?authuser=0&ltclid=d58a4eb8-0f2b-4a95-bd38-e8335bd00e19",
-        "threads": "https://www.threads.net/@ba_miaoli_lawmakers",
-        "facebook": "https://www.facebook.com/baMiaoliLawmakers?locale=zh_TW",
-        "instagram": "https://www.instagram.com/ba_miaoli_lawmakers/",
-        "line": "https://line.me/ti/g2/bpau1XnvVaB44lsWJIEgTomY8D7FcFOCXi9viw?utm_source=invitation&utm_medium=QR_code&utm_campaign=default",
-        "youtube": "",
-        "x": ""
+    "url": "https://sites.google.com/view/ba-miaoli-lawmaker/index?authuser=0&ltclid=d58a4eb8-0f2b-4a95-bd38-e8335bd00e19",
+    "x": "",
+    "youtube": ""
+  },
+  {
+    "facebook": "https://www.facebook.com/baMiaoliLawmakers?locale=zh_TW",
+    "instagram": "https://www.instagram.com/ba_miaoli_lawmakers/",
+    "line": "https://line.me/ti/g2/bpau1XnvVaB44lsWJIEgTomY8D7FcFOCXi9viw?utm_source=invitation&utm_medium=QR_code&utm_campaign=default",
+    "name": "苗栗縣邱鎮軍",
+    "startDate": "2025-03-17",
+    "status": "第2天",
+    "target": "3萬",
+    "threads": "https://www.threads.net/@ba_miaoli_lawmakers",
+    "threshold": 23187,
+    "totalDays": 40,
+    "twacda": {
+      "image_url": "https://framerusercontent.com/images/B3dgKCkpQzKaOFuYG6WcLzWKY.jpg",
+      "progress": "統計中",
+      "region": {
+        "city": "苗栗",
+        "districts": ""
+      },
+      "statistics": {
+        "progress": {
+          "unit": "%",
+          "value": 0.0
+        },
+        "received_copies": {
+          "unit": "份",
+          "value": 0
+        },
+        "threshold": {
+          "unit": "份",
+          "value": 16709
+        }
+      },
+      "status": "緊急"
     },
-    {
-        "name": "臺中市顏寬恒",
-        "status": "第11天",
-        "startDate": "2025-03-08",
-        "totalDays": 40,
-        "threshold": 30278,
-        "target": "4萬",
-        "url": "https://bento.me/taichung2jyen?ltclid=ee3a2801-5333-438b-89eb-b99c7949db9e",
-        "threads": "https://www.threads.net/@taichung2jyen",
-        "facebook": "https://www.facebook.com/profile.php?id=61571883407026",
-        "instagram": "https://www.instagram.com/taichung2jyen",
-        "line": "https://line.me/R/ti/p/@885nfdnt?oat_content=qr",
-        "youtube": "",
-        "x": ""
+    "url": "https://sites.google.com/view/ba-miaoli-lawmaker/index?authuser=0&ltclid=d58a4eb8-0f2b-4a95-bd38-e8335bd00e19",
+    "x": "",
+    "youtube": ""
+  },
+  {
+    "facebook": "https://www.facebook.com/profile.php?id=61571883407026",
+    "instagram": "https://www.instagram.com/taichung2jyen",
+    "line": "https://line.me/R/ti/p/@885nfdnt?oat_content=qr",
+    "name": "臺中市顏寬恒",
+    "startDate": "2025-03-08",
+    "status": "第11天",
+    "target": "4萬",
+    "threads": "https://www.threads.net/@taichung2jyen",
+    "threshold": 30278,
+    "totalDays": 40,
+    "twacda": {
+      "image_url": "https://framerusercontent.com/images/qvLbwil9M1i0CHy0Rlyk1HasWL8.png",
+      "progress": "26.4%",
+      "region": {
+        "city": "台中",
+        "districts": "烏日、沙鹿、龍井、大肚、霧峰"
+      },
+      "statistics": {
+        "progress": {
+          "unit": "%",
+          "value": 26.4
+        },
+        "received_copies": {
+          "unit": "份",
+          "value": 8000
+        },
+        "threshold": {
+          "unit": "份",
+          "value": 30278
+        }
+      },
+      "status": "緊急"
     },
-    {
-        "name": "臺中市楊瓊瓔",
-        "status": "第11天",
-        "startDate": "2025-03-08",
-        "totalDays": 40,
-        "threshold": 26026,
-        "target": "6萬5",
-        "url": "https://linktr.ee/recallvote_taichung3rd?ltclid=7f33be9a-35bc-4bbe-baa5-4a4482985454",
-        "threads": "https://www.threads.net/@recallvote_taichung3rd?invite=0",
-        "facebook": "https://www.facebook.com/profile.php?id=61570566375814",
-        "instagram": "https://www.instagram.com/recallvote_taichung3rd/profilecard/?igsh=cmk5bG5wNHhueGVl",
-        "line": "https://line.me/ti/g2/6krkB0Li0fwpt09svphGI9dzMt4wsgWFd8Io9w?utm_source=invitation&utm_medium=link_copy&utm_campaign=default",
-        "youtube": "",
-        "x": ""
+    "url": "https://bento.me/taichung2jyen?ltclid=ee3a2801-5333-438b-89eb-b99c7949db9e",
+    "x": "",
+    "youtube": ""
+  },
+  {
+    "facebook": "https://www.facebook.com/profile.php?id=61570566375814",
+    "instagram": "https://www.instagram.com/recallvote_taichung3rd/profilecard/?igsh=cmk5bG5wNHhueGVl",
+    "line": "https://line.me/ti/g2/6krkB0Li0fwpt09svphGI9dzMt4wsgWFd8Io9w?utm_source=invitation&utm_medium=link_copy&utm_campaign=default",
+    "name": "臺中市楊瓊瓔",
+    "startDate": "2025-03-08",
+    "status": "第11天",
+    "target": "6萬5",
+    "threads": "https://www.threads.net/@recallvote_taichung3rd?invite=0",
+    "threshold": 26026,
+    "totalDays": 40,
+    "twacda": {
+      "image_url": "https://framerusercontent.com/images/mCtpcQOlWYyAnxqRcS0GarRTVM.jpg",
+      "progress": "21.1%",
+      "region": {
+        "city": "台中",
+        "districts": "潭子、大雅、神岡、后里"
+      },
+      "statistics": {
+        "progress": {
+          "unit": "%",
+          "value": 21.1
+        },
+        "received_copies": {
+          "unit": "份",
+          "value": 5500
+        },
+        "threshold": {
+          "unit": "份",
+          "value": 26026
+        }
+      },
+      "status": "緊急"
     },
-    {
-        "name": "臺中市廖偉翔",
-        "status": "第12天",
-        "startDate": "2025-03-07",
-        "totalDays": 40,
-        "threshold": 32921,
-        "target": "5萬",
-        "url": "https://linktr.ee/tc4.recall?ltclid=9b3843c8-3703-40da-bf97-ecd8444556a0",
-        "threads": "https://www.threads.net/@tc4recall",
-        "facebook": "https://www.facebook.com/profile.php?id=61561945661666",
-        "instagram": "",
-        "line": "https://line.me/R/ti/p/@310rxvhp?oat_content=url&ts=12211818",
-        "youtube": "",
-        "x": ""
+    "url": "https://linktr.ee/recallvote_taichung3rd?ltclid=7f33be9a-35bc-4bbe-baa5-4a4482985454",
+    "x": "",
+    "youtube": ""
+  },
+  {
+    "facebook": "https://www.facebook.com/profile.php?id=61561945661666",
+    "instagram": "",
+    "line": "https://line.me/R/ti/p/@310rxvhp?oat_content=url&ts=12211818",
+    "name": "臺中市廖偉翔",
+    "startDate": "2025-03-07",
+    "status": "第12天",
+    "target": "5萬",
+    "threads": "https://www.threads.net/@tc4recall",
+    "threshold": 32921,
+    "totalDays": 40,
+    "twacda": {
+      "image_url": "https://framerusercontent.com/images/Z8A1ONQ1BqTR12sHtkzYtgJlK4.jpg",
+      "progress": "60.8%",
+      "region": {
+        "city": "台中",
+        "districts": "西屯、南屯"
+      },
+      "statistics": {
+        "progress": {
+          "unit": "%",
+          "value": 60.8
+        },
+        "received_copies": {
+          "unit": "份",
+          "value": 20000
+        },
+        "threshold": {
+          "unit": "份",
+          "value": 32921
+        }
+      },
+      "status": "緊急"
     },
-    {
-        "name": "臺中市黃健豪",
-        "status": "第12天",
-        "startDate": "2025-03-07",
-        "totalDays": 40,
-        "threshold": 36323,
-        "target": "5萬",
-        "url": "https://linktr.ee/recallvote_beibeitun?ltclid=1ba16855-f494-4195-93db-527b180b4292",
-        "threads": "https://www.threads.net/@recallvote.beibeitun",
-        "facebook": "https://www.facebook.com/people/%E6%96%B7%E5%81%A5%E8%A1%8C%E5%8B%95-%E4%B8%8B%E6%9E%B6%E9%BB%83%E5%81%A5%E8%B1%AA/61560586934148/",
-        "instagram": "https://www.instagram.com/recallvote.beibeitun",
-        "line": "https://line.me/R/ti/p/@038ltern?ts=07170149&oat_content=url",
-        "youtube": "https://www.youtube.com/@recallvote.beibeitun",
-        "x": "https://x.com/rvbeibeitun"
+    "url": "https://linktr.ee/tc4.recall?ltclid=9b3843c8-3703-40da-bf97-ecd8444556a0",
+    "x": "",
+    "youtube": ""
+  },
+  {
+    "facebook": "https://www.facebook.com/people/%E6%96%B7%E5%81%A5%E8%A1%8C%E5%8B%95-%E4%B8%8B%E6%9E%B6%E9%BB%83%E5%81%A5%E8%B1%AA/61560586934148/",
+    "instagram": "https://www.instagram.com/recallvote.beibeitun",
+    "line": "https://line.me/R/ti/p/@038ltern?ts=07170149&oat_content=url",
+    "name": "臺中市黃健豪",
+    "startDate": "2025-03-07",
+    "status": "第12天",
+    "target": "5萬",
+    "threads": "https://www.threads.net/@recallvote.beibeitun",
+    "threshold": 36323,
+    "totalDays": 40,
+    "twacda": {
+      "image_url": "https://framerusercontent.com/images/G9lmJP1xD1t79gDjsgIvlQ9LZaQ.jpg",
+      "progress": "57.8%",
+      "region": {
+        "city": "台中",
+        "districts": "北屯、北區"
+      },
+      "statistics": {
+        "progress": {
+          "unit": "%",
+          "value": 57.8
+        },
+        "received_copies": {
+          "unit": "份",
+          "value": 21000
+        },
+        "threshold": {
+          "unit": "份",
+          "value": 36323
+        }
+      },
+      "status": "緊急"
     },
-    {
-        "name": "臺中市羅廷瑋",
-        "status": "第12天",
-        "startDate": "2025-03-07",
-        "totalDays": 40,
-        "threshold": 27337,
-        "target": "7萬",
-        "url": "https://linktr.ee/beat__low?ltclid=4286878d-7a62-4875-8cea-8b0558dce178",
-        "threads": "https://www.threads.net/@beat__low",
-        "facebook": "https://www.facebook.com/beatlow2025/",
-        "instagram": "https://www.instagram.com/beat__low",
-        "line": "https://line.me/R/ti/p/@669nwcgj?oat_content=url&ts=06181429",
-        "youtube": "",
-        "x": ""
+    "url": "https://linktr.ee/recallvote_beibeitun?ltclid=1ba16855-f494-4195-93db-527b180b4292",
+    "x": "https://x.com/rvbeibeitun",
+    "youtube": "https://www.youtube.com/@recallvote.beibeitun"
+  },
+  {
+    "facebook": "https://www.facebook.com/beatlow2025/",
+    "instagram": "https://www.instagram.com/beat__low",
+    "line": "https://line.me/R/ti/p/@669nwcgj?oat_content=url&ts=06181429",
+    "name": "臺中市羅廷瑋",
+    "startDate": "2025-03-07",
+    "status": "第12天",
+    "target": "7萬",
+    "threads": "https://www.threads.net/@beat__low",
+    "threshold": 27337,
+    "totalDays": 40,
+    "twacda": {
+      "image_url": "https://framerusercontent.com/images/kDcoglvEQsRdhwUkQlGPVjU7fg.jpg",
+      "progress": "73.2%",
+      "region": {
+        "city": "台中",
+        "districts": "中區、西區、東區、南區"
+      },
+      "statistics": {
+        "progress": {
+          "unit": "%",
+          "value": 73.2
+        },
+        "received_copies": {
+          "unit": "份",
+          "value": 20000
+        },
+        "threshold": {
+          "unit": "份",
+          "value": 27337
+        }
+      },
+      "status": "緊急"
     },
-    {
-        "name": "臺中市江啟臣",
-        "status": "第12天",
-        "startDate": "2025-03-07",
-        "totalDays": 40,
-        "threshold": 21060,
-        "target": "3萬5",
-        "url": "https://linktr.ee/taichung8th.recall?ltclid=548d59c3-d237-4c9e-8fc8-186bb50e80ba",
-        "threads": "https://www.threads.net/@taichung8th_recall?igshid=NTc4MTIwNjQ2YQ%3D%3D",
-        "facebook": "https://www.facebook.com/profile.php?id=61571972293214&mibextid=LQQJ4d",
-        "instagram": "https://www.instagram.com/taichung8th_recall?igsh=MThteXUwZDZ2NjFiNg%3D%3D",
-        "line": "https://line.me/ti/g2/2jaNXK-Q--90swip565S--Awu7U7RRrvqGS1Mw?utm_source=invitation&utm_medium=link_copy&utm_campaign=default",
-        "youtube": "",
-        "x": ""
+    "url": "https://linktr.ee/beat__low?ltclid=4286878d-7a62-4875-8cea-8b0558dce178",
+    "x": "",
+    "youtube": ""
+  },
+  {
+    "facebook": "https://www.facebook.com/profile.php?id=61571972293214&mibextid=LQQJ4d",
+    "instagram": "https://www.instagram.com/taichung8th_recall?igsh=MThteXUwZDZ2NjFiNg%3D%3D",
+    "line": "https://line.me/ti/g2/2jaNXK-Q--90swip565S--Awu7U7RRrvqGS1Mw?utm_source=invitation&utm_medium=link_copy&utm_campaign=default",
+    "name": "臺中市江啟臣",
+    "startDate": "2025-03-07",
+    "status": "第12天",
+    "target": "3萬5",
+    "threads": "https://www.threads.net/@taichung8th_recall?igshid=NTc4MTIwNjQ2YQ%3D%3D",
+    "threshold": 21060,
+    "totalDays": 40,
+    "twacda": {
+      "image_url": "https://framerusercontent.com/images/yFenddtudi5JeSpjSWkpO2L5bo.jpg",
+      "progress": "47.5%",
+      "region": {
+        "city": "台中",
+        "districts": "豐原、石崗、東勢、新社、和平"
+      },
+      "statistics": {
+        "progress": {
+          "unit": "%",
+          "value": 47.5
+        },
+        "received_copies": {
+          "unit": "份",
+          "value": 10000
+        },
+        "threshold": {
+          "unit": "份",
+          "value": 21060
+        }
+      },
+      "status": "緊急"
     },
-    {
-        "name": "南投縣馬文君",
-        "status": "第13天",
-        "startDate": "2025-03-06",
-        "totalDays": 40,
-        "threshold": 18622,
-        "target": "2萬7",
-        "url": "https://magenta-pear-z108l8.mystrikingly.com/?ltclid=bb17e223-083d-4f2f-8168-86073c444873",
-        "threads": "https://www.threads.net/@allbama.bababa",
-        "facebook": "https://www.facebook.com/groups/1304092960743681/?rdid=yuIjpwkElcuuRGSv&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2Fg%2F15tM4ZVfaL%2F#",
-        "instagram": "https://www.instagram.com/allbama.bababa?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D",
-        "line": "https://line.me/R/ti/p/@049mvvpr?ts=02110159&oat_content=url",
-        "youtube": "",
-        "x": ""
+    "url": "https://linktr.ee/taichung8th.recall?ltclid=548d59c3-d237-4c9e-8fc8-186bb50e80ba",
+    "x": "",
+    "youtube": ""
+  },
+  {
+    "facebook": "https://www.facebook.com/groups/1304092960743681/?rdid=yuIjpwkElcuuRGSv&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2Fg%2F15tM4ZVfaL%2F#",
+    "instagram": "https://www.instagram.com/allbama.bababa?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D",
+    "line": "https://line.me/R/ti/p/@049mvvpr?ts=02110159&oat_content=url",
+    "name": "南投縣馬文君",
+    "startDate": "2025-03-06",
+    "status": "第13天",
+    "target": "2萬7",
+    "threads": "https://www.threads.net/@allbama.bababa",
+    "threshold": 18622,
+    "totalDays": 40,
+    "twacda": {
+      "image_url": "https://framerusercontent.com/images/i0xUg2sMYoXUQnjvXlZUhwoD5c.jpg",
+      "progress": "32.2%",
+      "region": {
+        "city": "南投",
+        "districts": "草屯、埔里、國姓、仁愛、魚池、中寮"
+      },
+      "statistics": {
+        "progress": {
+          "unit": "%",
+          "value": 32.2
+        },
+        "received_copies": {
+          "unit": "份",
+          "value": 6000
+        },
+        "threshold": {
+          "unit": "份",
+          "value": 18622
+        }
+      },
+      "status": "緊急"
     },
-    {
-        "name": "南投縣游顥",
-        "status": "第13天",
-        "startDate": "2025-03-06",
-        "totalDays": 40,
-        "threshold": 19833,
-        "target": "2萬5",
-        "url": "https://linktr.ee/toueryouout?ltclid=f7cefc1e-3ab6-47b0-901e-7ca91e129c7f",
-        "threads": "https://www.threads.net/@taiwan_phoenix",
-        "facebook": "https://www.facebook.com/profile.php?id=61572303830032&mibextid=ZbWKwL",
-        "instagram": "https://www.instagram.com/taiwan_phoenix",
-        "line": "https://line.me/ti/g2/SRJTPBOuX-bLAq1zcK6l4-g1HRNE8EcBjxzVTg?utm_source=invitation&utm_medium=link_copy&utm_campaign=default",
-        "youtube": "https://www.youtube.com/@%E5%8E%BB%E6%B8%B8%E9%99%A4%E5%9E%A2-YouOut",
-        "x": ""
+    "url": "https://magenta-pear-z108l8.mystrikingly.com/?ltclid=bb17e223-083d-4f2f-8168-86073c444873",
+    "x": "",
+    "youtube": ""
+  },
+  {
+    "facebook": "https://www.facebook.com/profile.php?id=61572303830032&mibextid=ZbWKwL",
+    "instagram": "https://www.instagram.com/taiwan_phoenix",
+    "line": "https://line.me/ti/g2/SRJTPBOuX-bLAq1zcK6l4-g1HRNE8EcBjxzVTg?utm_source=invitation&utm_medium=link_copy&utm_campaign=default",
+    "name": "南投縣游顥",
+    "startDate": "2025-03-06",
+    "status": "第13天",
+    "target": "2萬5",
+    "threads": "https://www.threads.net/@taiwan_phoenix",
+    "threshold": 19833,
+    "totalDays": 40,
+    "twacda": {
+      "image_url": "https://framerusercontent.com/images/dCbyvoAt1BjZMU3JJj9XLodrCIw.jpg",
+      "progress": "19.2%",
+      "region": {
+        "city": "南投",
+        "districts": "南投市、名間、集集、竹山、鹿谷、水里、信義"
+      },
+      "statistics": {
+        "progress": {
+          "unit": "%",
+          "value": 19.2
+        },
+        "received_copies": {
+          "unit": "份",
+          "value": 3800
+        },
+        "threshold": {
+          "unit": "份",
+          "value": 19833
+        }
+      },
+      "status": "緊急"
     },
-    {
-        "name": "彰化縣謝衣鳳",
-        "status": "第4天",
-        "startDate": "2025-03-15",
-        "totalDays": 40,
-        "threshold": 26719,
-        "target": "3萬5",
-        "url": "https://linktr.ee/bamain_c1feng",
-        "threads": "https://www.threads.net/@bamain_c1feng",
-        "facebook": "https://www.facebook.com/profile.php?id=61573514215318",
-        "instagram": "",
-        "line": "https://line.me/ti/g2/ypMEeD1VcqmCpV_aaLBOM74u5zl8rkmbejiQ-w?utm_source=invitation&utm_medium=link_copy&utm_campaign=default",
-        "youtube": "",
-        "x": ""
+    "url": "https://linktr.ee/toueryouout?ltclid=f7cefc1e-3ab6-47b0-901e-7ca91e129c7f",
+    "x": "",
+    "youtube": "https://www.youtube.com/@%E5%8E%BB%E6%B8%B8%E9%99%A4%E5%9E%A2-YouOut"
+  },
+  {
+    "facebook": "https://www.facebook.com/profile.php?id=61573514215318",
+    "instagram": "",
+    "line": "https://line.me/ti/g2/ypMEeD1VcqmCpV_aaLBOM74u5zl8rkmbejiQ-w?utm_source=invitation&utm_medium=link_copy&utm_campaign=default",
+    "name": "彰化縣謝衣鳳",
+    "startDate": "2025-03-15",
+    "status": "第4天",
+    "target": "3萬5",
+    "threads": "https://www.threads.net/@bamain_c1feng",
+    "threshold": 26719,
+    "totalDays": 40,
+    "url": "https://linktr.ee/bamain_c1feng",
+    "x": "",
+    "youtube": ""
+  },
+  {
+    "facebook": "https://www.facebook.com/badingact",
+    "instagram": "https://www.instagram.com/badingact",
+    "line": "https://line.me/R/ti/p/@972yxfgk",
+    "name": "雲林縣丁學忠",
+    "startDate": "2025-03-08",
+    "status": "第11天",
+    "target": "3萬5",
+    "threads": "https://www.threads.net/@badingact",
+    "threshold": 27501,
+    "totalDays": 40,
+    "twacda": {
+      "image_url": "https://framerusercontent.com/images/dpDZgmdQvpVLIDsV0PoMflKpU8.jpg",
+      "progress": "36.4%",
+      "region": {
+        "city": "雲林",
+        "districts": "北港、虎尾、土庫、麥寮、臺西、東勢、褒忠、四湖、元長、口湖、水林"
+      },
+      "statistics": {
+        "progress": {
+          "unit": "%",
+          "value": 36.4
+        },
+        "received_copies": {
+          "unit": "份",
+          "value": 10000
+        },
+        "threshold": {
+          "unit": "份",
+          "value": 27501
+        }
+      },
+      "status": "緊急"
     },
-    {
-        "name": "雲林縣丁學忠",
-        "status": "第11天",
-        "startDate": "2025-03-08",
-        "totalDays": 40,
-        "threshold": 27501,
-        "target": "3萬5",
-        "url": "https://linktr.ee/badingact?ltclid=58c2c4bc-fa82-48cd-b6f6-3182a2dd8470",
-        "threads": "https://www.threads.net/@badingact",
-        "facebook": "https://www.facebook.com/badingact",
-        "instagram": "https://www.instagram.com/badingact",
-        "line": "https://line.me/R/ti/p/@972yxfgk",
-        "youtube": "https://www.youtube.com/@badingact88",
-        "x": ""
+    "url": "https://linktr.ee/badingact?ltclid=58c2c4bc-fa82-48cd-b6f6-3182a2dd8470",
+    "x": "",
+    "youtube": "https://www.youtube.com/@badingact88"
+  },
+  {
+    "facebook": "https://www.facebook.com/profile.php?id=61559077240907",
+    "instagram": "https://www.instagram.com/shimmer.taiwan",
+    "line": "https://line.me/ti/g2/rBu_w9RqIzupHhEQP3jhYtgZF0wRsBdp4V0mUg?utm_source=invitation&utm_medium=link_copy&utm_campaign=default",
+    "name": "花蓮縣傅崐萁",
+    "startDate": "2025-03-05",
+    "status": "第14天",
+    "target": "2萬5",
+    "threads": "https://www.threads.net/@shimmer.taiwan",
+    "threshold": 19377,
+    "totalDays": 40,
+    "twacda": {
+      "image_url": "https://framerusercontent.com/images/HI1OuW65F14oYBaiorIfW2E15Q.jpg",
+      "progress": "50%",
+      "region": {
+        "city": "花蓮",
+        "districts": ""
+      },
+      "statistics": {
+        "progress": {
+          "unit": "%",
+          "value": 50.0
+        },
+        "received_copies": {
+          "unit": "份",
+          "value": 9688
+        },
+        "threshold": {
+          "unit": "份",
+          "value": 19377
+        }
+      },
+      "status": "緊急"
     },
-    {
-        "name": "花蓮縣傅崐萁",
-        "status": "第14天",
-        "startDate": "2025-03-05",
-        "totalDays": 40,
-        "threshold": 19377,
-        "target": "2萬5",
-        "url": "https://linktr.ee/shimmer.tw?ltclid=6c87cfaa-1474-4e77-a77c-0900b55f7e72",
-        "threads": "https://www.threads.net/@shimmer.taiwan",
-        "facebook": "https://www.facebook.com/profile.php?id=61559077240907",
-        "instagram": "https://www.instagram.com/shimmer.taiwan",
-        "line": "https://line.me/ti/g2/rBu_w9RqIzupHhEQP3jhYtgZF0wRsBdp4V0mUg?utm_source=invitation&utm_medium=link_copy&utm_campaign=default",
-        "youtube": "",
-        "x": ""
+    "url": "https://linktr.ee/shimmer.tw?ltclid=6c87cfaa-1474-4e77-a77c-0900b55f7e72",
+    "x": "",
+    "youtube": ""
+  },
+  {
+    "facebook": "https://www.facebook.com/profile.php?id=61571928863961&rdid=1p5e72o44X4Rti8s&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F19eQ3TZV7s%2F#",
+    "instagram": "",
+    "line": "https://line.me/ti/g2/durnftvfKTx6RIYBHo3-hzzwNR24TgWCCnaYQA?utm_source=invitation&utm_medium=link_copy&utm_campaign=default&ltclid=526fa497-f874-406f-bc73-876660d230de",
+    "name": "臺東縣黃建賓",
+    "startDate": "2025-03-06",
+    "status": "第13天",
+    "target": "1萬5",
+    "threads": "https://www.threads.net/@taitung_vote_off",
+    "threshold": 11534,
+    "totalDays": 40,
+    "twacda": {
+      "image_url": "https://framerusercontent.com/images/P6mCJs90B9mg78u8hKbKZ0MrU.jpg",
+      "progress": "28.6%",
+      "region": {
+        "city": "台東",
+        "districts": ""
+      },
+      "statistics": {
+        "progress": {
+          "unit": "%",
+          "value": 28.6
+        },
+        "received_copies": {
+          "unit": "份",
+          "value": 3300
+        },
+        "threshold": {
+          "unit": "份",
+          "value": 11534
+        }
+      },
+      "status": "緊急"
     },
-    {
-        "name": "臺東縣黃建賓",
-        "status": "第13天",
-        "startDate": "2025-03-06",
-        "totalDays": 40,
-        "threshold": 11534,
-        "target": "1萬5",
-        "url": "https://line.me/ti/g2/durnftvfKTx6RIYBHo3-hzzwNR24TgWCCnaYQA?utm_source=invitation&utm_medium=link_copy&utm_campaign=default&ltclid=526fa497-f874-406f-bc73-876660d230de",
-        "threads": "https://www.threads.net/@taitung_vote_off",
-        "facebook": "https://www.facebook.com/profile.php?id=61571928863961&rdid=1p5e72o44X4Rti8s&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F19eQ3TZV7s%2F#",
-        "instagram": "",
-        "line": "https://line.me/ti/g2/durnftvfKTx6RIYBHo3-hzzwNR24TgWCCnaYQA?utm_source=invitation&utm_medium=link_copy&utm_campaign=default&ltclid=526fa497-f874-406f-bc73-876660d230de",
-        "youtube": "",
-        "x": ""
-    }
+    "url": "https://line.me/ti/g2/durnftvfKTx6RIYBHo3-hzzwNR24TgWCCnaYQA?utm_source=invitation&utm_medium=link_copy&utm_campaign=default&ltclid=526fa497-f874-406f-bc73-876660d230de",
+    "x": "",
+    "youtube": ""
+  }
 ]

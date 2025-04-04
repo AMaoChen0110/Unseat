@@ -182,7 +182,7 @@ def integrate_data():
     # 計數器，用於追蹤成功配對的立委數量
     matched_count = 0
     
-    # 遍歷從 TWACDA 爬取的立委資料
+    # 走訪從 TWACDA 爬取的立委資料
     for legislator in legislator_data:
         name = legislator['name']
         # 嘗試在 personData.json 中找到對應的立委

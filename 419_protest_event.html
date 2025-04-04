@@ -36,17 +36,47 @@
     }
 
     .info {
-      background-color: #222;
-      padding: 20px;
-      margin-top: 20px;
-      border-radius: 10px;
-    }
+  background-color: #222;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  color: #fff;
+  /* 讓整個區塊在視窗寬度上置中 */
+  text-align: center;
+}
 
-    .info p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      color: #fff;
-    }
+/* 每一行是個區塊，但我們要置中，所以給它固定寬度 + margin: auto */
+.info .row {
+  display: block;          /* 讓整行能獨立排版 */
+  width: 400px;            /* 可依實際需要增減 */
+  margin: 0.5em auto;      /* 向外自動置中 */
+  text-align: left;        /* 使 label + value 以靠左排版 */
+}
+
+/* 左側標籤：使用 inline-block 方便定寬、對齊冒號 */
+.info .label {
+  display: inline-block;
+  width: 6em;              /* 控制冒號對齊，酌情調整寬度 */
+  text-align: right;       /* 冒號貼齊右邊 */
+  font-weight: bold;
+  white-space: nowrap;     /* 避免換行 */
+}
+
+/* 右側內容：同一行緊接在 label 後 */
+.info .value {
+  display: inline-block;  
+  margin-left: 0.5em;      /* 與 label 間隔 */
+  white-space: nowrap;     /* 避免換行 */
+}
+
+/* 後面那些簡單的 p 保持原本設計 */
+.info p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0.5em 0;
+}
+
+
 
     .map {
       margin-top: 30px;
@@ -76,11 +106,21 @@
     </div>
 
     <div class="info">
-      <p><strong>時間：</strong>4 月 19 日（六）14:00 - 18:30</p>
-      <p><strong>集合地點：</strong>凱達格蘭大道</p>
-      <p><strong>進場時間：</strong>14:00 中山南路進場</p>
-      <p><strong>口號：</strong>護民主、斷滲透、人民團結是靠山！</p>
-      <p><strong>訴求：</strong>守護台灣，拒絕統戰！</p>
+      <div class="row">
+        <span class="label">時間：</span>
+        <span class="value">4 月 19 日（六）14:00 - 18:30</span>
+      </div>
+      <div class="row">
+        <span class="label">集合地點：</span>
+        <span class="value">凱達格蘭大道</span>
+      </div>
+      <div class="row">
+        <span class="label">進場時間：</span>
+        <span class="value">14:00 中山南路進場</span>
+      </div>
+    
+      <p>護民主、斷滲透、人民團結是靠山！</p>
+      <p>守護台灣，拒絕統戰！</p>
     </div>
 
     <div class="map">

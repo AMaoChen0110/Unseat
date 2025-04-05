@@ -328,10 +328,30 @@ document.addEventListener('DOMContentLoaded', function () {
         const isDesc = isFromSort ? classList.contains('active') && classList.contains('asc') : classList.contains('active') && classList.contains('desc');
         const isToReset = isFromSort ? classList.contains('active') && classList.contains('desc') : !classList.contains('active');
 
+        // ⬇️ 加入圖示切換函式
+        function _updateIcons(state) {
+            const iconSort = document.querySelector('.icon-sort');
+            const iconUp = document.querySelector('.icon-up');
+            const iconDown = document.querySelector('.icon-down');
+
+            iconSort.style.display = 'none';
+            iconUp.style.display = 'none';
+            iconDown.style.display = 'none';
+
+            if (state === 'asc') {
+                iconUp.style.display = 'inline-block';
+            } else if (state === 'desc') {
+                iconDown.style.display = 'inline-block';
+            } else {
+                iconSort.style.display = 'inline-block';
+            }
+        }
+
         function _resetClass() {
             classList.remove('asc');
             classList.remove('desc');
             classList.remove('active');
+            _updateIcons(null); // ⬅️ 顯示 ⇅
         }
 
         function _sortData(sortOrder) {
@@ -357,19 +377,19 @@ document.addEventListener('DOMContentLoaded', function () {
         if (isAsc) {
             if (isFromSort) {
                 _resetClass();
-                classList.add('active');
-                classList.add('asc');
+                classList.add('active', 'asc');
+                _updateIcons('asc');  // 顯示 ▲
             }
             _sortData(1);
         } else if (isDesc) {
             if (isFromSort) {
                 _resetClass();
-                classList.add('active');
-                classList.add('desc');
+                classList.add('active', 'desc');
+                _updateIcons('desc'); // 顯示 ▼
             }
             _sortData(-1);
         } else if (isToReset) {
-            _resetClass();
+            _resetClass(); // 顯示 ⇅
         }
 
         renderPersonList();

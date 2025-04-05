@@ -102,6 +102,8 @@
     <link rel="icon" href="images/favicon.png" type="image/png">
     <link href="styles/style.css" rel="stylesheet" />
     <link href="styles/floatingMenu.css" rel="stylesheet" />
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LCXFLLD9K2"></script>
     <script>
@@ -122,6 +124,34 @@
             本網站於每週一晚間20:00更新最新數據<br>
             本網站連署進度數據非即時更新，若與罷免團隊不同，請依據各罷免團體公告資訊為主
         </p>
+
+        <div class="filter-sort">
+            <select name="filter" id="filter">
+                <option value="all">全部</option>
+                <option value="基隆市">基隆市</option>
+                <option value="新北市">新北市</option>
+                <option value="臺北市">臺北市</option>
+                <option value="桃園市">桃園市</option>
+                <option value="新竹市">新竹市</option>
+                <option value="新竹縣">新竹縣</option>
+                <option value="苗栗縣">苗栗縣</option>
+                <option value="臺中市">臺中市</option>
+                <option value="南投縣">南投縣</option>
+                <option value="彰化縣">彰化縣</option>
+                <option value="雲林縣">雲林縣</option>
+                <option value="花蓮縣">花蓮縣</option>
+                <option value="臺東縣">臺東縣</option>
+            </select>
+
+            <div class="sort-process">
+                <span>連署進度</span>
+                <span class="sort-icon">
+                    <i class="fa-solid fa-sort"></i>
+                    <i class="fa-solid fa-sort-up"></i>
+                    <i class="fa-solid fa-sort-down"></i>
+                </span>
+            </div>
+        </div>
 
         <div class="person-list" id="person-list">
             <!-- Person data will be populated here -->

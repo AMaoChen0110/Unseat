@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Get current date when the page loads
     const currentDate = new Date();
     currentDate.setHours(0, 0, 0, 0);
-    
+
     // Format the current date for display
     const formattedDate = `${currentDate.getFullYear()}/${currentDate.getMonth() + 1}/${currentDate.getDate()}`;
 
@@ -32,6 +32,10 @@ document.addEventListener('DOMContentLoaded', function () {
         };
     };
 
+    // data
+    let originalPersonData = []
+    let personData = []
+
     // 使用 fetch 讀取 personData.json
     fetch('personData.json')
         .then(response => response.json())
@@ -58,6 +62,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 personData.forEach(person => {
                     person.count = nameToCountMap[person.name] || null;
                 });
+
+                // 將 personData 複製一份
+                originalPersonData = JSON.parse(JSON.stringify(personData));
 
                 // 呼叫你原本顯示畫面邏輯
                 renderPersonList();
@@ -107,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             nameGroup.appendChild(firstPart);
             nameGroup.appendChild(secondPart);
-            
+
             personName.appendChild(nameGroup);
             //start
 
@@ -314,4 +321,60 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    function filterAndSort(isFromSort) {
+        const sortProcess = document.querySelector('.sort-process');
+        const classList = sortProcess.classList;
+        const isAsc = isFromSort ? !classList.contains('active') : classList.contains('active') && classList.contains('asc');
+        const isDesc = isFromSort ? classList.contains('active') && classList.contains('asc') : classList.contains('active') && classList.contains('desc');
+        const isToReset = isFromSort ? classList.contains('active') && classList.contains('desc') : !classList.contains('active');
+
+        function _resetClass() {
+            classList.remove('asc');
+            classList.remove('desc');
+            classList.remove('active');
+        }
+
+        function _sortData(sortOrder) {
+            personData = personData.sort((a, b) => {
+                const percentA = parseInt(a.count) / a.threshold;
+                const percentB = parseInt(b.count) / b.threshold;
+                return (percentA - percentB) * sortOrder;
+            });
+        }
+
+        function _filterName() {
+            const city = document.querySelector('#filter').value;
+
+            // reset
+            personData = JSON.parse(JSON.stringify(originalPersonData));
+            if (city !== 'all') {
+                personData = personData.filter(person => person.name.includes(city));
+            }
+        }
+
+        _filterName();
+
+        if (isAsc) {
+            if (isFromSort) {
+                _resetClass();
+                classList.add('active');
+                classList.add('asc');
+            }
+            _sortData(1);
+        } else if (isDesc) {
+            if (isFromSort) {
+                _resetClass();
+                classList.add('active');
+                classList.add('desc');
+            }
+            _sortData(-1);
+        } else if (isToReset) {
+            _resetClass();
+        }
+
+        renderPersonList();
+    }
+
+    document.querySelector('.sort-process').addEventListener('click', () => filterAndSort(true));
+    document.querySelector('#filter').addEventListener('change', () => filterAndSort(false));
 });

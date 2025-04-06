@@ -186,7 +186,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             countSpan.textContent = `目前收件：${current.toLocaleString()}+　`;
                         }, frameRate);
                     } else {
-                        countSpan.textContent = `目前收件：尚未更新　`;
+                        countSpan.textContent = `目前收件：統計中　`;
                     }
                 }
 

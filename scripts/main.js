@@ -190,11 +190,17 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 }
 
-                const thresholdText = `門檻：${person.threshold.toLocaleString()}　`;
+                const thresholdSpan = document.createElement('span');
+                thresholdSpan.className = 'min-threshold';
+                thresholdSpan.textContent = `最低門檻：${person.threshold.toLocaleString()}　`;
+               
+                //const thresholdText = `最低門檻：${person.threshold.toLocaleString()}　`;
                 const targetText = `目標：${person.target.toLocaleString()}`;
 
                 goalInfo.appendChild(countSpan);
-                goalInfo.append(thresholdText + targetText);
+                //goalInfo.append(thresholdText + targetText);
+                goalInfo.append(thresholdSpan);
+                goalInfo.append(targetText);
 
                 personName.append(goalInfo);
             }
@@ -252,7 +258,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         }
 
                         receiptProgressBar.style.width = `${current}%`;
-                        receiptLabel.textContent = `收件進度：${current.toFixed(1)}%`;
+                        receiptLabel.textContent = `門檻進度：${current.toFixed(1)}%`;
                     }, frameRate);
 
                 }

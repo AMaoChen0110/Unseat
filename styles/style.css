@@ -178,6 +178,10 @@ h1 {
     margin-top: 4px;
 }
 
+.min-threshold {
+    color: #ff0000;
+}
+
 .progress-bar.receipt {
     background-color: #e8f5e9; /* 比較淡的底 */
 }

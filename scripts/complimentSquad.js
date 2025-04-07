@@ -75,7 +75,7 @@ function generateReport() {
       const area = match[1];
       const name = match[2];
       if (!result[area]) result[area] = [];
-      result[area].push(`${name} + ${count}`);
+      result[area].push(`${name} + ${count} 份`);
     }
   });
 

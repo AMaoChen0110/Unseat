@@ -190,11 +190,18 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 }
 
-                const thresholdText = `門檻：${person.threshold.toLocaleString()}　`;
-                const targetText = `目標：${person.target.toLocaleString()}`;
+                const thresholdSpan = document.createElement('span');
+                thresholdSpan.className = 'min-threshold';
+                thresholdSpan.textContent = `最低門檻：${person.threshold.toLocaleString()}　`;
+               
+                const targetSpan = document.createElement('span');
+                targetSpan.className = 'min-target';
+                targetSpan.textContent = `目標：${person.target.toLocaleString()}　`;
 
                 goalInfo.appendChild(countSpan);
-                goalInfo.append(thresholdText + targetText);
+
+                goalInfo.append(thresholdSpan);
+                goalInfo.append(targetSpan);
 
                 personName.append(goalInfo);
             }
@@ -218,41 +225,61 @@ document.addEventListener('DOMContentLoaded', function () {
                 const countNum = parseInt(person.count.replace(/,/g, '')); // 若有逗號分隔
                 const thresholdNum = typeof person.threshold === 'number' ? person.threshold : parseInt(person.threshold.toString().replace(/\D/g, ''));
 
+                const targetNum = parseInt(person.targetNum);
+                const thresholdPercent = Math.min((countNum / thresholdNum) * 100, 100);
+                const targetPercent = Math.min((countNum / targetNum) * 100, 100);
+
                 if (!isNaN(countNum) && !isNaN(thresholdNum) && thresholdNum > 0) {
-                    const finalPercent = Math.min((countNum / thresholdNum) * 100, 100);
-
+                   
                     const receiptBarContainer = document.createElement('div');
-                    receiptBarContainer.className = 'progress-bar receipt';
+                    receiptBarContainer.className = 'progress-bar dual-layer';
 
-                    const receiptProgressBar = document.createElement('div');
-                    receiptProgressBar.className = 'progress';
-                    receiptProgressBar.style.width = `0%`; // 初始寬度設為 0
+                    const targetProgress = document.createElement('div');
+                    targetProgress.className = 'progress-half progress-target';
+                    targetProgress.style.width = `0%`;
 
-                    // receiptProgressBar.style.width = `${receiptProgress}%`;
+                    const thresholdProgress = document.createElement('div');
+                    thresholdProgress.className = 'progress-half progress-threshold';
+                    thresholdProgress.style.width = `0%`;
 
-                    const receiptLabel = document.createElement('div');
-                    receiptLabel.className = 'day-info';
-                    receiptLabel.textContent = `收件進度：0%`; // 初始為 0
-                    // receiptLabel.textContent = `收件進度：${receiptProgress.toFixed(1)}%`;
-
-                    receiptBarContainer.appendChild(receiptProgressBar);
+                    receiptBarContainer.appendChild(thresholdProgress);
+                    receiptBarContainer.appendChild(targetProgress);
                     progressContainer.appendChild(receiptBarContainer);
-                    infoContainer.appendChild(receiptLabel);
 
-                    let current = 0;
+                    const labelTarget = document.createElement('div');
+                    labelTarget.className = 'day-info';
+                    labelTarget.textContent = `目標：0.0%`;
+                    
+                    const labelThreshold = document.createElement('div');
+                    labelThreshold.className = 'day-info';
+                    labelThreshold.textContent = `門檻：0.0%`;
+                    
+                    infoContainer.appendChild(labelTarget);
+                    infoContainer.appendChild(labelThreshold);
+
+                    let curThreshold = 0;
+                    let curTarget = 0;
                     const duration = 800;
                     const frameRate = 30;
-                    const step = finalPercent / (duration / frameRate);
-
+                    const stepThreshold = thresholdPercent / (duration / frameRate);
+                    const stepTarget = targetPercent / (duration / frameRate);
+                    
                     const interval = setInterval(() => {
-                        current += step;
-                        if (current >= finalPercent) {
-                            current = finalPercent;
+                        curThreshold += stepThreshold;
+                        curTarget += stepTarget;
+                    
+                        if (curThreshold >= thresholdPercent) curThreshold = thresholdPercent;
+                        if (curTarget >= targetPercent) curTarget = targetPercent;
+                    
+                        thresholdProgress.style.width = `${curThreshold}%`;
+                        targetProgress.style.width = `${curTarget}%`;
+                    
+                        labelThreshold.textContent = `門檻進度：${curThreshold.toFixed(1)}%`;
+                        labelTarget.textContent = `目標進度：${curTarget.toFixed(1)}%`;
+                    
+                        if (curThreshold >= thresholdPercent && curTarget >= targetPercent) {
                             clearInterval(interval);
                         }
-
-                        receiptProgressBar.style.width = `${current}%`;
-                        receiptLabel.textContent = `收件進度：${current.toFixed(1)}%`;
                     }, frameRate);
 
                 }

@@ -178,6 +178,16 @@ h1 {
     margin-top: 4px;
 }
 
+.min-threshold {
+    /* color: #ff0000; */
+}
+
+.min-target {
+    font-weight:bold;
+    color: #ff0000;
+    /* color: #dd8a0e; */
+}
+
 .progress-bar.receipt {
     background-color: #e8f5e9; /* 比較淡的底 */
 }
@@ -202,6 +212,38 @@ h1 {
     background: linear-gradient(90deg, #cc4b4b, #e39393);
     border-radius: 8px 0 0 8px;
 }
+
+.progress-bar.dual-layer {
+    position: relative;
+    /*background-color: #e8f5e9; /* 比較淡的底 */
+    background-color: #f0e6d2;
+    height: 30px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+.progress-bar .progress-half {
+    position: absolute;
+    height: 50%;
+    left: 0;
+}
+
+.progress-target {
+    top: 0;
+    background: linear-gradient(90deg, #ff9800, #ffc107);
+    opacity: 0.8;
+    z-index: 2;
+}
+
+.progress-threshold {
+    bottom: 0;
+    background: linear-gradient(90deg, #4caf50, #81c784);
+    z-index: 1;
+}
+
+
 
 /* 讀取條後面的文字樣式 */
 .day-info {

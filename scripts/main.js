@@ -24,11 +24,11 @@ document.addEventListener('DOMContentLoaded', function () {
         const currentDay = Math.ceil(diffTime / (1000 * 60 * 60 * 24)) + 1;
 
         // Ensure we don't exceed 40 days
-        const finalDay = Math.min(currentDay, 40);
+        const finalDay = Math.min(currentDay, person.totalDays);
 
         return {
             day: `第${currentDay}天`,
-            progress: (finalDay / 40) * 100
+            progress: (finalDay / person.totalDays) * 100
         };
     };
 

@@ -240,7 +240,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     
                     const receiptText = document.createElement('div');
                     receiptText.className = 'progress-text';
-                    receiptText.textContent = `已收取：${countNum.toLocaleString()}+`;
+                    if (countNum.toLocaleString() === "0") {
+                        receiptText.textContent = `統計中　`;
+                    } else {
+                        receiptText.textContent = `已收取：${countNum.toLocaleString()}+`;
+                    }
                     
                     const thresholdLine = document.createElement('div');
                     thresholdLine.className = 'threshold-line';

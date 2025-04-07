@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const thresholdSpan = document.createElement('span');
                 thresholdSpan.className = 'min-threshold';
                 thresholdSpan.textContent = `門檻：${person.threshold.toLocaleString()}　`;
-               
+
                 const targetSpan = document.createElement('span');
                 targetSpan.className = 'min-target';
                 targetSpan.textContent = `目標：${person.target.toLocaleString()}　`;
@@ -230,14 +230,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 const targetPercent = Math.min((countNum / targetNum) * 100, 100);
 
                 if (!isNaN(countNum) && !isNaN(thresholdNum) && thresholdNum > 0) {
-                   
+
                     const receiptBarContainer = document.createElement('div');
                     receiptBarContainer.className = 'progress-bar one-line';
-                    
+
                     const receiptProgressBar = document.createElement('div');
                     receiptProgressBar.className = 'progress-fill';
                     receiptProgressBar.style.width = `0%`;
-                    
+
                     const receiptText = document.createElement('div');
                     receiptText.className = 'progress-text';
                     if (countNum.toLocaleString() === "0") {
@@ -245,12 +245,12 @@ document.addEventListener('DOMContentLoaded', function () {
                     } else {
                         receiptText.textContent = `已收取：${countNum.toLocaleString()}+`;
                     }
-                    
+
                     const thresholdLine = document.createElement('div');
                     thresholdLine.className = 'threshold-line';
                     const thresholdPos = Math.min((thresholdNum / targetNum) * 100, 100);
                     thresholdLine.style.left = `${thresholdPos}%`;
-                    
+
                     const targetLine = document.createElement('div');
                     targetLine.className = 'target-line';
                     targetLine.style.left = `${99}%`;
@@ -260,7 +260,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     receiptBarContainer.appendChild(thresholdLine);
                     receiptBarContainer.appendChild(targetLine);
                     progressContainer.appendChild(receiptBarContainer);
-                    
+
                     const labelProgress = document.createElement('div');
                     labelProgress.className = 'day-info';
                     labelProgress.textContent = `進度：0.0%`;
@@ -269,7 +269,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     let curPercent = 0;
                     const finalPercent = Math.min((countNum / targetNum) * 100, 100);
                     const step = finalPercent / (800 / 30);
-                    
+
                     const interval = setInterval(() => {
                         curPercent += step;
                         if (curPercent >= finalPercent) {
@@ -349,9 +349,9 @@ document.addEventListener('DOMContentLoaded', function () {
     function filterAndSort(isFromSort) {
         const sortProcess = document.querySelector('.sort-process');
         const classList = sortProcess.classList;
-        const isAsc = isFromSort ? !classList.contains('active') : classList.contains('active') && classList.contains('asc');
-        const isDesc = isFromSort ? classList.contains('active') && classList.contains('asc') : classList.contains('active') && classList.contains('desc');
-        const isToReset = isFromSort ? classList.contains('active') && classList.contains('desc') : !classList.contains('active');
+        const isDesc = isFromSort ? !classList.contains('active') : classList.contains('active') && classList.contains('desc');
+        const isAsc = isFromSort ? classList.contains('active') && classList.contains('desc') : classList.contains('active') && classList.contains('asc');
+        const isToReset = isFromSort ? classList.contains('active') && classList.contains('asc') : !classList.contains('active');
 
         // ⬇️ 加入圖示切換函式
         function _updateIcons(state) {

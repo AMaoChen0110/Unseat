@@ -192,7 +192,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 const thresholdSpan = document.createElement('span');
                 thresholdSpan.className = 'min-threshold';
-                thresholdSpan.textContent = `最低門檻：${person.threshold.toLocaleString()}　`;
+                thresholdSpan.textContent = `門檻：${person.threshold.toLocaleString()}　`;
                
                 const targetSpan = document.createElement('span');
                 targetSpan.className = 'min-target';

@@ -179,7 +179,7 @@ h1 {
 }
 
 .min-threshold {
-    /* color: #ff0000; */
+    color: #000000;
 }
 
 .min-target {
@@ -220,8 +220,8 @@ h1 {
     height: 30px;
     border-radius: 12px;
     overflow: hidden;
-    margin-top: 6px;
-    margin-bottom: 6px;
+    margin-top: 7px;
+    margin-bottom: 5px;
 }
 
 .progress-bar .progress-half {

@@ -381,8 +381,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         function _sortData(sortOrder) {
             personData = personData.sort((a, b) => {
-                const percentA = parseInt(a.count) / a.threshold;
-                const percentB = parseInt(b.count) / b.threshold;
+                const percentA = parseInt(a.count) / a.targetNum;
+                const percentB = parseInt(b.count) / b.targetNum;
                 return (percentA - percentB) * sortOrder;
             });
         }

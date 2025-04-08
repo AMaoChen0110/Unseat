@@ -70,6 +70,11 @@ function getImageArray() {
   });
 }
 
+function toggleDialog() {
+  const reportDialog = document.getElementsByClassName('report-dialog')[0];
+  reportDialog.classList.toggle('active');
+}
+
 async function generateReport() {
   // get img array
   await getImageArray();
@@ -112,6 +117,10 @@ async function generateReport() {
   img.style.borderRadius = '15px';
   img.style.marginTop = '1em';
   imgContent.appendChild(img);
+
+
+  // 渲染前端
+  toggleDialog();
 }
 
 init();

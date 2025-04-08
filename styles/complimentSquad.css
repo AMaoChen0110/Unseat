@@ -1,133 +1,163 @@
 body {
-    font-family: "Noto Sans TC", sans-serif;
-    background: linear-gradient(to bottom, #e9f2e3, #f7e9d3);
-    /* 柔和綠→米膚色 */
-    color: #333;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-  }
+  font-family: "Noto Sans TC", sans-serif;
+  background: linear-gradient(to bottom, #e9f2e3, #f7e9d3);
+  /* 柔和綠→米膚色 */
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
 
-  .container {
-    max-width: 800px;
-    width: 100%;
-    padding: 1em;
-    background-color: #fff0f5;
-    /* 淡粉紅，可根據喜好調整 */
-    border-radius: 20px;
-    /* 可選：讓 container 有點圓角更溫柔 */
-  }
+.container {
+  max-width: 800px;
+  width: 100%;
+  padding: 1em;
+  background-color: #fff0f5;
+  /* 淡粉紅，可根據喜好調整 */
+  border-radius: 20px;
+  /* 可選：讓 container 有點圓角更溫柔 */
+}
 
-  h1 {
-    text-align: center;
-    font-size: 2em;
-    margin-bottom: 1em;
-  }
+h1 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 1em;
+}
 
+.grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1em;
+}
+
+@media (min-width: 768px) {
   .grid {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 1em;
+    grid-template-columns: repeat(2, 1fr);
   }
+}
+
+.card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card h2 {
+  font-size: 1.2em;
+  margin: 0 0 0.5em 0;
+  text-align: center;
+}
+
+.counter-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+.counter-row button {
+  font-size: 1.9em;
+  padding: 0.9em 1.4em;
+  border: none;
+  border-radius: 10px;
+  background-color: #ffda79;
+  cursor: pointer;
+}
+
+.counter-row button:hover {
+  border: 2px solid #ff9800;
+  /* 加上橘色邊框或你喜歡的顏色 */
+  background-color: #ffe0b2;
+  /* 可選：讓背景色稍微變亮更有互動感 */
+}
+
+.counter-row input {
+  width: 50px;
+  text-align: center;
+  font-size: 1.8em;
+  /* 字體加大 */
+  padding: 0.7em 0.9em;
+  /* 增加內距 */
+  border-radius: 10px;
+  /* 加上圓角 */
+  border: 1px solid #ccc;
+  /* 可選：加上邊框讓它更清楚 */
+}
+
+.generate-btn {
+  width: 100%;
+  padding: 1em;
+  font-size: 1.2em;
+  background-color: #ffb6b9;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  margin-top: 2em;
+}
+
+.generate-btn:hover {
+  border: 2px solid #ff6f91;
+  /* 可愛的粉紅邊框 */
+  background-color: #ffcedb;
+  /* 滑入時背景也變淡粉，強化互動感 */
+}
+
+.report-dialog {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+
+.report-dialog.active {
+  display: flex;
+}
+
+.report {
+  position: relative;
+  overflow-y: scroll;
+  width: 80vw;
+  max-width: 900px;
+  max-height: 80vh;
+  background-color: #e0f7fa;
+  border-radius: 10px;
+  padding: 1em;
+}
+
+.report .close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.report-content {
+  display: flex;
+  gap: 5%;
+  flex-wrap: wrap;
 
   @media (min-width: 768px) {
-    .grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
+    gap: 6.25%;
   }
+}
 
-  .card {
-    background: #fff;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 1em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.report-content p {
+  flex-basis: 47.5%;
+
+  @media (min-width: 768px) {
+    flex-basis: 15%;
   }
+}
 
-  .card h2 {
-    font-size: 1.2em;
-    margin: 0 0 0.5em 0;
-    text-align: center;
-  }
-
-  .counter-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1em;
-  }
-
-  .counter-row button {
-    font-size: 1.9em;
-    padding: 0.9em 1.4em;
-    border: none;
-    border-radius: 10px;
-    background-color: #ffda79;
-    cursor: pointer;
-  }
-
-  .counter-row button:hover {
-    border: 2px solid #ff9800;
-    /* 加上橘色邊框或你喜歡的顏色 */
-    background-color: #ffe0b2;
-    /* 可選：讓背景色稍微變亮更有互動感 */
-  }
-
-  .counter-row input {
-    width: 50px;
-    text-align: center;
-    font-size: 1.8em;
-    /* 字體加大 */
-    padding: 0.7em 0.9em;
-    /* 增加內距 */
-    border-radius: 10px;
-    /* 加上圓角 */
-    border: 1px solid #ccc;
-    /* 可選：加上邊框讓它更清楚 */
-  }
-
-  .generate-btn {
-    width: 100%;
-    padding: 1em;
-    font-size: 1.2em;
-    background-color: #ffb6b9;
-    border: none;
-    border-radius: 15px;
-    cursor: pointer;
-    margin-top: 2em;
-  }
-
-  .generate-btn:hover {
-    border: 2px solid #ff6f91;
-    /* 可愛的粉紅邊框 */
-    background-color: #ffcedb;
-    /* 滑入時背景也變淡粉，強化互動感 */
-  }
-
-  .report {
-    background-color: #e0f7fa;
-    border-radius: 10px;
-    padding: 1em;
-    margin-top: 2em;
-  }
-
-  .report-content {
-    display: flex;
-    gap: 5%;
-    flex-wrap: wrap;
-
-    @media (min-width: 768px) {
-      gap: 6.25%;
-    }
-  }
-
-  .report-content p {
-    flex-basis: 47.5%;
-
-    @media (min-width: 768px) {
-      flex-basis: 15%;
-    }
-  }

@@ -119,10 +119,12 @@
     <h1>誇誇部隊罷免收件計數器</h1>
     <div id="cards" class="grid"></div>
     <button class="generate-btn" onclick="generateReport()">產生報表</button>
-    <div id="report" class="report">
-      <h2>誇誇部隊</h2>
-      <div class="report-content"></div>
-      <div class="img-content"></div>
+    <div class="report-dialog" onclick="toggleDialog(event)">
+      <div id="report" class="report" onclick="event.stopPropagation()">
+        <div class="close">✕</div>
+        <h2>誇誇部隊</h2>
+        <div class="img-content"></div>
+        <div class="report-content"></div>
     </div>
   </div>
   <!-- Floating Menu Button -->

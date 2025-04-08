@@ -9,6 +9,10 @@ body {
   justify-content: center;
 }
 
+body:has(div.report-dialog.active) {
+  overflow-y: hidden;
+}
+
 .container {
   max-width: 800px;
   width: 100%;
@@ -66,11 +70,14 @@ h1 {
   border: none;
   border-radius: 10px;
   background-color: #ffda79;
+  border: 2px solid transparent;
   cursor: pointer;
+  display: inline-block;
+  box-sizing: border-box;
 }
 
 .counter-row button:hover {
-  border: 2px solid #ff9800;
+  border: 2px solid #ffad39;
   /* 加上橘色邊框或你喜歡的顏色 */
   background-color: #ffe0b2;
   /* 可選：讓背景色稍微變亮更有互動感 */
@@ -89,15 +96,28 @@ h1 {
   /* 可選：加上邊框讓它更清楚 */
 }
 
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 .generate-btn {
   width: 100%;
   padding: 1em;
   font-size: 1.2em;
   background-color: #ffb6b9;
-  border: none;
+  border: 2px solid transparent;
   border-radius: 15px;
   cursor: pointer;
-  margin-top: 2em;
+  display: inline-block;
+  box-sizing: border-box;
 }
 
 .generate-btn:hover {
@@ -105,6 +125,10 @@ h1 {
   /* 可愛的粉紅邊框 */
   background-color: #ffcedb;
   /* 滑入時背景也變淡粉，強化互動感 */
+}
+
+.report-btn {
+  margin-top: 2em;
 }
 
 .report-dialog {
@@ -126,13 +150,19 @@ h1 {
 
 .report {
   position: relative;
-  overflow-y: scroll;
   width: 80vw;
   max-width: 900px;
-  max-height: 80vh;
+  height: 80vh;
   background-color: #e0f7fa;
   border-radius: 10px;
   padding: 1em;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
 
 .report .close {
@@ -143,21 +173,63 @@ h1 {
   cursor: pointer;
 }
 
+.report-title {
+  height: 30px;
+  @media (min-width: 768px) {
+    flex: 0 0 100%;
+  }
+}
+
 .report-content {
   display: flex;
   gap: 5%;
   flex-wrap: wrap;
+  overflow-y: auto;
+  height: 37%;
+  padding: 0 10px;
+  margin: 10px 0;
 
   @media (min-width: 768px) {
-    gap: 6.25%;
+    height: 75%;
+    flex: 0 0 47.5%;
   }
 }
 
 .report-content p {
   flex-basis: 47.5%;
 
-  @media (min-width: 768px) {
-    flex-basis: 15%;
+  @media (min-width: 800px) {
+    flex-basis: 30%;
   }
 }
 
+.city {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+}
+
+.count {
+  padding-left: 14px;
+  padding-top: 5px;
+}
+
+.img-content {
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 5px;
+  margin-bottom: 10px;
+
+  @media (min-width: 768px) {
+    flex: 0 0 47.5%;
+    height: 75%;
+  }
+}
+
+.img-content img {
+  max-width: 100%;
+  height: 100%;
+  object-fit: contain;
+}

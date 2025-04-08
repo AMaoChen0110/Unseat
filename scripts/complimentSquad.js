@@ -39,7 +39,7 @@ async function init() {
       minusBtn.textContent = '-';
       const input = document.createElement('input');
       input.type = 'number';
-      input.value = 0;
+      input.value = 1;
       input.min = 0;
       input.id = p.fullName;
       const plusBtn = document.createElement('button');
@@ -102,7 +102,7 @@ async function generateReport() {
 
   for (const area in result) {
     const p = document.createElement('p');
-    p.innerHTML = '▫️' + area + '<br>' + result[area].join('<br>');
+    p.innerHTML = '<div class="city">▫️' + area + '</div><div class="count">' + result[area].join('<br>') + '</div>';
     reportContent.appendChild(p);
   }
 
@@ -113,9 +113,6 @@ async function generateReport() {
   const img = document.createElement('img');
   img.src = imgAry[randomIndex];
   img.alt = '誇誇部隊加油圖';
-  img.style.width = '100%';
-  img.style.borderRadius = '15px';
-  img.style.marginTop = '1em';
   imgContent.appendChild(img);
 
 

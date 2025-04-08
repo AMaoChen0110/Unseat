@@ -74,8 +74,8 @@ async function generateReport() {
   // get img array
   await getImageArray();
 
-  const reportDiv = document.getElementById('report');
   const reportContent = document.getElementsByClassName('report-content')[0];
+  const imgContent = document.getElementsByClassName('img-content')[0];
   const inputs = document.querySelectorAll('input');
   const result = {};
 
@@ -91,13 +91,17 @@ async function generateReport() {
     }
   });
 
+  // reset report content
+  reportContent.innerHTML = '';
+  imgContent.innerHTML = '';
+
   for (const area in result) {
     const p = document.createElement('p');
     p.innerHTML = '▫️' + area + '<br>' + result[area].join('<br>');
     reportContent.appendChild(p);
   }
 
-  reportDiv.appendChild(reportContent);
+  // reportDiv.appendChild(reportContent);
 
   // 隨機插入一張圖片
   const randomIndex = Math.floor(Math.random() * imgAry.length);
@@ -107,7 +111,7 @@ async function generateReport() {
   img.style.width = '100%';
   img.style.borderRadius = '15px';
   img.style.marginTop = '1em';
-  reportDiv.appendChild(img);
+  imgContent.appendChild(img);
 }
 
 init();

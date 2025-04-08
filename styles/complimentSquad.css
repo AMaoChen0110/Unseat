@@ -116,10 +116,18 @@ body {
 
   .report-content {
     display: flex;
-    gap: 6.25%;
+    gap: 5%;
     flex-wrap: wrap;
+
+    @media (min-width: 768px) {
+      gap: 6.25%;
+    }
   }
 
   .report-content p {
-    flex-basis: 15%;
+    flex-basis: 47.5%;
+
+    @media (min-width: 768px) {
+      flex-basis: 15%;
+    }
   }

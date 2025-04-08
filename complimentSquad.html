@@ -121,11 +121,11 @@
     <button class="report-btn generate-btn" onclick="generateReport()">產生報表</button>
     <div class="report-dialog" onclick="toggleDialog(event)">
       <div id="report" class="report" onclick="event.stopPropagation()">
-        <div class="close">✕</div>
+        <div class="close" onclick="toggleDialog()">✕</div>
         <h2 class="report-title">誇誇部隊</h2>
         <div class="img-content"></div>
         <div class="report-content"></div>
-        <button type="button" class="copy-btn generate-btn">複製文字</button>
+        <button type="button" class="copy-btn generate-btn" onclick="copyReport()">複製文字</button>
     </div>
   </div>
   <!-- Floating Menu Button -->

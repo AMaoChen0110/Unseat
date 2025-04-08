@@ -113,3 +113,13 @@ body {
     padding: 1em;
     margin-top: 2em;
   }
+
+  .report-content {
+    display: flex;
+    gap: 6.25%;
+    flex-wrap: wrap;
+  }
+
+  .report-content p {
+    flex-basis: 15%;
+  }

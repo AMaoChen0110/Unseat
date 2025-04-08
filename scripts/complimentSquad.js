@@ -70,6 +70,11 @@ function getImageArray() {
   });
 }
 
+function toggleDialog() {
+  const reportDialog = document.getElementsByClassName('report-dialog')[0];
+  reportDialog.classList.toggle('active');
+}
+
 async function generateReport() {
   // get img array
   await getImageArray();
@@ -97,7 +102,7 @@ async function generateReport() {
 
   for (const area in result) {
     const p = document.createElement('p');
-    p.innerHTML = '▫️' + area + '<br>' + result[area].join('<br>');
+    p.innerHTML = '<div class="city">▫️' + area + '</div><div class="count">' + result[area].join('<br>') + '</div>';
     reportContent.appendChild(p);
   }
 
@@ -108,10 +113,31 @@ async function generateReport() {
   const img = document.createElement('img');
   img.src = imgAry[randomIndex];
   img.alt = '誇誇部隊加油圖';
-  img.style.width = '100%';
-  img.style.borderRadius = '15px';
-  img.style.marginTop = '1em';
   imgContent.appendChild(img);
+
+
+  // 渲染前端
+  toggleDialog();
+}
+
+function copyReport() {
+  const range = document.createRange();
+
+  // 將指定元素內容加到 Range 中
+  const texts = document.querySelector('.report-content');
+
+  range.selectNode(texts);
+  // 取得 Selection 物件
+  const selection = window.getSelection();
+  // 先清空當前選取範圍
+  selection.removeAllRanges();
+  // 加入 Range
+  selection.addRange(range);
+
+  document.execCommand('copy');
+  selection.removeAllRanges();
+
+  window.alert('複製成功');
 }
 
 init();

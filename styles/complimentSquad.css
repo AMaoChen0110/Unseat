@@ -1,133 +1,235 @@
 body {
-    font-family: "Noto Sans TC", sans-serif;
-    background: linear-gradient(to bottom, #e9f2e3, #f7e9d3);
-    /* 柔和綠→米膚色 */
-    color: #333;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-  }
+  font-family: "Noto Sans TC", sans-serif;
+  background: linear-gradient(to bottom, #e9f2e3, #f7e9d3);
+  /* 柔和綠→米膚色 */
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
 
-  .container {
-    max-width: 800px;
-    width: 100%;
-    padding: 1em;
-    background-color: #fff0f5;
-    /* 淡粉紅，可根據喜好調整 */
-    border-radius: 20px;
-    /* 可選：讓 container 有點圓角更溫柔 */
-  }
+body:has(div.report-dialog.active) {
+  overflow-y: hidden;
+}
 
-  h1 {
-    text-align: center;
-    font-size: 2em;
-    margin-bottom: 1em;
-  }
+.container {
+  max-width: 800px;
+  width: 100%;
+  padding: 1em;
+  background-color: #fff0f5;
+  /* 淡粉紅，可根據喜好調整 */
+  border-radius: 20px;
+  /* 可選：讓 container 有點圓角更溫柔 */
+}
 
+h1 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1em;
+}
+
+@media (min-width: 768px) {
   .grid {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 1em;
+    grid-template-columns: repeat(2, 1fr);
   }
+}
+
+.card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card h2 {
+  font-size: 1.2em;
+  margin: 0 0 0.5em 0;
+  text-align: center;
+}
+
+.counter-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+.counter-row button {
+  font-size: 1.9em;
+  padding: 0.9em 1.4em;
+  border: none;
+  border-radius: 10px;
+  background-color: #ffda79;
+  border: 2px solid transparent;
+  cursor: pointer;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+.counter-row button:hover {
+  border: 2px solid #ffad39;
+  /* 加上橘色邊框或你喜歡的顏色 */
+  background-color: #ffe0b2;
+  /* 可選：讓背景色稍微變亮更有互動感 */
+}
+
+.counter-row input {
+  width: 50px;
+  text-align: center;
+  font-size: 1.8em;
+  /* 字體加大 */
+  padding: 0.7em 0.9em;
+  /* 增加內距 */
+  border-radius: 10px;
+  /* 加上圓角 */
+  border: 1px solid #ccc;
+  /* 可選：加上邊框讓它更清楚 */
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.generate-btn {
+  width: 100%;
+  padding: 1em;
+  font-size: 1.2em;
+  background-color: #ffb6b9;
+  border: 2px solid transparent;
+  border-radius: 15px;
+  cursor: pointer;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+.generate-btn:hover {
+  border: 2px solid #ff6f91;
+  /* 可愛的粉紅邊框 */
+  background-color: #ffcedb;
+  /* 滑入時背景也變淡粉，強化互動感 */
+}
+
+.report-btn {
+  margin-top: 2em;
+}
+
+.report-dialog {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+
+.report-dialog.active {
+  display: flex;
+}
+
+.report {
+  position: relative;
+  width: 80vw;
+  max-width: 900px;
+  height: 80vh;
+  background-color: #e0f7fa;
+  border-radius: 10px;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
 
   @media (min-width: 768px) {
-    .grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  .card {
-    background: #fff;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 1em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .card h2 {
-    font-size: 1.2em;
-    margin: 0 0 0.5em 0;
-    text-align: center;
-  }
-
-  .counter-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1em;
-  }
-
-  .counter-row button {
-    font-size: 1.9em;
-    padding: 0.9em 1.4em;
-    border: none;
-    border-radius: 10px;
-    background-color: #ffda79;
-    cursor: pointer;
-  }
-
-  .counter-row button:hover {
-    border: 2px solid #ff9800;
-    /* 加上橘色邊框或你喜歡的顏色 */
-    background-color: #ffe0b2;
-    /* 可選：讓背景色稍微變亮更有互動感 */
-  }
-
-  .counter-row input {
-    width: 50px;
-    text-align: center;
-    font-size: 1.8em;
-    /* 字體加大 */
-    padding: 0.7em 0.9em;
-    /* 增加內距 */
-    border-radius: 10px;
-    /* 加上圓角 */
-    border: 1px solid #ccc;
-    /* 可選：加上邊框讓它更清楚 */
-  }
-
-  .generate-btn {
-    width: 100%;
-    padding: 1em;
-    font-size: 1.2em;
-    background-color: #ffb6b9;
-    border: none;
-    border-radius: 15px;
-    cursor: pointer;
-    margin-top: 2em;
-  }
-
-  .generate-btn:hover {
-    border: 2px solid #ff6f91;
-    /* 可愛的粉紅邊框 */
-    background-color: #ffcedb;
-    /* 滑入時背景也變淡粉，強化互動感 */
-  }
-
-  .report {
-    background-color: #e0f7fa;
-    border-radius: 10px;
-    padding: 1em;
-    margin-top: 2em;
-  }
-
-  .report-content {
-    display: flex;
-    gap: 5%;
+    flex-direction: row;
     flex-wrap: wrap;
-
-    @media (min-width: 768px) {
-      gap: 6.25%;
-    }
   }
+}
 
-  .report-content p {
-    flex-basis: 47.5%;
+.report .close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
 
-    @media (min-width: 768px) {
-      flex-basis: 15%;
-    }
+.report-title {
+  height: 30px;
+  @media (min-width: 768px) {
+    flex: 0 0 100%;
   }
+}
+
+.report-content {
+  display: flex;
+  gap: 5%;
+  flex-wrap: wrap;
+  overflow-y: auto;
+  height: 37%;
+  padding: 0 10px;
+  margin: 10px 0;
+
+  @media (min-width: 768px) {
+    height: 75%;
+    flex: 0 0 47.5%;
+  }
+}
+
+.report-content p {
+  flex-basis: 47.5%;
+
+  @media (min-width: 800px) {
+    flex-basis: 30%;
+  }
+}
+
+.city {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+}
+
+.count {
+  padding-left: 14px;
+  padding-top: 5px;
+}
+
+.img-content {
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 5px;
+  margin-bottom: 10px;
+
+  @media (min-width: 768px) {
+    flex: 0 0 47.5%;
+    height: 75%;
+  }
+}
+
+.img-content img {
+  max-width: 100%;
+  height: 100%;
+  object-fit: contain;
+}

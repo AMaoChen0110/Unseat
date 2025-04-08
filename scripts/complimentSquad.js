@@ -75,7 +75,7 @@ async function generateReport() {
   await getImageArray();
 
   const reportDiv = document.getElementById('report');
-  reportDiv.innerHTML = '<h2>誇誇部隊</h2>';
+  const reportContent = document.getElementsByClassName('report-content')[0];
   const inputs = document.querySelectorAll('input');
   const result = {};
 
@@ -94,8 +94,10 @@ async function generateReport() {
   for (const area in result) {
     const p = document.createElement('p');
     p.innerHTML = '▫️' + area + '<br>' + result[area].join('<br>');
-    reportDiv.appendChild(p);
+    reportContent.appendChild(p);
   }
+
+  reportDiv.appendChild(reportContent);
 
   // 隨機插入一張圖片
   const randomIndex = Math.floor(Math.random() * imgAry.length);

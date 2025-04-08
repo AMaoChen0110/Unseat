@@ -9,12 +9,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wenyo/Unseat.git"
+    "url": "git+https://github.com/AMaoChen0110/Unseat.git"
   },
   "author": "AMaoChen0110",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/wenyo/Unseat/issues"
+    "url": "https://github.com/AMaoChen0110/Unseat/issues"
   },
-  "homepage": "https://github.com/wenyo/Unseat#readme"
+  "homepage": "https://github.com/AMaoChen0110/Unseat#readme"
 }

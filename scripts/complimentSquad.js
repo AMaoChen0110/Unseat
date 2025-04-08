@@ -1,4 +1,5 @@
 const data = [];
+let imgAry = [];
 
 async function init() {
   const res = await fetch('personData.json');
@@ -61,7 +62,18 @@ async function init() {
   }
 }
 
-function generateReport() {
+function getImageArray() {
+  return fetch('images/ComplimentSquad/images.json')
+  .then(res => res.json())
+  .then(images => {
+    imgAry = images;
+  });
+}
+
+async function generateReport() {
+  // get img array
+  await getImageArray();
+
   const reportDiv = document.getElementById('report');
   reportDiv.innerHTML = '<h2>誇誇部隊</h2>';
   const inputs = document.querySelectorAll('input');
@@ -86,9 +98,9 @@ function generateReport() {
   }
 
   // 隨機插入一張圖片
+  const randomIndex = Math.floor(Math.random() * imgAry.length);
   const img = document.createElement('img');
-  const randomIndex = Math.floor(Math.random() * 7) + 1; // 假設你有 7 張圖，檔名為 01.jpg ~ 07.jpg
-  img.src = `images/ComplimentSquad/0${randomIndex}.jpg`;
+  img.src = imgAry[randomIndex];
   img.alt = '誇誇部隊加油圖';
   img.style.width = '100%';
   img.style.borderRadius = '15px';

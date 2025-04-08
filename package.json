@@ -1,0 +1,20 @@
+{
+  "name": "unseat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "update-ComplimentSquad-images": "bash tools/generate-image-json.sh ./images/ComplimentSquad"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wenyo/Unseat.git"
+  },
+  "author": "AMaoChen0110",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wenyo/Unseat/issues"
+  },
+  "homepage": "https://github.com/wenyo/Unseat#readme"
+}

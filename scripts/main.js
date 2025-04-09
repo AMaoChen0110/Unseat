@@ -346,44 +346,62 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    function filterAndSort(isFromSort) {
-        const sortProcess = document.querySelector('.sort-process');
-        const classList = sortProcess.classList;
-        const isDesc = isFromSort ? !classList.contains('active') : classList.contains('active') && classList.contains('desc');
-        const isAsc = isFromSort ? classList.contains('active') && classList.contains('desc') : classList.contains('active') && classList.contains('asc');
-        const isToReset = isFromSort ? classList.contains('active') && classList.contains('asc') : !classList.contains('active');
+    function filterAndSort() {
+        // const sortProcess = document.querySelector('.sort-process');
+        // const classList = sortProcess.classList;
+        // const isDesc = isFromSort ? !classList.contains('active') : classList.contains('active') && classList.contains('desc');
+        // const isAsc = isFromSort ? classList.contains('active') && classList.contains('desc') : classList.contains('active') && classList.contains('asc');
+        // const isToReset = isFromSort ? classList.contains('active') && classList.contains('asc') : !classList.contains('active');
 
-        // ⬇️ 加入圖示切換函式
-        function _updateIcons(state) {
-            const iconSort = document.querySelector('.icon-sort');
-            const iconUp = document.querySelector('.icon-up');
-            const iconDown = document.querySelector('.icon-down');
+        const sortValue = document.querySelector('#sort').value;
+        const sortType = sortValue && sortValue.split('-')[0];
+        const sortOrder = sortValue.split('-')[1] === 'desc' ? -1 : 1;
 
-            iconSort.style.display = 'none';
-            iconUp.style.display = 'none';
-            iconDown.style.display = 'none';
 
-            if (state === 'asc') {
-                iconUp.style.display = 'inline-block';
-            } else if (state === 'desc') {
-                iconDown.style.display = 'inline-block';
-            } else {
-                iconSort.style.display = 'inline-block';
-            }
-        }
+        // // ⬇️ 加入圖示切換函式
+        // function _updateIcons(state) {
+        //     const iconSort = document.querySelector('.icon-sort');
+        //     const iconUp = document.querySelector('.icon-up');
+        //     const iconDown = document.querySelector('.icon-down');
 
-        function _resetClass() {
-            classList.remove('asc');
-            classList.remove('desc');
-            classList.remove('active');
-            _updateIcons(null); // ⬅️ 顯示 ⇅
-        }
+        //     iconSort.style.display = 'none';
+        //     iconUp.style.display = 'none';
+        //     iconDown.style.display = 'none';
 
-        function _sortData(sortOrder) {
+        //     if (state === 'asc') {
+        //         iconUp.style.display = 'inline-block';
+        //     } else if (state === 'desc') {
+        //         iconDown.style.display = 'inline-block';
+        //     } else {
+        //         iconSort.style.display = 'inline-block';
+        //     }
+        // }
+
+        // function _resetClass() {
+        //     classList.remove('asc');
+        //     classList.remove('desc');
+        //     classList.remove('active');
+        //     _updateIcons(null); // ⬅️ 顯示 ⇅
+        // }
+
+        function _sortData(sortType, sortOrder) {
             personData = personData.sort((a, b) => {
-                const percentA = parseInt(a.count) / a.targetNum;
-                const percentB = parseInt(b.count) / b.targetNum;
-                return (percentA - percentB) * sortOrder;
+                let compareA = '';
+                let compareB = '';
+
+                switch (sortType) {
+                    case 'targetNum':
+                    case 'threshold':
+                        compareA = parseInt(a.count) / a[sortType];
+                        compareB = parseInt(b.count) / b[sortType];
+                        break;
+                    case 'startDate':
+                        compareA = new Date(a[sortType]);
+                        compareB = new Date(b[sortType]);
+                        break;
+                }
+
+                return (compareA - compareB) * sortOrder;
             });
         }
 
@@ -398,28 +416,34 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         _filterName();
+        if (sortType)  {
+            console.log(sortType);
 
-        if (isAsc) {
-            if (isFromSort) {
-                _resetClass();
-                classList.add('active', 'asc');
-                _updateIcons('asc');  // 顯示 ▲
-            }
-            _sortData(1);
-        } else if (isDesc) {
-            if (isFromSort) {
-                _resetClass();
-                classList.add('active', 'desc');
-                _updateIcons('desc'); // 顯示 ▼
-            }
-            _sortData(-1);
-        } else if (isToReset) {
-            _resetClass(); // 顯示 ⇅
+            _sortData(sortType, sortOrder);
         }
+
+        // if (isAsc) {
+        //     if (isFromSort) {
+        //         _resetClass();
+        //         classList.add('active', 'asc');
+        //         _updateIcons('asc');  // 顯示 ▲
+        //     }
+        //     _sortData(1);
+        // } else if (isDesc) {
+        //     if (isFromSort) {
+        //         _resetClass();
+        //         classList.add('active', 'desc');
+        //         _updateIcons('desc'); // 顯示 ▼
+        //     }
+        //     _sortData(-1);
+        // } else if (isToReset) {
+        //     _resetClass(); // 顯示 ⇅
+        // }
 
         renderPersonList();
     }
 
-    document.querySelector('.sort-process').addEventListener('click', () => filterAndSort(true));
-    document.querySelector('#filter').addEventListener('change', () => filterAndSort(false));
+    // document.querySelector('.sort-process').addEventListener('click', filterAndSort);
+    document.querySelector('#sort').addEventListener('change', filterAndSort);
+    document.querySelector('#filter').addEventListener('change', filterAndSort);
 });

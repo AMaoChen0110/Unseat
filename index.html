@@ -126,7 +126,7 @@
         </p>
 
         <div class="filter-sort">
-            <select name="filter" id="filter">
+            <select name="filter" id="filter" class="general-select">
                 <option value="all">全部</option>
                 <option value="基隆市">基隆市</option>
                 <option value="新北市">新北市</option>
@@ -143,14 +143,25 @@
                 <option value="臺東縣">臺東縣</option>
             </select>
 
-            <div class="sort-process">
+            <select name="sort" id="sort" class="general-select no-icon">
+                <option value="">預設排序</option>
+                <option value="targetNum-desc">目標進度▼</option>
+                <option value="targetNum-asc">目標進度▲</option>
+                <option value="threshold-desc">門檻進度▼</option>
+                <option value="threshold-asc">門檻進度▲</option>
+                <option value="startDate-asc">截止時間▼</option>
+                <option value="startDate-desc">截止時間▲</option>
+            </select>
+
+
+            <!-- <div class="sort-process">
                 <span>連署進度</span>
                 <span class="sort-icon">
                     <span class="icon icon-sort">⇅</span>
                     <span class="icon icon-up" style="display:none;">▲</span>
                     <span class="icon icon-down" style="display:none;">▼</span>
                 </span>
-            </div>
+            </div> -->
         </div>
 
         <div class="person-list" id="person-list">

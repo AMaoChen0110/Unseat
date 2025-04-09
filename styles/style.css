@@ -359,7 +359,8 @@ h1 {
     flex-wrap: wrap;
 }
 
-#filter {
+.general-select {
+    height: 34px;
     background-color: #fdf7ec;
     border: 1.5px solid #bfa88b;
     padding: 6px 6px 6px 10px;
@@ -374,9 +375,15 @@ h1 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-#filter:focus {
+.general-select:focus {
     outline: none;
     border-color: #9c7f5d;
+}
+
+.general-select.no-icon {
+    -moz-appearance:none; /* Firefox */
+    -webkit-appearance:none; /* Safari and Chrome */
+    appearance:none;
 }
 
 .sort-process {

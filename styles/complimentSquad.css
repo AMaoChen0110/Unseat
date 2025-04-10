@@ -233,3 +233,8 @@ input[type=number] {
   height: 100%;
   object-fit: contain;
 }
+
+.notice {
+  margin-top: 20px;
+  font-size: 12px;
+}

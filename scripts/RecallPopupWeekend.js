@@ -2,13 +2,6 @@
 function showIntroCards() {
     const introCards = [
         {
-            date: '4/11',
-            weekday: '(五)',
-            title: '台東剉賓行動',
-            location: '四維路台東民進黨黨部前',
-            time: '19:00~19:10'
-        },
-        {
             date: '4/12',
             weekday: '(六)',
             title: '花蓮市場掃街',

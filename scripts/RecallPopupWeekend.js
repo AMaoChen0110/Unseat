@@ -72,7 +72,7 @@ function showIntroCards() {
     // 新增標題容器
     const titleContainer = document.createElement('div');
     titleContainer.className = 'popup-title-container';
-    titleContainer.innerHTML = '<h2>週末罷免宣講行程表</h2>';
+    titleContainer.innerHTML = '<h2>Puma沈伯洋週末宣講行程</h2>';
     wrapper.appendChild(titleContainer);
 
     const cardsContainer = document.createElement('div');

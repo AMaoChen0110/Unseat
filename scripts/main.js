@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // data
     let originalPersonData = []
     let personData = []
+    let dayOverMessage = null;
 
     // 使用 fetch 讀取 personData.json
     fetch('personData.json')
@@ -42,6 +43,15 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(data => {
             personData = data;
             fetchCountData();
+        });
+
+    fetch('dayOverMessage.json')
+        .then(res => res.json())
+        .then(data => {
+            dayOverMessage = data;
+        })
+        .catch(err => {
+            console.error("載入 dayOverMessage.json 發生錯誤：", err);
         });
 
     function fetchCountData() {
@@ -171,6 +181,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 if (person.count) {
                     const countNum = parseInt(person.count.replace(/,/g, '')); // 去除千分位
+                    person.countNum = countNum; // 儲存目前收件數
+
                     if (!isNaN(countNum) && countNum > 0) {
                         let current = 0;
                         const duration = 800; // 動畫總長度 (ms)
@@ -222,8 +234,10 @@ document.addEventListener('DOMContentLoaded', function () {
             // ⬇️ 顯示目前收件數（從 Google Sheets 來）
             if (person.count) {
                 // 👉 新增的收件進度條放這裡
-                const countNum = parseInt(person.count.replace(/,/g, '')); // 若有逗號分隔
+                const countNum = person.countNum; // 若有逗號分隔
+                
                 const thresholdNum = typeof person.threshold === 'number' ? person.threshold : parseInt(person.threshold.toString().replace(/\D/g, ''));
+                person.thresholdNum = thresholdNum; // 儲存門檻數
 
                 const targetNum = parseInt(person.targetNum);
 
@@ -326,22 +340,36 @@ document.addEventListener('DOMContentLoaded', function () {
                         startDay = finalDay;
                         clearInterval(interval);
                     }
-
+                   
                     if (startDay >= person.totalDays) {
-                        const progressBarText = document.createElement('div');
-                        progressBarText.className = 'progress-text';
-                        progressBarText.textContent = `🔺開始造冊，持續收件🔺`;
-                        progressBarText.style.textAlign = 'center';
-                        progressBarText.style.width = '90%';
-                        progressBarContainer.appendChild(progressBarText);
-                        progressBar.style.background = 'linear-gradient(90deg, #ffa726, #ffeb3b)';
-        
                         dayInfo.textContent = `第${Math.floor(startDay)}天/${(person.totalDays + (60 - person.totalDays))}天`;
                     }
                     else {
                         dayInfo.textContent = `第${Math.floor(startDay)}天/${person.totalDays}天`;
                     }
                 }, frameRate);
+
+                if (startDay >= person.totalDays) {
+                    const progressBarText = document.createElement('div');
+                    progressBarText.className = 'progress-text';
+
+                    progressBar.style.background = 'linear-gradient(90deg, #ffa726, #ffeb3b)';
+                    const thresholdPercent = (person.countNum / person.thresholdNum) * 100;
+                    if (thresholdPercent >= 100) {
+                        progressBarText.textContent = `${getRandomHitMessage()}`;
+
+                        if (thresholdPercent >= 120) {
+                            progressBar.style.background = 'linear-gradient(90deg, #aed581, #dce775)';
+                        }
+                    }
+                    else {
+                        progressBarText.textContent = `${getRandomMissMessage()}`;
+                    }
+
+                    progressBarText.style.textAlign = 'center';
+                    progressBarText.style.width = '90%';
+                    progressBarContainer.appendChild(progressBarText);
+                }
 
             }
             // Append all elements
@@ -457,4 +485,27 @@ document.addEventListener('DOMContentLoaded', function () {
     // document.querySelector('.sort-process').addEventListener('click', filterAndSort);
     document.querySelector('#sort').addEventListener('change', filterAndSort);
     document.querySelector('#filter').addEventListener('change', filterAndSort);
+
+    // 隨機取陣列中一筆
+    function getRandomItem(arr) {
+        return arr[Math.floor(Math.random() * arr.length)];
+    }
+
+    // 取得一筆「達門檻」文宣
+    function getRandomHitMessage() {
+        if (!dayOverMessage) {
+            console.warn("資料尚未載入完成");
+            return null;
+        }
+        return getRandomItem(dayOverMessage.thresholdHitMessages);
+    }
+
+    // 取得一筆「未達門檻」文宣
+    function getRandomMissMessage() {
+        if (!dayOverMessage) {
+            console.warn("資料尚未載入完成");
+            return null;
+        }
+        return getRandomItem(dayOverMessage.thresholdMissMessages);
+    }
 });

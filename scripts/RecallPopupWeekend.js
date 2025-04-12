@@ -2,34 +2,6 @@
 function showIntroCards() {
     const introCards = [
         {
-            date: '4/12',
-            weekday: '(六)',
-            title: '花蓮市場掃街',
-            location: '花蓮市重慶市場',
-            time: '07:30~08:30'
-        },
-        {
-            date: '4/12',
-            weekday: '(六)',
-            title: '汐止罷免宣講',
-            location: '汐止區水返腳公園',
-            time: '14:00~14:15'
-        },
-        {
-            date: '4/12',
-            weekday: '(六)',
-            title: '人民是頭家新竹場',
-            location: '新竹市香山指澤宮廟埕',
-            time: '16:15~16:30'
-        },
-        {
-            date: '4/12',
-            weekday: '(六)',
-            title: '人民是頭家北屯場',
-            location: '台中舊社南興宮',
-            time: '19:00~19:30'
-        },
-        {
             date: '4/13',
             weekday: '(日)',
             title: '苗栗罷免宣講',

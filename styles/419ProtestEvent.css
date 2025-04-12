@@ -90,6 +90,11 @@ body {
     border-radius: 10px;
   }
 
+  .guest img {
+    margin-top: 30px;
+    max-width: 100%;
+    border-radius: 10px;
+  }
   @media (max-width: 600px) {
     h1 {
       font-size: 1.5rem;

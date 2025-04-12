@@ -341,7 +341,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         clearInterval(interval);
                     }
                    
-                    if (startDay >= person.totalDays) {
+                    if (finalDay >= person.totalDays) {
                         dayInfo.textContent = `第${Math.floor(startDay)}天/${(person.totalDays + (60 - person.totalDays))}天`;
                     }
                     else {
@@ -349,7 +349,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 }, frameRate);
 
-                if (startDay >= person.totalDays) {
+                if (finalDay >= person.totalDays) {
                     const progressBarText = document.createElement('div');
                     progressBarText.className = 'progress-text';
 

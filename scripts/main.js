@@ -226,8 +226,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 const thresholdNum = typeof person.threshold === 'number' ? person.threshold : parseInt(person.threshold.toString().replace(/\D/g, ''));
 
                 const targetNum = parseInt(person.targetNum);
-                const thresholdPercent = Math.min((countNum / thresholdNum) * 100, 100);
-                const targetPercent = Math.min((countNum / targetNum) * 100, 100);
 
                 if (!isNaN(countNum) && !isNaN(thresholdNum) && thresholdNum > 0) {
 
@@ -329,7 +327,20 @@ document.addEventListener('DOMContentLoaded', function () {
                         clearInterval(interval);
                     }
 
-                    dayInfo.textContent = `第${Math.floor(startDay)}天/${person.totalDays}天`;
+                    if (startDay >= person.totalDays) {
+                        const progressBarText = document.createElement('div');
+                        progressBarText.className = 'progress-text';
+                        progressBarText.textContent = `🔺開始造冊，持續收件🔺`;
+                        progressBarText.style.textAlign = 'center';
+                        progressBarText.style.width = '90%';
+                        progressBarContainer.appendChild(progressBarText);
+                        progressBar.style.background = 'linear-gradient(90deg, #ffa726, #ffeb3b)';
+        
+                        dayInfo.textContent = `第${Math.floor(startDay)}天/${(person.totalDays + (60 - person.totalDays))}天`;
+                    }
+                    else {
+                        dayInfo.textContent = `第${Math.floor(startDay)}天/${person.totalDays}天`;
+                    }
                 }, frameRate);
 
             }
@@ -416,7 +427,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         _filterName();
-        if (sortType)  {
+        if (sortType) {
             console.log(sortType);
 
             _sortData(sortType, sortOrder);

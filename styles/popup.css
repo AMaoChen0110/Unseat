@@ -1,0 +1,121 @@
+body.modal-open {
+    overflow: hidden !important;
+    height: 100vh;
+}
+
+#entry-animation-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 95vh;
+    z-index: 9999;
+    background-color: rgba(255, 255, 255, 0.85);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* 標題容器樣式 */
+.popup-title-container {
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #295939;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.popup-title-container h2 {
+    color: white;
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 保持2列 */
+    gap: 16px;
+    width: 80%; /* 可以縮小這個百分比 */
+    max-width: 700px; /* 可以縮小這個最大寬度 */
+    padding: 0 10px;
+    margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+    .cards-container {
+        grid-template-columns: 1fr; /* 手機版1列 */
+        width: 95%;
+    }
+
+    .popup-title-container {
+        width: 95%;
+    }
+}
+
+.event-card {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background-color: #fff;
+    width: 100%; /* 這個是相對於容器的寬度 */
+    max-width: 280px; /* 新增這行來限制每個卡片的最大寬度 */
+    margin: 0 auto; /* 居中顯示 */
+    animation: dropDown 0.6s ease forwards;
+    opacity: 0;
+    transform: translateY(-30px);
+}
+
+.event-header {
+    background-color: #295939;
+    color: white;
+    padding: 8px 12px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.content-text,
+.content-time {
+    background-color: #f5f0e6;
+    color: #333;
+    padding: 6px 12px;
+    font-size: 14px;
+    border-top: 1px solid #ddd;
+}
+
+.content-time {
+    font-weight: bold;
+}
+
+#close-entry-wrapper {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10000;
+    background: #fff;
+    color: #333;
+    border: none;
+    font-size: 20px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes dropDown {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -364,7 +364,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     progressBar.style.background = 'linear-gradient(90deg, #ffa726, #ffeb3b)';
                     const thresholdPercent = (person.countNum / person.thresholdNum) * 100;
                     if (thresholdPercent >= 100) {
-                        progressBarText.textContent = `${getRandomHitMessage()}`;
+                        progressBarText.textContent = `${getRandomMissMessage()}`;
 
                         if (thresholdPercent >= 120) {
                             progressBar.style.background = 'linear-gradient(90deg, #aed581, #dce775)';
@@ -514,7 +514,7 @@ document.addEventListener('DOMContentLoaded', function () {
         return getRandomItem(dayOverMessage.thresholdHitMessages);
     }
 
-    // 取得一筆「未達門檻」文宣
+    // 取得一筆「未達門檻」文宣 [改為統一用這組]
     function getRandomMissMessage() {
         if (!dayOverMessage) {
             console.warn("資料尚未載入完成");

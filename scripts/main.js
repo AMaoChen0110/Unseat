@@ -343,6 +343,14 @@ document.addEventListener('DOMContentLoaded', function () {
                    
                     if (finalDay >= person.totalDays) {
                         dayInfo.textContent = `第${Math.floor(startDay)}天/${(person.totalDays + (60 - person.totalDays))}天`;
+                        const tagInbox = document.createElement('div');
+                        tagInbox.textContent = '持續收件中';
+                        tagInbox.className = 'day-info-tag-Inbox';
+                        dayInfo.appendChild(tagInbox);
+                        // const tagRoll = document.createElement('span');
+                        // tagRoll.textContent = '+造冊天';
+                        // tagRoll.className = 'day-info-tag-Roll';
+                        // tagInbox.append(tagRoll);
                     }
                     else {
                         dayInfo.textContent = `第${Math.floor(startDay)}天/${person.totalDays}天`;
@@ -356,7 +364,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     progressBar.style.background = 'linear-gradient(90deg, #ffa726, #ffeb3b)';
                     const thresholdPercent = (person.countNum / person.thresholdNum) * 100;
                     if (thresholdPercent >= 100) {
-                        progressBarText.textContent = `${getRandomHitMessage()}`;
+                        progressBarText.textContent = `${getRandomMissMessage()}`;
 
                         if (thresholdPercent >= 120) {
                             progressBar.style.background = 'linear-gradient(90deg, #aed581, #dce775)';
@@ -365,6 +373,12 @@ document.addEventListener('DOMContentLoaded', function () {
                     else {
                         progressBarText.textContent = `${getRandomMissMessage()}`;
                     }
+
+
+                    if(person.name === "花蓮縣傅崐萁") {
+                        progressBarText.textContent = `緊急！花蓮二階要重簽！`;
+                    }
+
 
                     progressBarText.style.textAlign = 'center';
                     progressBarText.style.width = '90%';
@@ -423,6 +437,20 @@ document.addEventListener('DOMContentLoaded', function () {
         //     _updateIcons(null); // ⬅️ 顯示 ⇅
         // }
 
+        function _getDiffDaysPercent(startDate, totalDays) {
+            const start = new Date(startDate);
+            const today = new Date();
+            const difference = today.getTime() - start.getTime();
+            const days = Math.ceil(difference / (1000 * 3600 * 24));
+  
+            // 超過收件截止日
+            if (days >= totalDays) {
+                return totalDays / totalDays;
+            }
+  
+            return days / totalDays;
+        }
+
         function _sortData(sortType, sortOrder) {
             personData = personData.sort((a, b) => {
                 let compareA = '';
@@ -435,8 +463,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         compareB = parseInt(b.count) / b[sortType];
                         break;
                     case 'startDate':
-                        compareA = new Date(a[sortType]);
-                        compareB = new Date(b[sortType]);
+                        compareA = _getDiffDaysPercent(a[sortType], a.totalDays);
+                        compareB = _getDiffDaysPercent(b[sortType], b.totalDays);
                         break;
                 }
 
@@ -456,8 +484,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         _filterName();
         if (sortType) {
-            console.log(sortType);
-
             _sortData(sortType, sortOrder);
         }
 
@@ -500,7 +526,7 @@ document.addEventListener('DOMContentLoaded', function () {
         return getRandomItem(dayOverMessage.thresholdHitMessages);
     }
 
-    // 取得一筆「未達門檻」文宣
+    // 取得一筆「未達門檻」文宣 [改為統一用這組]
     function getRandomMissMessage() {
         if (!dayOverMessage) {
             console.warn("資料尚未載入完成");

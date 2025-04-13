@@ -5,7 +5,7 @@ function showIntroCards() {
             date: '4/13',
             weekday: '(日)',
             title: '苗栗罷免宣講',
-            location: '頭份市建國國小旁',
+            location: '頭份市建國國小旁建國花市預訂地',
             time: '10:30~10:45'
         },
         {

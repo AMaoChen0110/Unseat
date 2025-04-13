@@ -437,6 +437,20 @@ document.addEventListener('DOMContentLoaded', function () {
         //     _updateIcons(null); // ⬅️ 顯示 ⇅
         // }
 
+        function _getDiffDaysPercent(startDate, totalDays) {
+            const start = new Date(startDate);
+            const today = new Date();
+            const difference = today.getTime() - start.getTime();
+            const days = Math.ceil(difference / (1000 * 3600 * 24));
+  
+            // 超過收件截止日
+            if (days >= totalDays) {
+                return totalDays / totalDays;
+            }
+  
+            return days / totalDays;
+        }
+
         function _sortData(sortType, sortOrder) {
             personData = personData.sort((a, b) => {
                 let compareA = '';
@@ -449,8 +463,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         compareB = parseInt(b.count) / b[sortType];
                         break;
                     case 'startDate':
-                        compareA = new Date(a[sortType]);
-                        compareB = new Date(b[sortType]);
+                        compareA = _getDiffDaysPercent(a[sortType], a.totalDays);
+                        compareB = _getDiffDaysPercent(b[sortType], b.totalDays);
                         break;
                 }
 
@@ -470,8 +484,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         _filterName();
         if (sortType) {
-            console.log(sortType);
-
             _sortData(sortType, sortOrder);
         }
 

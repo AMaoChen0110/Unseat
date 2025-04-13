@@ -1,29 +1,56 @@
 const popupType = { IMAGE: 1, INFO: 2 };
+const popupWrapp = buildPopupWrap(); // popup wrapper
 let popupData = [];
+let imgLoadCount = 0;
+let popupImgCount = 0;
 
 async function getPopupData() {
   return fetch("popup.json?ver=1")
     .then((response) => response.json())
     .then((data) => {
       popupData = data;
+      popupImgCount = data.filter(i => i.type === popupType.IMAGE).length;
     });
+}
+
+function buildPopupWrap() {
+  // popup wrapper
+  const popupWrapp = document.createElement("div");
+  popupWrapp.className = "popup-wrapper";
+
+  const paginatonPrev = document.createElement("span");
+  const paginatonNext = document.createElement("span");
+  paginatonPrev.className = "popup-pagination prev";
+  paginatonNext.className = "popup-pagination next";
+  paginatonPrev.innerText = "◀"
+  paginatonNext.innerText = "▶"
+  
+  popupWrapp.appendChild(paginatonPrev);
+  popupWrapp.appendChild(paginatonNext);
+
+  return popupWrapp;
 }
 
 function buildTextPopup(popupInfo, parentDom) {
   // wrapper
   const wrapper = document.createElement("div");
-  wrapper.id = "entry-animation-wrapper";
+  wrapper.className = "popup-item popup-text";
+
+  // animation wrapper
+  const animationWrapper = document.createElement("div");
+  animationWrapper.className = "entry-animation-wrapper";
+  wrapper.appendChild(animationWrapper);
 
   // title
   const titleContainer = document.createElement("div");
   titleContainer.className = "popup-title-container";
   titleContainer.innerHTML = `<h2>${popupInfo.title}</h2>`;
-  wrapper.appendChild(titleContainer);
+  animationWrapper.appendChild(titleContainer);
 
   // card content
   const cardsContainer = document.createElement("div");
   cardsContainer.className = "cards-container";
-  wrapper.appendChild(cardsContainer);
+  animationWrapper.appendChild(cardsContainer);
 
   popupInfo.contentAry.forEach((content, index) => {
     const div = document.createElement("div");
@@ -44,22 +71,71 @@ function buildTextPopup(popupInfo, parentDom) {
   parentDom.appendChild(wrapper);
 }
 
+function buildImgPopup(popupInfo, parentDom) {
+  // wrapper
+  const wrapper = document.createElement("div");
+  wrapper.className = "popup-item popup-img";
+
+  // img
+  const imgContainer = document.createElement("div");
+  const img = document.createElement("img");
+  imgContainer.className = "popup-img-container";
+  img.src = popupInfo.image;
+  imgContainer.appendChild(img);
+  wrapper.appendChild(imgContainer);
+
+  img.addEventListener('load', imgLoadFinish);
+
+
+  // title
+  // const titleContainer = document.createElement("div");
+  // titleContainer.className = "popup-title-container";
+  // titleContainer.innerHTML = `<h2>${popupInfo.title}</h2>`;
+  // wrapper.appendChild(titleContainer);
+
+  // hashtag
+  // const hashtagContainer = document.createElement("div");
+  // hashtagContainer.className = "popup-hashtag-container";
+  // wrapper.appendChild(hashtagContainer);
+
+  // popupInfo.hashtag.forEach(hashtag => {
+  //   const span = document.createElement("span");
+  //   span.innerText = `#${hashtag}`;
+  //   hashtagContainer.appendChild(span);
+  // });
+
+  parentDom.appendChild(wrapper);
+}
+
+function imgLoadFinish() {
+  imgLoadCount++;
+  if (imgLoadCount === popupImgCount) {
+    popupWrapp.style.width = `${popupWrapp.offsetWidth}px`;
+  }
+  img.removeEventListener('load', _imgLoadFinish);
+}
+
 async function renderPopup() {
   await getPopupData();
 
-  // popup wrapper
-  const popupWrapp = document.createElement("div");
-  popupWrapp.class = "popup-wrapper";
-
   for (const popupInfo of popupData) {
-    // popup type: 2 -> 文字彈窗陣列
-    if (popupInfo.type === popupType.INFO) {
-      buildTextPopup(popupInfo, popupWrapp);
+    switch (popupInfo.type) {
+      // popup type: 2 -> 文字彈窗陣列
+      case popupType.INFO:
+        buildTextPopup(popupInfo, popupWrapp);
+        break;
+      // popup type: 2 -> 文字彈窗陣列
+      case popupType.IMAGE:
+        buildImgPopup(popupInfo, popupWrapp);
+        break;
+    
+      default:
+        break;
     }
   }
 
   document.body.appendChild(popupWrapp);
-  document.body.classList.add("modal-open");
+  document.body.classList.add("modal-open");  
 }
 
 // 建立進場動畫卡片（一次性顯示）

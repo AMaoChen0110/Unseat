@@ -259,6 +259,29 @@ h1 {
     white-space: nowrap;
 }
 
+.day-info-tag-Inbox {
+    background-color: #FFF9C4; /* 淡粉色背景 */
+    padding: 0px 6px;
+    border-radius: 12px;
+    font-size: 8px;
+    font-weight: 500;
+    font-weight: bold;
+    width: 30px;
+}
+
+.day-info-tag-Roll {
+    background-color: #FFFDE7; /* 淡粉色背景 */
+    padding: 0px 6px;
+    border-radius: 12px;
+    font-size: 8px;
+    font-weight: 500;
+    font-weight: bold;
+    width: 30px;
+    margin-left: 4px;
+}
+
+
+
 /* 門檻目標的樣式 */
 .goal-info {
     font-size: 13px;

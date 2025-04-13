@@ -343,6 +343,14 @@ document.addEventListener('DOMContentLoaded', function () {
                    
                     if (finalDay >= person.totalDays) {
                         dayInfo.textContent = `第${Math.floor(startDay)}天/${(person.totalDays + (60 - person.totalDays))}天`;
+                        const tagInbox = document.createElement('div');
+                        tagInbox.textContent = '收件';
+                        tagInbox.className = 'day-info-tag-Inbox';
+                        dayInfo.appendChild(tagInbox);
+                        const tagRoll = document.createElement('span');
+                        tagRoll.textContent = '整理中';
+                        tagRoll.className = 'day-info-tag-Roll';
+                        tagInbox.append(tagRoll);
                     }
                     else {
                         dayInfo.textContent = `第${Math.floor(startDay)}天/${person.totalDays}天`;

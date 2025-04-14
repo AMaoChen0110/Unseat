@@ -13,24 +13,54 @@ async function getPopupData() {
     });
 }
 
+function closePopup() {
+  document.body.classList.remove("modal-open");
+}
+
+// set close event
+function setDialogBgClose() {
+  popupWrapper.onclick = () => closePopup();
+  // set child stop propagation
+  popupWrapper.childNodes.forEach(child => {
+    const oldClick = (child.onclick);
+
+    child.onclick = (event) => {
+    event.stopPropagation();
+    oldClick && oldClick();
+  }
+  });
+}
+
 function buildPopupWrap() {
+  // popup background
+  const popupBg = document.createElement("div");
+  popupBg.className = "popup-bg";
+
   // popup wrapper
   const popupWrapper = document.createElement("div");
   popupWrapper.className = "popup-wrapper";
+  popupBg.appendChild(popupWrapper);
 
+  // pagination
   const paginationPrev = document.createElement("button");
   const paginationNext = document.createElement("button");
   paginationPrev.className = "popup-pagination prev";
   paginationNext.className = "popup-pagination next";
   paginationPrev.innerText = "◀";
   paginationNext.innerText = "▶";
-  console.log(clickPagination);
-
   paginationPrev.onclick = () => clickPagination('prev');
   paginationNext.onclick = () => clickPagination('next');
 
+  // close button
+  const closeBtn = document.createElement("button");
+  closeBtn.className = "popup-close-btn";
+  closeBtn.onclick = () => closePopup();
+  closeBtn.innerText = "✕";
+
+  popupWrapper.appendChild(closeBtn);
   popupWrapper.appendChild(paginationPrev);
   popupWrapper.appendChild(paginationNext);
+  document.body.appendChild(popupBg);
 
   return popupWrapper;
 }
@@ -85,6 +115,7 @@ function buildImgPopup(popupInfo, parentDom, idx) {
   // img
   const img = document.createElement("img");
   img.src = popupInfo.image;
+  img.alt = popupInfo.title;
 
   const imgContainer = popupInfo.link ? document.createElement("a") : document.createElement("div");
   popupInfo.link && (imgContainer.href = popupInfo.link);
@@ -95,22 +126,16 @@ function buildImgPopup(popupInfo, parentDom, idx) {
 
   img.addEventListener('load', imgLoadFinish);
 
-  // title
-  // const titleContainer = document.createElement("div");
-  // titleContainer.className = "popup-title-container";
-  // titleContainer.innerHTML = `<h2>${popupInfo.title}</h2>`;
-  // wrapper.appendChild(titleContainer);
-
   // hashtag
-  // const hashtagContainer = document.createElement("div");
-  // hashtagContainer.className = "popup-hashtag-container";
-  // wrapper.appendChild(hashtagContainer);
+  const hashtagContainer = document.createElement("div");
+  hashtagContainer.className = "popup-hashtag-container";
+  wrapper.appendChild(hashtagContainer);
 
-  // popupInfo.hashtag.forEach(hashtag => {
-  //   const span = document.createElement("span");
-  //   span.innerText = `#${hashtag}`;
-  //   hashtagContainer.appendChild(span);
-  // });
+  popupInfo.hashtag.forEach(hashtag => {
+    const span = document.createElement("span");
+    span.innerText = `#${hashtag}`;
+    hashtagContainer.appendChild(span);
+  });
 
   parentDom.appendChild(wrapper);
 }
@@ -122,33 +147,6 @@ function imgLoadFinish() {
     popupWrapper.style.width = `${popupWrapper.offsetWidth * popupData.length}px`;
   }
   this.removeEventListener('load', imgLoadFinish);
-}
-
-async function renderPopup() {
-  await getPopupData();
-
-  for (const idx in popupData) {
-    popupInfo = popupData[idx];
-
-    switch (popupInfo.type) {
-      // popup type: 1 -> 圖片彈窗陣列
-      case popupType.IMAGE:
-        buildImgPopup(popupInfo, popupWrapper, idx);
-        break;
-      // popup type: 2 -> 文字彈窗陣列
-      case popupType.INFO:
-        buildTextPopup(popupInfo, popupWrapper, idx);
-        break;
-
-      default:
-        break;
-    }
-  }
-
-  document.body.appendChild(popupWrapper);
-  document.body.classList.add("modal-open");
-
-  changePopupPagination(0);
 }
 
 function changePopupPagination(popupIdx) {
@@ -175,15 +173,39 @@ function changePopupPagination(popupIdx) {
 }
 
 function clickPagination(type) {
-  console.log(clickPagination);
-
   const popupItems = document.querySelectorAll(".popup-item");
   const popupCurrent = document.querySelector(".popup-item.active");
   const currentIdx = parseInt(popupCurrent.getAttribute("data-idx"));
   const targetIdx = type === 'prev' ? currentIdx - 1 : currentIdx + 1;
-  console.log(currentIdx, targetIdx, type);
 
   popupItems[targetIdx] && changePopupPagination(targetIdx);
+}
+
+// main function
+async function renderPopup() {
+  await getPopupData();
+
+  for (const idx in popupData) {
+    popupInfo = popupData[idx];
+
+    switch (popupInfo.type) {
+      // popup type: 1 -> 圖片彈窗陣列
+      case popupType.IMAGE:
+        buildImgPopup(popupInfo, popupWrapper, idx);
+        break;
+      // popup type: 2 -> 文字彈窗陣列
+      case popupType.INFO:
+        buildTextPopup(popupInfo, popupWrapper, idx);
+        break;
+
+      default:
+        break;
+    }
+  }
+
+  document.body.classList.add("modal-open");
+  setDialogBgClose();
+  changePopupPagination(0);
 }
 
 document.addEventListener("DOMContentLoaded", renderPopup);

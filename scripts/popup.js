@@ -3,6 +3,7 @@ const popupWrapper = buildPopupWrap(); // popup wrapper
 let popupData = [];
 let imgLoadCount = 0;
 let popupImgCount = 0;
+let timer = -1;
 
 async function getPopupData() {
   return fetch("popup.json?ver=1")
@@ -15,6 +16,8 @@ async function getPopupData() {
 
 function closePopup() {
   document.body.classList.remove("modal-open");
+  window.removeEventListener("resize", resizePopup);
+  window.clearInterval(timer);
 }
 
 // set close event
@@ -162,21 +165,29 @@ function changePopupPagination(popupIdx) {
 
   // reset
   popupCurrent && popupCurrent.classList.remove("active");
-  paginationPrev.disabled = false;
-  paginationNext.disabled = false;
 
   // add target active popup
   popupItems[popupIdx].classList.add("active");
-  popupItems[popupIdx -1] ? popupItems[popupIdx - 1].classList.add("prev") : paginationPrev.disabled = true;
-  popupItems[popupIdx + 1] ? popupItems[popupIdx + 1].classList.add("next") : paginationNext.disabled = true;
   popupWrapper.style.left = `-${documentWidth * popupIdx}px`;
 }
 
-function clickPagination(type) {
+function clickPagination(type, isAuto) {
   const popupItems = document.querySelectorAll(".popup-item");
   const popupCurrent = document.querySelector(".popup-item.active");
   const currentIdx = parseInt(popupCurrent.getAttribute("data-idx"));
-  const targetIdx = type === 'prev' ? currentIdx - 1 : currentIdx + 1;
+  const prevIdx = currentIdx - 1 < 0 ? popupItems.length - 1 : currentIdx - 1;
+  const nextIdx = currentIdx + 1 > popupItems.length - 1 ? 0 : currentIdx + 1;
+  const targetIdx = type === 'prev' ? prevIdx : nextIdx;
+
+  // if user click pagination, auto change after 60 seconds
+  if (!isAuto) {
+    window.clearInterval(timer);
+    timer = window.setTimeout(() => {
+      window.clearInterval(timer);
+      timer = changePopupAuto();
+    }, 60000);
+
+  }
 
   popupItems[targetIdx] && changePopupPagination(targetIdx);
 }
@@ -187,6 +198,10 @@ function resizePopup() {
   const currentIdx = parseInt(popupCurrent.getAttribute("data-idx"));
   popupWrapper.style.width = `${popupWrapper.offsetWidth * popupData.length}px`;
   popupWrapper.style.left = `-${documentWidth * currentIdx}px`;
+}
+
+function changePopupAuto(){
+  return window.setInterval(() => clickPagination('next', true), 5000);
 }
 
 // main function
@@ -214,6 +229,7 @@ async function renderPopup() {
   document.body.classList.add("modal-open");
   setDialogBgClose();
   changePopupPagination(0);
+  timer = changePopupAuto();
 }
 
 document.addEventListener("DOMContentLoaded", renderPopup);

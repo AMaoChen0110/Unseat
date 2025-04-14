@@ -195,6 +195,9 @@ body.modal-open {
 
 .cards-count-1 .event-card {
     max-width: unset;
+    @media (max-width: 600px) {
+        max-width: 280px; /* 新增這行來限制每個卡片的最大寬度 */
+    }
 }
 
 .event-header {

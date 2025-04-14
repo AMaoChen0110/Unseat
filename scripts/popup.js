@@ -84,7 +84,7 @@ function buildTextPopup(popupInfo, parentDom, idx) {
 
   // card content
   const cardsContainer = document.createElement("div");
-  cardsContainer.className = "cards-container";
+  cardsContainer.className = `cards-container cards-count-${popupInfo.contentAry.length}`;
   animationWrapper.appendChild(cardsContainer);
 
   popupInfo.contentAry.forEach((content, index) => {
@@ -97,7 +97,7 @@ function buildTextPopup(popupInfo, parentDom, idx) {
     cardContent = `<div class="event-header"> ${content.title}</div>`;
     // build content
     cardContent += `<div class="content-text">${content.text}</div>`;
-    cardContent += `<div class="content-time">${content.time}</div>`;
+    content.time && (cardContent += `<div class="content-time">${content.time}</div>`);
 
     div.innerHTML = cardContent;
     cardsContainer.appendChild(div);

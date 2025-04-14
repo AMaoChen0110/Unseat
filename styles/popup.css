@@ -79,13 +79,18 @@ body.modal-open {
 
 .popup-item {
     position: relative;
+}
+
+.popup-text {
+    height: 100vh;
+    width: 100vw;
+}
+
+.popup-img {
     height: 80vh;
     width: 80vw;
     flex: 0 0 80vw;
     max-height: 500px;
-}
-
-.popup-img {
     margin: auto 10vw;
     display: flex;
     flex-direction: column;
@@ -167,6 +172,10 @@ body.modal-open {
     }
 }
 
+.cards-count-1 {
+    grid-template-columns: repeat(1, 1fr);
+}
+
 .event-card {
     border-radius: 12px;
     overflow: hidden;
@@ -178,6 +187,14 @@ body.modal-open {
     animation: dropDown 0.6s ease forwards;
     opacity: 0;
     transform: translateY(-30px);
+}
+
+.cards-count-1 {
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.cards-count-1 .event-card {
+    max-width: unset;
 }
 
 .event-header {

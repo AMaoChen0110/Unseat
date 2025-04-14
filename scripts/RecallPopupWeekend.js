@@ -138,6 +138,12 @@ function showIntroCarousel() {
             imgLink.appendChild(img);
             imgContainer.appendChild(imgLink);
             slide.appendChild(imgContainer);
+
+            wrapper.addEventListener('click', (e) => {
+                if (e.target === imgContainer) {
+                    closeWrapper();
+                }
+            });
         }
         
         // Add click handler to close when clicking on slide background

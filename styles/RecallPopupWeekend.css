@@ -39,35 +39,167 @@ body.modal-open {
     font-weight: bold;
 }
 
+/* Carousel Container */
+.carousel-container {
+    position: relative;
+    width: 80%;
+    max-width: 700px;
+    overflow: hidden;
+    margin: 0 auto;
+    border-radius: 12px;
+    /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); */
+}
+
+/* Slides Container */
+.slides-container {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+    height: 100%;
+}
+
+/* Individual Slide */
+.carousel-slide {
+    min-width: 100%;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    padding: 20px 0;
+    background-color: transparent; /* Transparent background */
+}
+
+/* Scrollable container for first slide */
+.scroll-container {
+    width: 100%;
+    max-height: 70vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 10px 0;
+}
+
+/* Image Container */
+.image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.carousel-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.carousel-image:hover {
+    transform: scale(1.02);
+}
+
+/* Navigation Controls positioned in center */
+.carousel-nav-left,
+.carousel-nav-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.carousel-nav-left {
+    
+    left: 10px;
+}
+
+.carousel-nav-right {
+    right: 10px;
+}
+
+.carousel-nav-btn {
+    background-color: rgba(0,0,0,0.3);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.carousel-nav-btn:hover {
+    background-color: rgba(0, 0, 0, 0.808);
+}
+
+/* Indicators */
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0.3);
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.carousel-dot.active {
+    background-color: rgba(0, 0, 0, 0.808);
+}
+
+/* Close Button */
+#close-entry-wrapper {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10000;
+    background: #fff;
+    color: #333;
+    border: none;
+    font-size: 20px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Cards Container for Event Slides */
 .cards-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 保持2列 */
+    grid-template-columns: repeat(2, 1fr);
     gap: 16px;
-    width: 80%; /* 可以縮小這個百分比 */
-    max-width: 700px; /* 可以縮小這個最大寬度 */
+    width: 95%;
     padding: 0 10px;
     margin: 0 auto;
 }
 
-@media (max-width: 600px) {
-    .cards-container {
-        grid-template-columns: 1fr; /* 手機版1列 */
-        width: 95%;
-    }
-
-    .popup-title-container {
-        width: 95%;
-    }
-}
-
+/* Event Card Styles */
 .event-card {
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     background-color: #fff;
-    width: 100%; /* 這個是相對於容器的寬度 */
-    max-width: 280px; /* 新增這行來限制每個卡片的最大寬度 */
-    margin: 0 auto; /* 居中顯示 */
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
     animation: dropDown 0.6s ease forwards;
     opacity: 0;
     transform: translateY(-30px);
@@ -111,28 +243,57 @@ body.modal-open {
     font-weight: 500;
 }
 
-#close-entry-wrapper {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 10000;
-    background: #fff;
-    color: #333;
-    border: none;
-    font-size: 20px;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 @keyframes dropDown {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    .cards-container {
+        grid-template-columns: 1fr;
+        width: 95%;
+    }
+
+    .popup-title-container {
+        width: 95%;
+    }
+    
+
+    .carousel-container {
+        width: 95%;
+        height: 100vh; /* 撐滿整個螢幕高度 */
+    }
+
+    .slides-container {
+        height: 100%; /* 撐滿 carousel-container */
+    }
+    .carousel-slide {
+        height: 100%; /* 撐滿 slides-container */
+        box-sizing: border-box;
+    }
+    .image-container {
+        height: 100%; /* 確保圖片能垂直置中 */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .carousel-image {
+        max-height: 90%; /* 避免圖片溢出 */
+        object-fit: contain;
+    }
+
+    .carousel-nav-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+    
+    /* Smaller image width for mobile */
+    .carousel-image {
+        max-width: 80%;
+        margin: 0 auto;
     }
 }

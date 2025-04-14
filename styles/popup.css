@@ -29,7 +29,10 @@ body.modal-open {
     color: #4b4b4b;
     border: unset;
     font-size: 25px;
-    border-radius: 50%;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    padding: unset;
 }
 
 .popup-pagination {
@@ -96,12 +99,17 @@ body.modal-open {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    @media (max-width: 600px) {
+        height: fit-content;
+    }
 }
 
 .popup-img-container {
     display: contents;
     width: 100%;
-    height: 100%;
+    height: fit-content;
+    max-height: 100%;
 }
 
 .popup-img-container img {

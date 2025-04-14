@@ -274,7 +274,9 @@ function showIntroCarousel() {
 
     // Add to document
     document.body.appendChild(wrapper);
-    document.body.appendChild(closeBtn);
+
+    carouselContainer.appendChild(closeBtn);
+    
     document.body.classList.add('modal-open');
 
     // Initialize first slide

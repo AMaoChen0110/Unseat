@@ -181,6 +181,14 @@ function clickPagination(type) {
   popupItems[targetIdx] && changePopupPagination(targetIdx);
 }
 
+function resizePopup() {
+  const documentWidth = document.body.clientWidth;
+  const popupCurrent = document.querySelector(".popup-item.active");
+  const currentIdx = parseInt(popupCurrent.getAttribute("data-idx"));
+  popupWrapper.style.width = `${popupWrapper.offsetWidth * popupData.length}px`;
+  popupWrapper.style.left = `-${documentWidth * currentIdx}px`;
+}
+
 // main function
 async function renderPopup() {
   await getPopupData();
@@ -209,3 +217,4 @@ async function renderPopup() {
 }
 
 document.addEventListener("DOMContentLoaded", renderPopup);
+window.addEventListener("resize", resizePopup);

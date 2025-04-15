@@ -22,7 +22,7 @@ body.modal-open {
 
 .popup-close-btn {
     position: fixed;
-    top: 30px;
+    top: 28px;
     right: 20px;
     z-index: 10000;
     background-color: #fff;
@@ -85,7 +85,7 @@ body.modal-open {
 }
 
 .popup-text {
-    height: 100vh;
+    height: 90vh;
     width: 100vw;
 }
 
@@ -130,7 +130,7 @@ body.modal-open {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 95vh;
+    height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -253,4 +253,46 @@ body.modal-open {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+.popup-video {
+    height: 80vh;
+    width: 50vw;
+    max-height: 500px;
+    margin: auto 25vw;
+    overflow: hidden;
+
+    @media (max-width: 600px) {
+        margin: auto 10vw;
+        width: 80vw;
+    }
+}
+
+.popup-video-iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.popup-pagination-block {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.popup-pagination-item {
+    background-color: #295939;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    z-index: 1000;
+    opacity: 0.3;
+}
+
+.popup-pagination-item.active {
+    opacity: 1;
 }

@@ -1,5 +1,5 @@
 const popupType = { IMAGE: 1, INFO: 2, VIDEO: 3 };
-const popupWrapper = buildPopupWrap(); // popup wrapper
+let popupWrapper = null; // popup wrapper
 let popupData = [];
 let imgLoadCount = 0;
 let popupImgCount = 0;
@@ -25,9 +25,12 @@ function closePopup() {
 // set close event
 function setDialogBgClose() {
   function _setPreventDefault(dom) {
+
     const oldClick = (dom.onclick);
 
     dom.onclick = (event) => {
+      if (!event) return;
+
       event.stopPropagation();
       oldClick && oldClick();
     }
@@ -42,7 +45,9 @@ function setDialogBgClose() {
   document.querySelectorAll(".entry-animation-wrapper").forEach(textWrapper => {
     textWrapper.onclick = () => closePopup();
     textWrapper.childNodes.forEach(child => _setPreventDefault(child));
-  })
+  });
+
+  _setPreventDefault(document.querySelector(".popup-pagination-block"));
 }
 
 // build popup wrapper
@@ -66,15 +71,27 @@ function buildPopupWrap() {
   paginationPrev.onclick = () => clickPagination('prev');
   paginationNext.onclick = () => clickPagination('next');
 
+  const pagination = document.createElement("div");
+  pagination.className = "popup-pagination-block";
+  popupData.forEach((_item, index) => {
+    const paginationItem = document.createElement("div");
+    paginationItem.className = "popup-pagination-item";
+    paginationItem.setAttribute("data-idx", index);
+    paginationItem.onclick = () => clickPaginationItem(index);
+    pagination.appendChild(paginationItem);
+  });
+
   // close button
   const closeBtn = document.createElement("button");
   closeBtn.className = "popup-close-btn";
   closeBtn.onclick = () => closePopup();
   closeBtn.innerText = "✕";
 
+  // append to body
   popupWrapper.appendChild(closeBtn);
   popupWrapper.appendChild(paginationPrev);
   popupWrapper.appendChild(paginationNext);
+  popupWrapper.appendChild(pagination);
   document.body.appendChild(popupBg);
 
   return popupWrapper;
@@ -157,7 +174,7 @@ function buildImgPopup(popupInfo, parentDom, idx) {
   parentDom.appendChild(wrapper);
 }
 
-// build VI popup
+// build video popup
 function buildVideoPopup(popupInfo, parentDom, idx) {
   // wrapper
   const wrapper = document.createElement("div");
@@ -177,8 +194,6 @@ function buildVideoPopup(popupInfo, parentDom, idx) {
 
   wrapper.appendChild(iframe);
   parentDom.appendChild(wrapper);
-
-  iframe.addEventListener('click', () => console.log('0909'))
 }
 
 // watch img load Finish`
@@ -195,6 +210,8 @@ function changePopupPagination(popupIdx) {
   const popupItems = document.querySelectorAll(".popup-item");
   const documentWidth = document.body.clientWidth;
   const popupCurrent = document.querySelector(".popup-item.active");
+  const paginationItems = document.querySelectorAll(".popup-pagination-item");
+  const paginationCurrent = document.querySelector(".popup-pagination-item.active");
 
   if (popupIdx < 0 || popupIdx > popupItems.length - 1) {
     return;
@@ -202,9 +219,11 @@ function changePopupPagination(popupIdx) {
 
   // reset
   popupCurrent && popupCurrent.classList.remove("active");
+  paginationCurrent && paginationCurrent.classList.remove("active");
 
   // add target active popup
   popupItems[popupIdx].classList.add("active");
+  paginationItems[popupIdx].classList.add("active");
   popupWrapper.style.left = `-${documentWidth * popupIdx}px`;
 }
 
@@ -213,7 +232,28 @@ function changePopupAuto(){
   return window.setInterval(() => clickPagination('next', true), 5000);
 }
 
-// click pagination
+function waitOneMinChangePopupAuto(isPopupVideoActive = false) {
+  // clear
+  window.clearInterval(timer);
+
+  if (isPopupVideoActive) {
+    return;
+  }
+
+  timer = window.setTimeout(() => {
+    window.clearInterval(timer);
+    timer = changePopupAuto();
+  }, 60000);
+}
+
+function clickPaginationItem(idx) {
+  changePopupPagination(idx);
+
+  const isPopupVideoActive = !!document.querySelector(".popup-video.active");
+  waitOneMinChangePopupAuto(isPopupVideoActive);
+}
+
+// click pagination prev / next
 function clickPagination(type, isAuto) {
   const popupItems = document.querySelectorAll(".popup-item");
   const popupCurrent = document.querySelector(".popup-item.active");
@@ -222,20 +262,15 @@ function clickPagination(type, isAuto) {
   const nextIdx = currentIdx + 1 > popupItems.length - 1 ? 0 : currentIdx + 1;
   const targetIdx = type === 'prev' ? prevIdx : nextIdx;
 
-  function _waitOneMinChangePopupAuto() {
-    window.clearInterval(timer);
-      timer = window.setTimeout(() => {
-        window.clearInterval(timer);
-        timer = changePopupAuto();
-      }, 60000);
-  }
+  // change page
+  popupItems[targetIdx] && changePopupPagination(targetIdx);
 
   // if user click pagination, auto change after 60 seconds
-  if (!isAuto) {
-    _waitOneMinChangePopupAuto();
-  }
+  const isPopupVideoActive = !!document.querySelector(".popup-video.active");
 
-  popupItems[targetIdx] && changePopupPagination(targetIdx);
+  if (!isAuto || isPopupVideoActive) {
+    waitOneMinChangePopupAuto(isPopupVideoActive);
+  }
 }
 
 // watch resize
@@ -250,6 +285,7 @@ function resizePopup() {
 // main function
 async function renderPopup() {
   await getPopupData();
+  popupWrapper = buildPopupWrap();
 
   for (const idx in popupData) {
     popupInfo = popupData[idx];

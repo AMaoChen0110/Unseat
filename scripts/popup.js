@@ -267,7 +267,7 @@ function clickPagination(type, isAuto = false) {
   const isPopupVideoActive = !!document.querySelector(".popup-video.active");
 
   if (!isAuto || isPopupVideoActive) {
-    waitOneMinChangePopupAuto(isPopupVideoActive);
+    waitToChangePopupAuto(isPopupVideoActive);
   }
 }
 
@@ -297,6 +297,7 @@ function swiperEnd(e) {
 
 // main function
 async function renderPopup() {
+  document.body.classList.add("modal-open");
   await getPopupData();
   popupWrapper = buildPopupWrap();
 
@@ -321,7 +322,6 @@ async function renderPopup() {
     }
   }
 
-  document.body.classList.add("modal-open");
   setDialogBgClose();
   changePopupPagination(0);
   timer = changePopupAuto();

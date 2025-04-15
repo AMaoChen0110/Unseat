@@ -241,7 +241,7 @@ function waitToChangePopupAuto(isPopupVideoActive = false) {
   timer = window.setTimeout(() => {
     window.clearInterval(timer);
     timer = changePopupAuto();
-  }, 15000);
+  }, 7000);
 }
 
 function clickPaginationItem(idx) {

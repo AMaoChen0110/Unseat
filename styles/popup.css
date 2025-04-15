@@ -254,3 +254,21 @@ body.modal-open {
         transform: translateY(0);
     }
 }
+
+.popup-video {
+    height: 80vh;
+    width: 50vw;
+    max-height: 500px;
+    margin: auto 25vw;
+    overflow: hidden;
+
+    @media (max-width: 600px) {
+        margin: auto 10vw;
+        width: 80vw;
+    }
+}
+
+.popup-video-iframe {
+    width: 100%;
+    height: 100%;
+}

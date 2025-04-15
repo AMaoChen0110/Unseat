@@ -1,10 +1,11 @@
-const popupType = { IMAGE: 1, INFO: 2 };
+const popupType = { IMAGE: 1, INFO: 2, VIDEO: 3 };
 const popupWrapper = buildPopupWrap(); // popup wrapper
 let popupData = [];
 let imgLoadCount = 0;
 let popupImgCount = 0;
 let timer = -1;
 
+// get popup data
 async function getPopupData() {
   return fetch("popup.json?ver=1")
     .then((response) => response.json())
@@ -14,6 +15,7 @@ async function getPopupData() {
     });
 }
 
+// close popup
 function closePopup() {
   document.body.classList.remove("modal-open");
   window.removeEventListener("resize", resizePopup);
@@ -22,18 +24,28 @@ function closePopup() {
 
 // set close event
 function setDialogBgClose() {
+  function _setPreventDefault(dom) {
+    const oldClick = (dom.onclick);
+
+    dom.onclick = (event) => {
+      event.stopPropagation();
+      oldClick && oldClick();
+    }
+  }
+
+  // popup wrapper
   popupWrapper.onclick = () => closePopup();
   // set child stop propagation
-  popupWrapper.childNodes.forEach(child => {
-    const oldClick = (child.onclick);
+  popupWrapper.childNodes.forEach(child => _setPreventDefault(child));
 
-    child.onclick = (event) => {
-    event.stopPropagation();
-    oldClick && oldClick();
-  }
-  });
+  // popup text
+  document.querySelectorAll(".entry-animation-wrapper").forEach(textWrapper => {
+    textWrapper.onclick = () => closePopup();
+    textWrapper.childNodes.forEach(child => _setPreventDefault(child));
+  })
 }
 
+// build popup wrapper
 function buildPopupWrap() {
   // popup background
   const popupBg = document.createElement("div");
@@ -68,6 +80,7 @@ function buildPopupWrap() {
   return popupWrapper;
 }
 
+// build text popup
 function buildTextPopup(popupInfo, parentDom, idx) {
   // wrapper
   const wrapper = document.createElement("div");
@@ -109,6 +122,7 @@ function buildTextPopup(popupInfo, parentDom, idx) {
   parentDom.appendChild(wrapper);
 }
 
+// build img popup
 function buildImgPopup(popupInfo, parentDom, idx) {
   // wrapper
   const wrapper = document.createElement("div");
@@ -143,6 +157,30 @@ function buildImgPopup(popupInfo, parentDom, idx) {
   parentDom.appendChild(wrapper);
 }
 
+// build VI popup
+function buildVideoPopup(popupInfo, parentDom, idx) {
+  // wrapper
+  const wrapper = document.createElement("div");
+  wrapper.className = "popup-item popup-video";
+  wrapper.setAttribute("data-idx", idx);
+
+  const iframe = document.createElement("iframe");
+  iframe.className = "popup-video-iframe";
+  iframe.border = "0";
+  // iframe.width = "560";
+  // iframe.height = "315";
+  iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; controls";
+  iframe.controls = "1";
+  iframe.referrerpolicy = "strict-origin-when-cross-origin";
+  iframe.src = popupInfo.video;
+  iframe.title = popupInfo.title;
+
+  wrapper.appendChild(iframe);
+  parentDom.appendChild(wrapper);
+
+  iframe.addEventListener('click', () => console.log('0909'))
+}
+
 // watch img load Finish`
 function imgLoadFinish() {
   imgLoadCount++;
@@ -152,12 +190,11 @@ function imgLoadFinish() {
   this.removeEventListener('load', imgLoadFinish);
 }
 
+// change popup pagination
 function changePopupPagination(popupIdx) {
   const popupItems = document.querySelectorAll(".popup-item");
   const documentWidth = document.body.clientWidth;
   const popupCurrent = document.querySelector(".popup-item.active");
-  const paginationPrev = document.querySelector(".popup-pagination.prev");
-  const paginationNext = document.querySelector(".popup-pagination.next");
 
   if (popupIdx < 0 || popupIdx > popupItems.length - 1) {
     return;
@@ -171,6 +208,12 @@ function changePopupPagination(popupIdx) {
   popupWrapper.style.left = `-${documentWidth * popupIdx}px`;
 }
 
+// change popup auto
+function changePopupAuto(){
+  return window.setInterval(() => clickPagination('next', true), 5000);
+}
+
+// click pagination
 function clickPagination(type, isAuto) {
   const popupItems = document.querySelectorAll(".popup-item");
   const popupCurrent = document.querySelector(".popup-item.active");
@@ -179,29 +222,29 @@ function clickPagination(type, isAuto) {
   const nextIdx = currentIdx + 1 > popupItems.length - 1 ? 0 : currentIdx + 1;
   const targetIdx = type === 'prev' ? prevIdx : nextIdx;
 
+  function _waitOneMinChangePopupAuto() {
+    window.clearInterval(timer);
+      timer = window.setTimeout(() => {
+        window.clearInterval(timer);
+        timer = changePopupAuto();
+      }, 60000);
+  }
+
   // if user click pagination, auto change after 60 seconds
   if (!isAuto) {
-    window.clearInterval(timer);
-    timer = window.setTimeout(() => {
-      window.clearInterval(timer);
-      timer = changePopupAuto();
-    }, 60000);
-
+    _waitOneMinChangePopupAuto();
   }
 
   popupItems[targetIdx] && changePopupPagination(targetIdx);
 }
 
+// watch resize
 function resizePopup() {
   const documentWidth = document.body.clientWidth;
   const popupCurrent = document.querySelector(".popup-item.active");
   const currentIdx = parseInt(popupCurrent.getAttribute("data-idx"));
   popupWrapper.style.width = `${popupWrapper.offsetWidth * popupData.length}px`;
   popupWrapper.style.left = `-${documentWidth * currentIdx}px`;
-}
-
-function changePopupAuto(){
-  return window.setInterval(() => clickPagination('next', true), 5000);
 }
 
 // main function
@@ -220,7 +263,10 @@ async function renderPopup() {
       case popupType.INFO:
         buildTextPopup(popupInfo, popupWrapper, idx);
         break;
-
+      // popup type: 2 -> 文字彈窗陣列
+      case popupType.VIDEO:
+        buildVideoPopup(popupInfo, popupWrapper, idx);
+        break;
       default:
         break;
     }

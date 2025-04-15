@@ -1,4 +1,5 @@
 const popupType = { IMAGE: 1, INFO: 2, VIDEO: 3 };
+const stopPropagationClassName = "stop-propagation";
 let popupWrapper = null; // popup wrapper
 let popupData = [];
 let imgLoadCount = 0;
@@ -38,16 +39,9 @@ function setDialogBgClose() {
 
   // popup wrapper
   popupWrapper.onclick = () => closePopup();
-  // set child stop propagation
-  popupWrapper.childNodes.forEach(child => _setPreventDefault(child));
 
-  // popup text
-  document.querySelectorAll(".entry-animation-wrapper").forEach(textWrapper => {
-    textWrapper.onclick = () => closePopup();
-    textWrapper.childNodes.forEach(child => _setPreventDefault(child));
-  });
-
-  _setPreventDefault(document.querySelector(".popup-pagination-block"));
+  // set stop propagation
+  document.querySelectorAll(`.${stopPropagationClassName}`).forEach(child => _setPreventDefault(child))
 }
 
 // build popup wrapper
@@ -64,15 +58,15 @@ function buildPopupWrap() {
   // pagination
   const paginationPrev = document.createElement("button");
   const paginationNext = document.createElement("button");
-  paginationPrev.className = "popup-pagination prev";
-  paginationNext.className = "popup-pagination next";
+  paginationPrev.className = `popup-pagination prev ${stopPropagationClassName}`;
+  paginationNext.className = `popup-pagination next ${stopPropagationClassName}`;
   paginationPrev.innerText = "◀";
   paginationNext.innerText = "▶";
   paginationPrev.onclick = () => clickPagination('prev');
   paginationNext.onclick = () => clickPagination('next');
 
   const pagination = document.createElement("div");
-  pagination.className = "popup-pagination-block";
+  pagination.className = `popup-pagination-block ${stopPropagationClassName}`;
   popupData.forEach((_item, index) => {
     const paginationItem = document.createElement("div");
     paginationItem.className = "popup-pagination-item";
@@ -111,7 +105,7 @@ function buildTextPopup(popupInfo, parentDom, idx) {
 
   // title
   const titleContainer = document.createElement("div");
-  titleContainer.className = "popup-title-container";
+  titleContainer.className = `popup-title-container ${stopPropagationClassName}`;
   titleContainer.innerHTML = `<h2>${popupInfo.title}</h2>`;
   animationWrapper.appendChild(titleContainer);
 
@@ -123,7 +117,7 @@ function buildTextPopup(popupInfo, parentDom, idx) {
   popupInfo.contentAry.forEach((content, index) => {
     const div = document.createElement("div");
     let cardContent = "";
-    div.className = "event-card";
+    div.className = `event-card ${stopPropagationClassName}`;
     div.style.animationDelay = `${index * 0.1}s`; // 稍微加快動畫
 
     // build title
@@ -148,6 +142,7 @@ function buildImgPopup(popupInfo, parentDom, idx) {
 
   // img
   const img = document.createElement("img");
+  img.className = stopPropagationClassName;
   img.src = popupInfo.image;
   img.alt = popupInfo.title;
 
@@ -182,10 +177,8 @@ function buildVideoPopup(popupInfo, parentDom, idx) {
   wrapper.setAttribute("data-idx", idx);
 
   const iframe = document.createElement("iframe");
-  iframe.className = "popup-video-iframe";
+  iframe.className = `popup-video-iframe ${stopPropagationClassName}`;
   iframe.border = "0";
-  // iframe.width = "560";
-  // iframe.height = "315";
   iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; controls";
   iframe.controls = "1";
   iframe.referrerpolicy = "strict-origin-when-cross-origin";
@@ -243,7 +236,7 @@ function waitOneMinChangePopupAuto(isPopupVideoActive = false) {
   timer = window.setTimeout(() => {
     window.clearInterval(timer);
     timer = changePopupAuto();
-  }, 60000);
+  }, 15000);
 }
 
 function clickPaginationItem(idx) {
@@ -254,7 +247,7 @@ function clickPaginationItem(idx) {
 }
 
 // click pagination prev / next
-function clickPagination(type, isAuto) {
+function clickPagination(type, isAuto = false) {
   const popupItems = document.querySelectorAll(".popup-item");
   const popupCurrent = document.querySelector(".popup-item.active");
   const currentIdx = parseInt(popupCurrent.getAttribute("data-idx"));

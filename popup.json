@@ -9,6 +9,15 @@
     ]
   },
   {
+    "type": 1,
+    "title": "花蓮人召集令",
+    "image": "images/popup/test.webp",
+    "hashtag": [
+      "花蓮",
+      "緊急情況"
+    ]
+  },
+  {
     "type": 3,
     "title": "花蓮人召集令",
     "video": "https://www.youtube.com/embed/m6VI17E32rc"

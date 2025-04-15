@@ -1,10 +1,13 @@
 const popupType = { IMAGE: 1, INFO: 2, VIDEO: 3 };
 const stopPropagationClassName = "stop-propagation";
+const minSwipeDistance = 50;
 let popupWrapper = null; // popup wrapper
 let popupData = [];
 let imgLoadCount = 0;
 let popupImgCount = 0;
 let timer = -1;
+let startX = 0;
+let endX = 0;
 
 // get popup data
 async function getPopupData() {
@@ -20,6 +23,8 @@ async function getPopupData() {
 function closePopup() {
   document.body.classList.remove("modal-open");
   window.removeEventListener("resize", resizePopup);
+  document.removeEventListener('touchstart', swiperStart);
+  document.removeEventListener('touchend', swiperEnd);
   window.clearInterval(timer);
 }
 
@@ -225,7 +230,7 @@ function changePopupAuto(){
   return window.setInterval(() => clickPagination('next', true), 5000);
 }
 
-function waitOneMinChangePopupAuto(isPopupVideoActive = false) {
+function waitToChangePopupAuto(isPopupVideoActive = false) {
   // clear
   window.clearInterval(timer);
 
@@ -236,14 +241,14 @@ function waitOneMinChangePopupAuto(isPopupVideoActive = false) {
   timer = window.setTimeout(() => {
     window.clearInterval(timer);
     timer = changePopupAuto();
-  }, 15000);
+  }, 7000);
 }
 
 function clickPaginationItem(idx) {
   changePopupPagination(idx);
 
   const isPopupVideoActive = !!document.querySelector(".popup-video.active");
-  waitOneMinChangePopupAuto(isPopupVideoActive);
+  waitToChangePopupAuto(isPopupVideoActive);
 }
 
 // click pagination prev / next
@@ -273,6 +278,21 @@ function resizePopup() {
   const currentIdx = parseInt(popupCurrent.getAttribute("data-idx"));
   popupWrapper.style.width = `${popupWrapper.offsetWidth * popupData.length}px`;
   popupWrapper.style.left = `-${documentWidth * currentIdx}px`;
+}
+
+// watch swipe
+function swiperStart(e) {
+  startX = e.touches[0].clientX;
+}
+function swiperEnd(e) {
+  endX = e.changedTouches[0].clientX;
+  if (Math.abs(startX - endX) > minSwipeDistance) {
+    if (startX > endX) {
+      clickPagination('next');
+    } else {
+      clickPagination('prev');
+    }
+  }
 }
 
 // main function
@@ -309,3 +329,5 @@ async function renderPopup() {
 
 document.addEventListener("DOMContentLoaded", renderPopup);
 window.addEventListener("resize", resizePopup);
+document.addEventListener('touchstart', swiperStart);
+document.addEventListener('touchend', swiperEnd);

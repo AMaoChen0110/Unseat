@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📽️ 影片專區 - 全台大罷免</title>
+
+    <link href="styles/floatingMenu.css" rel="stylesheet" />
+    <link href="styles/video.css" rel="stylesheet" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LCXFLLD9K2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-LCXFLLD9K2');
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>📽️ 影片專區</h1>
+        <p>用影像記錄公民罷免的每一步</p>
+    </header>
+
+    <div class="controls">
+        <input type="text" id="searchInput" placeholder="🔍 搜尋影片標題...">
+        <div class="custom-dropdown" id="tagDropdown">
+            <button type="button" class="dropdown-toggle">篩選 #標籤 ▼</button>
+            <div class="dropdown-menu" id="dropdownMenu"></div>
+        </div>
+
+        <select id="sortTitle">
+            <option value="desc">標題 ▼</option>
+            <option value="asc">標題 ▲</option>
+        </select>
+    </div>
+
+    <section class="video-gallery" id="videoGallery"></section>
+
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <span class="close" id="closeLightbox">&times;</span>
+            <iframe id="lightboxVideo" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 全台大罷免聯盟 | 傳遞信念，傳遞行動
+    </footer>
+        <!-- Floating Menu Button -->
+        <div id="floating-menu">MENU</div>
+        <div id="floating-panel">
+            <ul class="floating-panel-list">
+                <li><a href="index.html">📊 全台大罷免第二階段連署時間條</a></li>
+                <li><a href="419ProtestEvent.html">✊ 419 守護台灣活動</a></li>
+                <li><a href="ckfinder.html">🟢 民主連署站</a></li>
+                <li><a href="reasonsRecall.html">🧾 罷免的理由</a></li>
+                <li><a href="complimentSquad.html">🎉 誇誇計數器</a></li>
+                <li><a href="https://linktr.ee/taiwanagainstccp?ltclid=9d7dbb0c-f9e4-4984-8a8c-dadacc1cfde2" target="_blank">🌏 海外支持大罷免</a></li>
+                <li><a href="https://bafu.tw/map/" target="_blank">📍 連署 & 宣講地圖</a></li>
+            </ul>
+        </div>
+    <script src="scripts/video.js?v=20250416"></script>
+    <script src="scripts/floatingMenu.js?v=20250406"></script>
+</body>
+
+</html>

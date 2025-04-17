@@ -97,7 +97,7 @@ body.modal-open {
     height: 80vh;
     width: 80vw;
     flex: 0 0 80vw;
-    max-height: 500px;
+    max-height: 600px;
     margin: auto 10vw;
     display: flex;
     flex-direction: column;

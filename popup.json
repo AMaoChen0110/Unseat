@@ -1,20 +1,6 @@
 [
   {
     "type": 1,
-    "title": "花蓮人召集令",
-    "image": "images/popup/recall01.webp",
-    "hashtag": [
-      "花蓮",
-      "緊急情況"
-    ]
-  },
-  {
-    "type": 3,
-    "title": "花蓮人召集令",
-    "video": "https://www.youtube.com/embed/m6VI17E32rc"
-  },
-  {
-    "type": 1,
     "title": "419守護台灣拒絕統戰",
     "image": "images/popup/41901.webp",
     "link": "419ProtestEvent.html",
@@ -30,10 +16,33 @@
   {
     "type": 1,
     "title": "罷免特快車",
-    "image": "images/popup/unseat_car.webp",
+    "image": "images/popup/unseat_car-1.webp",
     "hashtag": [
       "罷免特快車",
       "全台同步"
     ]
+  },
+  {
+    "type": 1,
+    "title": "罷免特快車",
+    "image": "images/popup/unseat_car-2.webp",
+    "hashtag": [
+      "罷免特快車",
+      "全台同步"
+    ]
+  },
+  {
+    "type": 1,
+    "title": "花蓮人召集令",
+    "image": "images/popup/recall01.webp",
+    "hashtag": [
+      "花蓮",
+      "緊急情況"
+    ]
+  },
+  {
+    "type": 3,
+    "title": "花蓮人召集令",
+    "video": "https://www.youtube.com/embed/m6VI17E32rc"
   }
 ]

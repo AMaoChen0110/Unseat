@@ -93,3 +93,26 @@ footer {
   margin-top: 20px;
   font-size: 12px;
 }
+
+button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  margin: 0 0.5rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+button:hover {
+  background-color: #e84343;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+  border: 2px solid #000000; /* hover 時加上淡粉色邊框 */
+}
+
+button:active {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transform: translateY(2px);
+}

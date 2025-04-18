@@ -235,7 +235,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (person.count) {
                 // 👉 新增的收件進度條放這裡
                 const countNum = person.countNum; // 若有逗號分隔
-                
+
                 const thresholdNum = typeof person.threshold === 'number' ? person.threshold : parseInt(person.threshold.toString().replace(/\D/g, ''));
                 person.thresholdNum = thresholdNum; // 儲存門檻數
 
@@ -261,6 +261,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     const thresholdLine = document.createElement('div');
                     thresholdLine.className = 'threshold-line';
                     const thresholdPos = Math.min((thresholdNum / targetNum) * 100, 100);
+                    person.thresholdPos = thresholdPos; // 儲存門檻位置
+
                     thresholdLine.style.left = `${thresholdPos}%`;
 
                     const targetLine = document.createElement('div');
@@ -340,7 +342,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         startDay = finalDay;
                         clearInterval(interval);
                     }
-                   
+
                     if (finalDay >= person.totalDays) {
                         dayInfo.textContent = `第${Math.floor(startDay)}天/${(person.totalDays + (60 - person.totalDays))}天`;
                         const tagInbox = document.createElement('div');
@@ -375,7 +377,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
 
 
-                    if(person.name === "花蓮縣傅崐萁") {
+                    if (person.name === "花蓮縣傅崐萁") {
                         progressBarText.textContent = `緊急！花蓮二階要重簽！`;
                     }
 
@@ -397,6 +399,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
             personListElement.appendChild(personItem);
         });
+
+        // person.name.substring(0, 3); person.name.substring(3);
+        const top6 = personData
+            .filter(item => {
+                const val = 100 - item.thresholdPos;
+                return val >= 15 && val <= 30;
+            }) // 篩選 15~30 間
+            .sort((a, b) => b.thresholdPos - a.thresholdPos)                      // 依 thresholdPos 由大到小排序
+            .slice(0, 6)
+            .map(item => ({
+                area: item.name.substring(0, 3) + '第一選區',      // 前 3 個字當 area
+                name: item.name.substring(3),         // 後面當 name
+                thresholdPos: item.thresholdPos       // 原本的 thresholdPos
+            }));
+        urgentData = top6; // 更新 urgentData
+
+        renderUrgentSection(urgentData);
     }
 
     function filterAndSort() {
@@ -442,12 +461,12 @@ document.addEventListener('DOMContentLoaded', function () {
             const today = new Date();
             const difference = today.getTime() - start.getTime();
             const days = Math.ceil(difference / (1000 * 3600 * 24));
-  
+
             // 超過收件截止日
             if (days >= totalDays) {
                 return totalDays / totalDays;
             }
-  
+
             return days / totalDays;
         }
 
@@ -534,4 +553,58 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         return getRandomItem(dayOverMessage.thresholdMissMessages);
     }
+
+    // 1. 告急專區資料
+    let urgentData = [
+    ];
+
+    // 2. 將資料渲染到 #urgent-section
+    function renderUrgentSection(data) {
+        const container = document.getElementById('urgent-section');
+        const section = document.createElement('div');
+        section.className = 'urgent-section';
+
+        // 標題
+        const header = document.createElement('div');
+        header.className = 'urgent-header';
+        // 先放文字
+        const headerText = document.createElement('span');
+        header.textContent = '⚠️ 收件告急';
+        header.appendChild(headerText);
+
+        // 在 header 裡面加跑馬燈
+        const marqueeInline = document.createElement('div');
+        marqueeInline.className = 'urgent-marquee-inline';
+        const marqueeSpan = document.createElement('span');
+        marqueeSpan.textContent = '⚠️ 件呢？件咧？我不是昨天才在你限動看到你說要簽結果現在人咧？你再睡傅崑萁已經在你夢裡跳戰舞你再躺韓國瑜會送你罷免滑水道下地獄還貼愛心貼圖國昌已經咆哮到太空艙破音司法正在被藍白亂黨活吞你還在選濾鏡？不簽連署藍委全體升級暗黑覺醒型號KMT-ZERO你一睡醒直接進入立法院寒冬宇宙版簽一下嘛簽一下嘛拜託託人家真的想要過門檻這不是情勒這是民主勒戒你不簽人家阿花都會看你沒禮貌你不簽藍白就會合體召喚黃國昌之怨靈你不簽我就要每天出現在你夢中問你到底簽了沒 真的簽下去財運橫掃八方考試秒解選擇題 連喜歡的人都突然密你說你很有正義感 件差一點國昌會偷笑阿明都簽十張你還在那邊精算要不要簽一張你說藍白爛那你快簽不然你就等著看藍白演《司法哭哭秀》還敢上北檢自導自演哭到震天嘎嘎叫宇宙都失焦 我在想現在犯法的人去北檢一哭二鬧是什麼最新的犯罪SOP嗎? 選罷法也是國民黨通過要嚴懲冒名連署的不是嗎?現在又不開心了喔哭哭真~的~~太~離~譜~了~ 我現在數到三喔一二件還沒拿出來三地球扣分你人生要進入KMT平行世界 簽下去福如東海身心靈解鎖心輪開啟KMT消滅術你不簽民主哭泣你一簽傅崑萁自己爆炸還附贈爆米花罷道總裁就是你我是你前世連署員快來簽啦～件件有愛罷免無罪現在不簽以後沒機會！人家隔壁阿花都簽了你還在等誰？簽個名而已那麼難嗎Q_Q罷免藍委就是罷免陳玉珍罷免藍委就是罷免黃國昌（誒不是啦是幫黃國昌完成他消滅國民黨的夢想啦）還在耍廢連阿明都簽了我都快變你老罷了419凱道反共見簽下去罷道總裁就是你我是你宇宙小罷罷快來一起簽！ ⚠️ ';
+        marqueeInline.appendChild(marqueeSpan);
+        header.appendChild(marqueeInline);
+
+        section.appendChild(header);
+
+        // Grid 容器
+        const grid = document.createElement('div');
+        grid.className = 'urgent-grid';
+
+        data.forEach(item => {
+            const card = document.createElement('div');
+            card.className = 'urgent-item';
+
+            const a = document.createElement('div');
+            a.className = 'urgent-area';
+            a.textContent = item.area;
+            card.appendChild(a);
+
+            const n = document.createElement('div');
+            n.className = 'urgent-name';
+            n.textContent = item.name;
+            card.appendChild(n);
+
+            grid.appendChild(card);
+        });
+
+        section.appendChild(grid);
+        container.appendChild(section);
+    }
+    
 });

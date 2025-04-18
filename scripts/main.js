@@ -409,7 +409,7 @@ document.addEventListener('DOMContentLoaded', function () {
             .sort((a, b) => b.thresholdPos - a.thresholdPos)                      // 依 thresholdPos 由大到小排序
             .slice(0, 6)
             .map(item => ({
-                area: item.name.substring(0, 3) + '第一選區',      // 前 3 個字當 area
+                area: item.name.substring(0, 3),      // 前 3 個字當 area
                 name: item.name.substring(3),         // 後面當 name
                 thresholdPos: item.thresholdPos       // 原本的 thresholdPos
             }));

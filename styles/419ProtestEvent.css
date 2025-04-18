@@ -1,106 +1,116 @@
+* {
+  box-sizing: border-box;
+}
 body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #1a1a1a;
-  }
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #1a1a1a;
+}
 
-  .container {
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
-  }
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
 
-  .hero {
-    background-color: #a00;
-    padding: 20px;
-    border-radius: 10px;
-  }
+.hero {
+  background-color: #a00;
+  padding: 20px;
+  border-radius: 10px;
+}
 
-  .hero h1 {
-    color: #f0e68c;
-    text-align: center;
-  }
+.hero h1 {
+  color: #f0e68c;
+  text-align: center;
+}
 
-  .hero img {
-    max-width: 100%;
-    border-radius: 10px;
-  }
+.hero img {
+  max-width: 100%;
+  border-radius: 10px;
+}
 
-  h1 {
-    font-size: 2rem;
-    margin: 20px 0 10px;
-  }
+h1 {
+  font-size: 2rem;
+  margin: 20px 0 10px;
+}
 
-  .info {
-    background-color: #222;
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 10px;
-    color: #fff;
-    /* 讓整個區塊在視窗寬度上置中 */
-    text-align: center;
-  }
+.info {
+  background-color: #222;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  color: #fff;
+}
 
-  /* 每一行是個區塊，但我們要置中，所以給它固定寬度 + margin: auto */
-  .info .row {
+/* 每一行是個區塊，但我們要置中，所以給它固定寬度 + margin: auto */
+.info .row {
+  display: flex;
+  /* 可依實際需要增減 */
+  margin: 0.5em auto;
+}
+
+/* 左側標籤：使用 inline-block 方便定寬、對齊冒號 */
+.info .label {
+  flex: 0 0 100px;
+  text-align: right;
+  text-align-last: justify;
+}
+
+/* 右側內容：同一行緊接在 label 後 */
+.info .value {
+  margin-left: 4px;
+  margin-left: 4px;
+  flex: 0 0 auto;
+  text-align: left;
+}
+
+@media (max-width: 400px) {
+  .info .value span {
     display: block;
-    /* 讓整行能獨立排版 */
-    width: 400px;
-    /* 可依實際需要增減 */
-    margin: 0.5em auto;
-    /* 向外自動置中 */
-    text-align: left;
-    /* 使 label + value 以靠左排版 */
   }
+}
 
-  /* 左側標籤：使用 inline-block 方便定寬、對齊冒號 */
-  .info .label {
-    display: inline-block;
-    width: 6em;
-    /* 控制冒號對齊，酌情調整寬度 */
-    text-align: right;
-    /* 冒號貼齊右邊 */
-    font-weight: bold;
-    white-space: nowrap;
-    /* 避免換行 */
-  }
+.slogan {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px 0;
+  border: 1px solid;
+  border-color: #8b8b8b transparent;
+  border-radius: 2px;
+}
 
-  /* 右側內容：同一行緊接在 label 後 */
-  .info .value {
-    display: inline-block;
-    margin-left: 0.5em;
-    /* 與 label 間隔 */
-    white-space: nowrap;
-    /* 避免換行 */
-  }
-
-  /* 後面那些簡單的 p 保持原本設計 */
-  .info p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin: 0.5em 0;
-  }
-
-  .map {
-    margin-top: 30px;
-  }
-
-  .map img {
-    max-width: 100%;
-    border-radius: 10px;
-  }
-
-  .guest img {
-    margin-top: 30px;
-    max-width: 100%;
-    border-radius: 10px;
-  }
+.slogan p {
+  flex: 0 0 auto;
+  display: inline;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: unset;
   @media (max-width: 600px) {
-    h1 {
-      font-size: 1.5rem;
-    }
-
-    .info p {
-      font-size: 1rem;
-    }
+    display: inline-block;
   }
+}
+
+.map {
+  margin-top: 30px;
+}
+
+.map img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.guest img {
+  margin-top: 30px;
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  /* .info p {
+    font-size: 1rem;
+  } */
+}

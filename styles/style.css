@@ -558,7 +558,13 @@ h1 {
     padding-left: 100%;    /* 從右側開始 */
     animation: urgent-marquee 120s linear infinite;
   }
-  
+
+  /* 在滑鼠移上或按住時暫停動畫 */
+  .urgent-marquee-inline:hover span,
+  .urgent-marquee-inline:active span {
+    animation-play-state: paused;
+  }
+
   @keyframes urgent-marquee {
     0%   { transform: translateX(0%); }
     100% { transform: translateX(-100%); }

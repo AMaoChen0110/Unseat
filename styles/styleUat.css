@@ -259,6 +259,29 @@ h1 {
     white-space: nowrap;
 }
 
+.day-info-tag-Inbox {
+    background-color: #FFF9C4; /* 淡粉色背景 */
+    padding: 0px 6px;
+    border-radius: 12px;
+    font-size: 8px;
+    font-weight: 500;
+    font-weight: bold;
+    width: 38px;
+}
+
+.day-info-tag-Roll {
+    background-color: #FFFDE7; /* 淡粉色背景 */
+    padding: 0px 6px;
+    border-radius: 12px;
+    font-size: 8px;
+    font-weight: 500;
+    font-weight: bold;
+    width: 30px;
+    margin-left: 4px;
+}
+
+
+
 /* 門檻目標的樣式 */
 .goal-info {
     font-size: 13px;
@@ -456,3 +479,88 @@ h1 {
     opacity: 1;
     font-size: 16px;
 }
+
+
+/* -------- 告急專區 -------- */
+.urgent-section {
+    background-color: #ffecec;
+    border-left: 4px solid #ff4c4c;
+    padding: 10px 15px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+  }
+  
+  .urgent-header {
+    font-size: 16px;
+    font-weight: bold;
+    color: #b00000;
+    margin-bottom: 10px;
+  }
+  
+  .urgent-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+  }
+  
+  .urgent-item {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 8px;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .urgent-area {
+    display: block;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .urgent-name {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+  }
+  
+  /* 手機板調整為兩欄 */
+  @media (max-width: 600px) {
+    .urgent-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  /* -------------------------- */
+  
+  /* -------- 告急專區跑馬燈 -------- */
+/* urgent-header 改為 flex，允許跑馬燈溢出隱藏 */
+.urgent-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #b00000;
+    margin-bottom: 10px;
+    overflow: hidden;      /* 隱藏溢出 */
+  }
+  
+  /* inline 跑馬燈容器 */
+  .urgent-marquee-inline {
+    flex: 1;               /* 撐滿剩餘空間 */
+    overflow: hidden;      /* 隱藏溢出 */
+    white-space: nowrap;
+  }
+  
+  /* 跑馬燈文字 */
+  .urgent-marquee-inline span {
+    display: inline-block;
+    padding-left: 100%;    /* 從右側開始 */
+    animation: urgent-marquee 120s linear infinite;
+  }
+
+  @keyframes urgent-marquee {
+    0%   { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+  }
+  /* -------------------------------- */

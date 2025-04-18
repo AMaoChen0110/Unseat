@@ -100,7 +100,7 @@
             </script>
 
     <link rel="icon" href="images/favicon.png" type="image/png">
-    <link href="styles/styleUat.css" rel="stylesheet" />
+    <link href="styles/style.css" rel="stylesheet" />
     <link href="styles/floatingMenu.css" rel="stylesheet" />
     <link href="styles/popup.css" rel="stylesheet" />
 
@@ -119,6 +119,10 @@
     <div class="container">
         <h1 id="current-date-title">全台大罷免第二階段連署時間條 <span class="hourglass">⌛</span></h1>
         <p class="subtitle">扣除造冊及相關作業時間大約只有40天左右，還沒填寫的民眾請盡快前往填寫</p>
+
+        <!-- 告急專區（由 JS 動態產生） -->
+        <div id="urgent-section"></div>
+
 
         <p class="notice">
             🔆本網站連署進度數據非即時更新，若與罷免團隊不同，請以各罷免團體公告為準。</br>
@@ -149,8 +153,8 @@
                 <option value="targetNum-asc">目標進度▲</option>
                 <option value="threshold-desc">門檻進度▼</option>
                 <option value="threshold-asc">門檻進度▲</option>
-                <option value="startDate-asc">截止時間▼</option>
-                <option value="startDate-desc">截止時間▲</option>
+                <option value="startDate-desc">截止時間▼</option>
+                <option value="startDate-asc">截止時間▲</option>
             </select>
 
 
@@ -228,8 +232,10 @@
             <li><a href="ckfinder.html">🟢 民主連署站</a></li>
             <li><a href="reasonsRecall.html">🧾 罷免的理由</a></li>
             <li><a href="complimentSquad.html">🎉 誇誇計數器</a></li>
-            <li><a href="https://linktr.ee/taiwanagainstccp?ltclid=9d7dbb0c-f9e4-4984-8a8c-dadacc1cfde2" target="_blank">🌏 海外支持大罷免</a></li>
+            <li><a href="https://linktr.ee/taiwanagainstccp?ltclid=9d7dbb0c-f9e4-4984-8a8c-dadacc1cfde2"
+                    target="_blank">🌏 海外支持大罷免</a></li>
             <li><a href="https://bafu.tw/map/" target="_blank">📍 連署 & 宣講地圖</a></li>
+            <li><a href="https://yueyuknows.com/dacaoji_v1.html" target="_blank">🌱 答草集</a></li>
             <!-- <li><a href="https://recall2025.ourtaiwan.tw/" target="_blank">🛠️ 罷免連署工具網站</a></li>
             <li><a href="https://www.twacda.com/" target="_blank">🗺️ 罷免選區整合網站</a></li> -->
             <!-- <li><a href="#">🌿 第二階段說明</a></li>
@@ -238,9 +244,9 @@
             <li><a href="#">📜 表單下載</a></li> -->
         </ul>
     </div>
-    <script src="scripts/mainUat.js?v=20250418"></script>
+    <script src="scripts/main.js?v=202504182"></script>
     <script src="scripts/floatingMenu.js?v=20250406"></script>
-    <script src="scripts/popup.js?v=20250415"></script>
+    <script src="scripts/popup.js?v=20250416"></script>
 </body>
 
 </html>

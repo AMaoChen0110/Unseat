@@ -600,6 +600,18 @@ document.addEventListener('DOMContentLoaded', function () {
             n.textContent = item.name;
             card.appendChild(n);
 
+            // ★ 新增：點擊後平滑捲動到 person-name-fullname
+            card.addEventListener('click', () => {
+                // 找到下方所有 fullname 元素
+                const elems = document.querySelectorAll('.person-name-fullname');
+                for (const el of elems) {
+                    if (el.textContent.trim() === item.name.trim()) {
+                        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        break;
+                    }
+                }
+            });
+
             grid.appendChild(card);
         });
 

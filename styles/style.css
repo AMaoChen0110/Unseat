@@ -12,7 +12,7 @@ body {
     background-color: white;
     border-radius: 10px;
     padding: 20px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
@@ -91,9 +91,9 @@ h1 {
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease, transform 0.3s ease;
-  }
+}
 
-  .tooltip::after {
+.tooltip::after {
     content: "";
     position: absolute;
     bottom: -10px;
@@ -102,12 +102,12 @@ h1 {
     border-width: 10px 10px 0 10px;
     border-style: solid;
     border-color: #333 transparent transparent transparent;
-  }
+}
 
-  .person-item:hover .tooltip {
+.person-item:hover .tooltip {
     opacity: 1;
     transform: translateY(0);
-  }
+}
 
 .person-item:hover .tooltip {
     opacity: 1;
@@ -122,14 +122,14 @@ h1 {
     align-items: center;
     flex-wrap: wrap; /* 這行讓 icon 會換行 */
     position: relative;
-  }
+}
 
 /* 包住區域和人名的容器 */
 .name-text-group {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-  }
+}
 
 .person-name-area {
     background-color: #FAF3E0; /* 淡粉色背景 */
@@ -137,14 +137,14 @@ h1 {
     border-radius: 12px;
     font-size: 14px;
     font-weight: 500;
-  }
+}
 
-  .person-name-fullname {
+.person-name-fullname {
     margin-left: 10px;
     font-weight: bold;
     font-size: 16px;
     color: #333; /* 深灰色 */
-  }
+}
 
 .progress-block {
     display: flex;
@@ -183,8 +183,8 @@ h1 {
 }
 
 .min-target {
-    font-weight:bold;
-    color: #ff0000;
+    font-weight: bold;
+    color: #ff0000; 
     /* color: #dd8a0e; */
 }
 
@@ -404,9 +404,9 @@ h1 {
 }
 
 .general-select.no-icon {
-    -moz-appearance:none; /* Firefox */
-    -webkit-appearance:none; /* Safari and Chrome */
-    appearance:none;
+    -moz-appearance: none; /* Firefox */
+    -webkit-appearance: none; /* Safari and Chrome */
+    appearance: none;
 }
 
 .sort-process {
@@ -488,51 +488,59 @@ h1 {
     padding: 10px 15px;
     border-radius: 6px;
     margin-bottom: 15px;
-  }
-  
-  .urgent-header {
+}
+
+.urgent-header {
     font-size: 16px;
     font-weight: bold;
     color: #b00000;
     margin-bottom: 10px;
-  }
-  
-  .urgent-grid {
+}
+
+.urgent-grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 10px;
-  }
-  
-  .urgent-item {
+}
+
+.urgent-item {
     background-color: #fff;
     border-radius: 8px;
     padding: 8px;
     text-align: center;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  }
-  
-  .urgent-area {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* hover 時微浮起並放大、加強陰影 */
+.urgent-item:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.urgent-area {
     display: block;
     font-size: 14px;
     color: #333;
-  }
-  
-  .urgent-name {
+}
+
+.urgent-name {
     display: block;
     font-size: 16px;
     font-weight: bold;
     color: #000;
-  }
-  
-  /* 手機板調整為兩欄 */
-  @media (max-width: 600px) {
+}
+
+/* 手機板調整為兩欄 */
+@media (max-width: 600px) {
     .urgent-grid {
-      grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
-  }
-  /* -------------------------- */
-  
-  /* -------- 告急專區跑馬燈 -------- */
+}
+
+/* -------------------------- */
+
+/* -------- 告急專區跑馬燈 -------- */
 /* urgent-header 改為 flex，允許跑馬燈溢出隱藏 */
 .urgent-header {
     display: flex;
@@ -542,31 +550,37 @@ h1 {
     font-weight: bold;
     color: #b00000;
     margin-bottom: 10px;
-    overflow: hidden;      /* 隱藏溢出 */
-  }
-  
-  /* inline 跑馬燈容器 */
-  .urgent-marquee-inline {
-    flex: 1;               /* 撐滿剩餘空間 */
-    overflow: hidden;      /* 隱藏溢出 */
+    overflow: hidden; /* 隱藏溢出 */
+}
+
+/* inline 跑馬燈容器 */
+.urgent-marquee-inline {
+    flex: 1; /* 撐滿剩餘空間 */
+    overflow: hidden; /* 隱藏溢出 */
     white-space: nowrap;
-  }
-  
-  /* 跑馬燈文字 */
-  .urgent-marquee-inline span {
+}
+
+/* 跑馬燈文字 */
+.urgent-marquee-inline span {
     display: inline-block;
-    padding-left: 100%;    /* 從右側開始 */
+    padding-left: 100%; /* 從右側開始 */
     animation: urgent-marquee 120s linear infinite;
-  }
+}
 
-  /* 在滑鼠移上或按住時暫停動畫 */
-  .urgent-marquee-inline:hover span,
-  .urgent-marquee-inline:active span {
+/* 在滑鼠移上或按住時暫停動畫 */
+.urgent-marquee-inline:hover span,
+.urgent-marquee-inline:active span {
     animation-play-state: paused;
-  }
+}
 
-  @keyframes urgent-marquee {
-    0%   { transform: translateX(0%); }
-    100% { transform: translateX(-100%); }
-  }
-  /* -------------------------------- */
+@keyframes urgent-marquee {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* -------------------------------- */

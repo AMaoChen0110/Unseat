@@ -400,22 +400,22 @@ document.addEventListener('DOMContentLoaded', function () {
             personListElement.appendChild(personItem);
         });
 
-        // person.name.substring(0, 3); person.name.substring(3);
-        const top6 = personData
-            .filter(item => {
-                const val = 100 - item.thresholdPos;
-                return val >= 15 && val <= 30;
-            }) // 篩選 15~30 間
-            .sort((a, b) => b.thresholdPos - a.thresholdPos)                      // 依 thresholdPos 由大到小排序
-            .slice(0, 6)
-            .map(item => ({
-                area: item.name.substring(0, 3),      // 前 3 個字當 area
-                name: item.name.substring(3),         // 後面當 name
-                thresholdPos: item.thresholdPos       // 原本的 thresholdPos
-            }));
-        urgentData = top6; // 更新 urgentData
+        if (urgentData.length === 0) {
+            urgentData = personData
+                .filter(item => {
+                    const val = 100 - item.thresholdPos;
+                    return val >= 15 && val <= 30;
+                }) // 篩選 15~30 間
+                .sort((a, b) => b.thresholdPos - a.thresholdPos)                      // 依 thresholdPos 由大到小排序
+                .slice(0, 6)
+                .map(item => ({
+                    area: item.name.substring(0, 3),      // 前 3 個字當 area
+                    name: item.name.substring(3),         // 後面當 name
+                    thresholdPos: item.thresholdPos       // 原本的 thresholdPos
+                }));
 
-        renderUrgentSection(urgentData);
+            renderUrgentSection(urgentData);
+        }
     }
 
     function filterAndSort() {
@@ -561,7 +561,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // 2. 將資料渲染到 #urgent-section
     function renderUrgentSection(data) {
         const container = document.getElementById('urgent-section');
-        container.innerHTML = '';
         const section = document.createElement('div');
         section.className = 'urgent-section';
 
@@ -607,5 +606,5 @@ document.addEventListener('DOMContentLoaded', function () {
         section.appendChild(grid);
         container.appendChild(section);
     }
-    
+
 });

@@ -47,6 +47,11 @@ h1 {
   display: flex;
   /* 可依實際需要增減 */
   margin: 0.5em auto;
+  margin-left: calc(40% - 100px);
+
+  @media (max-width: 600px) {
+    margin-left: unset;
+  }
 }
 
 /* 左側標籤：使用 inline-block 方便定寬、對齊冒號 */
@@ -85,8 +90,9 @@ h1 {
   font-size: 1.1rem;
   line-height: 1.6;
   margin: unset;
+
   @media (max-width: 600px) {
-    display: inline-block;
+    display: block;
   }
 }
 

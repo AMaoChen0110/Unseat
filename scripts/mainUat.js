@@ -582,25 +582,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
         section.appendChild(header);
 
-        // 1. 當滑鼠移進時暫停
-        marqueeInline.addEventListener('mouseover', () => {
-            marqueeSpan.style.animationPlayState = 'paused';
-        });
+        // // 1. 當滑鼠移進時暫停
+        // marqueeInline.addEventListener('mouseover', () => {
+        //     marqueeSpan.style.animationPlayState = 'paused';
+        // });
 
-        // 2. 滑鼠移出時恢復
-        marqueeInline.addEventListener('mouseout', () => {
-            marqueeSpan.style.animationPlayState = 'running';
-        });
+        // // 2. 滑鼠移出時恢復
+        // marqueeInline.addEventListener('mouseout', () => {
+        //     marqueeSpan.style.animationPlayState = 'running';
+        // });
 
-        // 3. 手機觸控按下時暫停
-        marqueeInline.addEventListener('touchstart', () => {
-            marqueeSpan.style.animationPlayState = 'paused';
-        }, { passive: true });
+        // // 3. 手機觸控按下時暫停
+        // marqueeInline.addEventListener('touchstart', () => {
+        //     marqueeSpan.style.animationPlayState = 'paused';
+        // }, { passive: true });
 
-        // 4. 離開觸控（手指離開）時恢復
-        marqueeInline.addEventListener('touchend', () => {
-            marqueeSpan.style.animationPlayState = 'running';
-        });
+        // // 4. 離開觸控（手指離開）時恢復
+        // marqueeInline.addEventListener('touchend', () => {
+        //     marqueeSpan.style.animationPlayState = 'running';
+        // });
 
         // Grid 容器
         const grid = document.createElement('div');

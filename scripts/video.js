@@ -8,9 +8,18 @@ document.addEventListener('DOMContentLoaded', function () {
                 const label = document.createElement('label');
                 label.innerHTML = `<input type="checkbox" value="${tag}"> ${tag}`;
                 dropdownMenu.appendChild(label);
-              });
-          
-              renderGallery(); // 初次渲染畫面
+            });
+
+            // 新增搜尋標籤的監聽
+            const tagSearchInput = document.getElementById('tagSearchInput');
+            tagSearchInput.addEventListener('input', () => {
+                const kw = tagSearchInput.value.toLowerCase();
+                dropdownMenu.querySelectorAll('label').forEach(label => {
+                    const txt = label.textContent.toLowerCase();
+                    label.style.display = txt.includes(kw) ? 'block' : 'none';
+                });
+            });
+            renderGallery(); // 初次渲染畫面
         })
         .catch(err => {
             console.error("載入 videos.json 發生錯誤：", err);

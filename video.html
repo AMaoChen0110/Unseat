@@ -11,7 +11,7 @@
     <meta property="og:image" content="https://amaochen0110.github.io/Unseat/images/Unseat.jpg?v=3" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <title>📽️ 影片專區 - 全台大罷免</title>
+    <title>影片專區 - 全台大罷免</title>
     <script type="application/ld+json">
         {
           "@context": "https://schema.org",
@@ -124,7 +124,11 @@
         <input type="text" id="searchInput" placeholder="🔍 搜尋影片標題...">
         <div class="custom-dropdown" id="tagDropdown">
             <button type="button" class="dropdown-toggle">篩選 #標籤 ▼</button>
-            <div class="dropdown-menu" id="dropdownMenu"></div>
+            <div class="dropdown-menu" id="dropdownMenu">
+                <!-- 新增搜尋欄 -->
+                <input type="text" id="tagSearchInput" placeholder="🔍 搜尋標籤..." class="tag-search-input">
+                <!-- checkbox 標籤列表由 JS 動態插入 -->
+            </div>
         </div>
 
         <select id="sortTitle">

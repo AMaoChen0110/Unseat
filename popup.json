@@ -1,20 +1,6 @@
 [
   {
     "type": 1,
-    "title": "419守護台灣拒絕統戰",
-    "image": "images/popup/41901.webp",
-    "link": "419ProtestEvent.html",
-    "linkType": "_self",
-    "content": "4/19 14:00~18:30",
-    "hashtag": [
-      "集結",
-      "台北",
-      "凱達格蘭大道",
-      "遊行"
-    ]
-  },
-  {
-    "type": 1,
     "title": "罷免特快車",
     "image": "images/popup/unseat_car-1.webp",
     "hashtag": [

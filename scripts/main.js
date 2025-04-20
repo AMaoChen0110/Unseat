@@ -265,8 +265,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
                     const thresholdLine = document.createElement('div');
                     thresholdLine.className = 'threshold-line';
+                    // 計算門檻目標的暫比
                     const thresholdPos = Math.min((thresholdNum / targetNum) * 100, 100);
-                    person.thresholdPos = thresholdPos; // 儲存門檻位置
+                    
+                    // 計算收件數/門檻百分比
+                    const receiptThPos = Math.min((countNum / thresholdNum) * 100, 100);
+                    person.receiptThPos = receiptThPos; // 儲存門檻位置
 
                     thresholdLine.style.left = `${thresholdPos}%`;
 
@@ -408,15 +412,15 @@ document.addEventListener('DOMContentLoaded', function () {
         if (urgentData.length === 0) {
             urgentData = personData
                 .filter(item => {
-                    const val = 100 - item.thresholdPos;
+                    const val = 100 - item.receiptThPos;
                     return val >= 15 && val <= 30;
                 }) // 篩選 15~30 間
-                .sort((a, b) => b.thresholdPos - a.thresholdPos)                      // 依 thresholdPos 由大到小排序
+                .sort((a, b) => b.receiptThPos - a.receiptThPos)                      // 依 receiptThPos 由大到小排序
                 .slice(0, 6)
                 .map(item => ({
                     area: item.name.substring(0, 3),      // 前 3 個字當 area
                     name: item.name.substring(3),         // 後面當 name
-                    thresholdPos: item.thresholdPos       // 原本的 thresholdPos
+                    receiptThPos: item.receiptThPos       // 原本的 receiptThPos
                 }));
 
             renderUrgentSection(urgentData);

@@ -101,6 +101,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (person.url) {
                 personItem.style.cursor = 'pointer';
                 personItem.addEventListener('click', () => {
+                    tagGAEvent(person.name.substring(3),'卡片');
                     window.open(person.url, '_blank');
                 });
             }
@@ -156,6 +157,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 a.href = iconData.href;
                 a.target = '_blank';
                 a.className = 'icon-link';
+
+                a.addEventListener('click', () => {
+                    tagGAEvent(person.name.substring(3), `Icon-${iconData.alt}`);
+                });
 
                 const img = document.createElement('img');
                 img.src = iconData.src;
@@ -610,6 +615,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         break;
                     }
                 }
+                tagGAEvent(item.name, `告急卡`);
             });
 
             grid.appendChild(card);
@@ -619,4 +625,13 @@ document.addEventListener('DOMContentLoaded', function () {
         container.appendChild(section);
     }
 
+    function tagGAEvent(name, type) {
+        gtag('event', 'click', {
+            event_category: `${name}-${type}`,
+            event_label: `${name}-${type}`,
+            value: 1,
+            transport_type: 'beacon'//,
+            // debug_mode: true // ✅ 加上這行
+        });
+    }
 });

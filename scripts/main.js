@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (person.url) {
                 personItem.style.cursor = 'pointer';
                 personItem.addEventListener('click', () => {
-                    tagGAEvent(person.name.substring(3),'卡片');
+                    tagGAEvent(person.name.substring(3), '卡片');
                     window.open(person.url, '_blank');
                 });
             }
@@ -267,7 +267,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     thresholdLine.className = 'threshold-line';
                     // 計算門檻目標的暫比
                     const thresholdPos = Math.min((thresholdNum / targetNum) * 100, 100);
-                    
+
                     // 計算收件數/門檻百分比
                     const receiptThPos = Math.min((countNum / thresholdNum) * 100, 100);
                     person.receiptThPos = receiptThPos; // 儲存門檻位置
@@ -303,6 +303,24 @@ document.addEventListener('DOMContentLoaded', function () {
                         labelProgress.textContent = `進度：${curPercent.toFixed(1)}%`;
                     }, 30);
 
+                    // 判斷「收件進度是否已滿」 放煙火
+                    if (finalPercent >= 100) {
+                        // 建立 canvas（會自動套用上面 CSS）
+                        const canvas = document.createElement('canvas');
+                        canvas.id = `fireworkCanvas_${person.name}`; // 可選：方便除錯
+
+                        // 插入到 personItem
+                        personItem.appendChild(canvas);
+
+                        // 等下一幀再設定尺寸並啟動煙火
+                        requestAnimationFrame(() => {
+                            // 由 CSS 負責寬高，直接啟動即可
+                            const ctx = canvas.getContext('2d');
+                            if (!ctx) return;  // 如果無法取得就跳過
+
+                            startFirework(canvas);
+                        });
+                    }
                 }
             }
 

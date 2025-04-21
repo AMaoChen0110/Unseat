@@ -584,3 +584,13 @@ h1 {
 }
 
 /* -------------------------------- */
+
+/* 把 canvas 放在卡片內容底下 */
+  .person-item canvas {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 0;          /* 放最下層 */
+  }
+  

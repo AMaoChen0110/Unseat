@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
             videos = data;
             getAllTags(videos).forEach(tag => {
                 const label = document.createElement('label');
-                label.innerHTML = `<input type="checkbox" value="${tag}"> ${tag}`;
+                label.innerHTML = `<input type="checkbox" value="${tag}"> <span>${tag}</span>`;
                 dropdownMenu.appendChild(label);
             });
 
@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     label.style.display = txt.includes(kw) ? 'block' : 'none';
                 });
             });
+
             renderGallery(); // 初次渲染畫面
         })
         .catch(err => {
@@ -27,10 +28,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const tagDropdown = document.getElementById('tagDropdown');
     const dropdownMenu = document.getElementById('dropdownMenu');
-    const toggleBtn = tagDropdown.querySelector('.dropdown-toggle');
+    const toggleBtn = document.getElementById('tagSearchInput');
 
-    toggleBtn.addEventListener('click', () => {
-        tagDropdown.classList.toggle('active');
+    toggleBtn.addEventListener('focus', () => {
+        tagDropdown.classList.add('active');
     });
 
     document.addEventListener('click', (e) => {
@@ -48,6 +49,10 @@ document.addEventListener('DOMContentLoaded', function () {
         label.innerHTML = `<input type="checkbox" value="${tag}"> ${tag}`;
         dropdownMenu.appendChild(label);
     });
+
+    dropdownMenu.addEventListener('scroll', () => {
+        toggleBtn.blur();
+    })
 
     dropdownMenu.addEventListener('change', () => {
         renderGallery(searchInput.value, getSelectedTags(), sortTitle.value);

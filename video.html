@@ -121,16 +121,16 @@
     </header>
 
     <div class="controls">
-        <input type="text" id="searchInput" placeholder="🔍 搜尋影片標題...">
+        <!-- choose hashtag -->
         <div class="custom-dropdown" id="tagDropdown">
-            <button type="button" class="dropdown-toggle">篩選 #標籤 ▼</button>
+            <input type="text" id="tagSearchInput" placeholder="🏷 選擇分類" class="tag-search-input">
             <div class="dropdown-menu" id="dropdownMenu">
-                <!-- 新增搜尋欄 -->
-                <input type="text" id="tagSearchInput" placeholder="🔍 搜尋標籤..." class="tag-search-input">
                 <!-- checkbox 標籤列表由 JS 動態插入 -->
             </div>
         </div>
-
+        <!-- search title -->
+        <input type="text" id="searchInput" placeholder="🔍 搜尋標題">
+        <!-- sort -->
         <select id="sortTitle">
             <option value="desc">標題 ▼</option>
             <option value="asc">標題 ▲</option>

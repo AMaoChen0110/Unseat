@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             countSpan.textContent = `目前收件：${current.toLocaleString()}+　`;
                         }, frameRate);
                     } else {
-                        countSpan.textContent = `目前收件：統計中　`;
+                        countSpan.textContent = `目前收件：收件中　`;
                     }
                 }
 
@@ -258,7 +258,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     const receiptText = document.createElement('div');
                     receiptText.className = 'progress-text';
                     if (countNum.toLocaleString() === "0") {
-                        receiptText.textContent = `統計中　`;
+                        receiptText.textContent = `持續收件中　`;
                     } else {
                         receiptText.textContent = `已收取：${countNum.toLocaleString()}+`;
                     }

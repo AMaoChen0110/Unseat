@@ -1,16 +1,20 @@
 [
   {
     "type": 1,
-    "title": "花蓮人召集令",
-    "image": "images/popup/recall01.webp",
+    "title": "罷免葉元之連署固定站點",
+    "image": "images/popup/recallYenYuanChih01.webp",
     "hashtag": [
-      "花蓮",
-      "緊急情況"
+      "新北市",
+      "罷免葉元之"
     ]
   },
   {
-    "type": 3,
-    "title": "花蓮人召集令",
-    "video": "https://www.youtube.com/embed/m6VI17E32rc"
+    "type": 1,
+    "title": "罷之快閃公車站出動!",
+    "image": "images/popup/recallYenYuanChih02.webp",
+    "hashtag": [
+      "新北市",
+      "罷免葉元之"
+    ]
   }
 ]

@@ -386,9 +386,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 }, frameRate);
 
+                const progressBarText = document.createElement('div');
+                progressBarText.className = 'progress-text';
                 if (finalDay >= person.totalDays) {
-                    const progressBarText = document.createElement('div');
-                    progressBarText.className = 'progress-text';
 
                     progressBar.style.background = 'linear-gradient(90deg, #ffa726, #ffeb3b)';
                     const thresholdPercent = (person.countNum / person.thresholdNum) * 100;
@@ -402,16 +402,25 @@ document.addEventListener('DOMContentLoaded', function () {
                     else {
                         progressBarText.textContent = `${getRandomMissMessage()}`;
                     }
-
-                    // if (person.name === "花蓮縣傅崐萁") {
-                    //     progressBarText.textContent = `緊急！花蓮二階要重簽！`;
-                    // }
-
-                    progressBarText.style.textAlign = 'center';
-                    progressBarText.style.width = '90%';
-                    progressBarContainer.appendChild(progressBarText);
                 }
 
+                if (person.name === "臺北市羅智強") {
+                    progressBarText.textContent = `收件數未更新`;
+                }
+
+                if(person.name === "新北市葉元之") {
+                    // 要先清空 progressBarText 的內容
+                    progressBarText.textContent = "";
+                    const marqueeInline = document.createElement('div');
+                    marqueeInline.className = 'urgent-marquee-inline card-speed';
+                    const marqueeSpan = document.createElement('span');
+                    marqueeSpan.textContent = '⚠️ 葉元之都已經偷薪水偷到宇宙邊緣了你還沒連署？葉元之又要跑通告領通告費、當立法委員打混摸魚，開會連資料都不用還可以投票，笑死！月薪19萬結果是這種爛咖，你能忍嗎？你不簽，葉元之變身宇宙最強薪水小偷，還可以豁免不會再被罷免，讓我們一起加入終結薪水小偷之路，空氣瞬間變香，不簽？葉元之會在你夢裡上通告跟你說錢勒錢勒給我交出來，無腦投票，還嗆你違反立法院秩序！選罷法是誰過的？國民黨自己啦，結果現在抓到冒名連署在北檢哭哭，葉元之跟著一起「假哭假可憐」，我就問憑～啥～～～～讓我們解放通告小丑～從罷免葉元之開始，讓他回歸主業～板東再度抬頭挺胸！跟著你的宇宙小罷罷（就是我），讓我們一起開創「葉元之退休模式」之路吧！ ⚠️ ';
+                    marqueeInline.appendChild(marqueeSpan);
+                    progressBarText.appendChild(marqueeInline);
+                }
+                progressBarText.style.textAlign = 'center';
+                progressBarText.style.width = '90%';
+                progressBarContainer.appendChild(progressBarText);
             }
             // Append all elements
             progressBarContainer.appendChild(progressBar);
@@ -599,7 +608,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // 在 header 裡面加跑馬燈
         const marqueeInline = document.createElement('div');
-        marqueeInline.className = 'urgent-marquee-inline';
+        marqueeInline.className = 'urgent-marquee-inline header-speed';
         const marqueeSpan = document.createElement('span');
         marqueeSpan.textContent = '⚠️ 件呢？件咧？我不是昨天才在你限動看到你說要簽結果現在人咧？你再睡傅崑萁已經在你夢裡跳戰舞 你再躺韓國瑜會送你罷免滑水道 還貼愛心貼圖?國昌已經咆哮到外太空 司法正在被藍白OOXX你還在選濾鏡？不簽連署藍委全體升級暗黑覺醒型號KMT-ZERO你一睡醒直接進入立法院寒冬宇宙版簽一下嘛簽一下嘛拜託託人家真的想要過門檻這不是情勒這是說呢你不簽人家阿花都會看你沒當當（沒有打錯字）你不簽藍白就會合體召喚黃國昌之怨靈你不簽我就要每天出現在你夢中問你到底簽了沒 真的簽下去財運橫掃八方考試秒解選擇題 連喜歡的人都突然密你說你很有正義感 件差一點國昌會偷笑阿明都簽十張你還在那邊精算要不要簽一張你說藍白爛那你快簽不然你就等著看藍白演《司法哭哭秀》抄了名冊還敢上北檢自導自演哭到震天嘎嘎叫宇宙都失焦 我在想現在犯法的人去北檢一哭二鬧是什麼最新的犯罪SOP嗎? 選罷法也是國民黨通過要嚴懲冒名連署的不是嗎?現在又不開心了喔哭哭真~的~~太~離~譜~了~ 我現在數到三喔一二件還沒去簽的話你人生要進入KMT平行世界 這個簽下去福如東海身心靈解鎖心輪開啟KMT消滅術 你一簽傅崑萁自己爆炸還附贈爆米花罷道總裁就是你我是你前世你的今生你的夢中情人快來簽啦～件件有愛罷免無罪現在不簽以後沒機會！人家隔壁阿花都簽了你還在等誰？簽個名而已那麼難嗎Q_Q罷免藍委就是罷免陳玉珍罷免藍委就是罷免黃國昌（誒不是啦是幫黃國昌完成他消滅國民黨的夢想啦）還在耍廢連阿明都簽了我都快變你老罷了419凱道反共見簽下去罷道總裁就是你我是你宇宙小罷罷快來一起簽！ ⚠️ ';
         marqueeInline.appendChild(marqueeSpan);

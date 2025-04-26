@@ -403,11 +403,9 @@ document.addEventListener('DOMContentLoaded', function () {
                         progressBarText.textContent = `${getRandomMissMessage()}`;
                     }
 
-
-                    if (person.name === "花蓮縣傅崐萁") {
-                        progressBarText.textContent = `緊急！花蓮二階要重簽！`;
-                    }
-
+                    // if (person.name === "花蓮縣傅崐萁") {
+                    //     progressBarText.textContent = `緊急！花蓮二階要重簽！`;
+                    // }
 
                     progressBarText.style.textAlign = 'center';
                     progressBarText.style.width = '90%';

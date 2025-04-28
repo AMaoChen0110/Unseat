@@ -290,7 +290,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     infoContainer.appendChild(labelProgress);
 
                     let curPercent = 0;
-                    const finalPercent = Math.min((countNum / targetNum) * 100, 100);
+                    const finalPercent = (countNum / targetNum) * 100;
                     const step = finalPercent / (800 / 30);
 
                     const interval = setInterval(() => {
@@ -299,7 +299,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             curPercent = finalPercent;
                             clearInterval(interval);
                         }
-                        receiptProgressBar.style.width = `${curPercent}%`;
+                        receiptProgressBar.style.width = `${Math.min(curPercent, 100)}%`;
                         labelProgress.textContent = `進度：${curPercent.toFixed(1)}%`;
                     }, 30);
 

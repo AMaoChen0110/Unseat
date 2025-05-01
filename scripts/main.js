@@ -376,6 +376,10 @@ document.addEventListener('DOMContentLoaded', function () {
                         tagInbox.textContent = '持續收件中';
                         tagInbox.className = 'day-info-tag-Inbox';
                         dayInfo.appendChild(tagInbox);
+                        // if (!['桃園市涂權吉'].includes(person.name)) {
+                        //     dayInfo.appendChild(tagInbox);
+                        // }
+
                         // const tagRoll = document.createElement('span');
                         // tagRoll.textContent = '+造冊天';
                         // tagRoll.className = 'day-info-tag-Roll';
@@ -418,6 +422,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     marqueeInline.appendChild(marqueeSpan);
                     progressBarText.appendChild(marqueeInline);
                 }
+
                 progressBarText.style.textAlign = 'center';
                 progressBarText.style.width = '90%';
                 progressBarContainer.appendChild(progressBarText);

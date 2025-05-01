@@ -1,29 +1,39 @@
 [
   {
     "type": 1,
-    "title": "罷免葉元之連署固定站點",
-    "image": "images/popup/recallYenYuanChih01.webp",
+    "title": "告急罷免廖先翔",
+    "image": "images/popup/recall02.webp",
     "hashtag": [
       "新北市",
-      "罷免葉元之"
+      "罷免廖先翔"
     ]
   },
   {
     "type": 1,
-    "title": "罷之快閃公車站出動!",
-    "image": "images/popup/recallYenYuanChih02.webp",
+    "title": "告急罷免徐欣瑩",
+    "image": "images/popup/recall03.webp",
     "hashtag": [
-      "新北市",
-      "罷免葉元之"
+      "新竹縣",
+      "罷免徐欣瑩"
     ]
   },
   {
     "type": 1,
-    "title": "第七選區範圍",
-    "image": "images/popup/recallYenYuanChih03.webp",
+    "title": "告急罷免楊瓊瓔",
+    "image": "images/popup/recall04.webp",
     "hashtag": [
-      "新北市",
-      "罷免葉元之"
+      "臺中市",
+      "罷免楊瓊瓔"
+    ]
+  },
+  {
+    "type": 1,
+    "title": "告急罷免陳超明、邱鎮軍",
+    "image": "images/popup/recall05.webp",
+    "hashtag": [
+      "苗栗縣",
+      "罷免陳超明",
+      "罷免邱鎮軍"
     ]
   }
 ]

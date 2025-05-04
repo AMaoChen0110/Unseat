@@ -444,7 +444,7 @@ document.addEventListener('DOMContentLoaded', function () {
             urgentData = personData
                 .filter(item => {
                     const val = 100 - item.receiptThPos;
-                    return val >= 15 && val <= 30;
+                    return val >= 1 && val <= 20;
                 }) // 篩選 15~30 間
                 .sort((a, b) => b.receiptThPos - a.receiptThPos)                      // 依 receiptThPos 由大到小排序
                 .slice(0, 6)

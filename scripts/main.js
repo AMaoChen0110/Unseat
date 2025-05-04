@@ -412,13 +412,14 @@ document.addEventListener('DOMContentLoaded', function () {
                     progressBarText.textContent = `收件數未更新`;
                 }
 
-                if(person.name === "新北市葉元之") {
+                if(person.marqueeText !== "") {
                     // 要先清空 progressBarText 的內容
                     progressBarText.textContent = "";
                     const marqueeInline = document.createElement('div');
-                    marqueeInline.className = 'urgent-marquee-inline card-speed';
+                    marqueeInline.className = 'urgent-marquee-inline';
                     const marqueeSpan = document.createElement('span');
-                    marqueeSpan.textContent = '⚠️ 葉元之都已經偷薪水偷到宇宙邊緣了你還沒連署？葉元之又要跑通告領通告費、當立法委員打混摸魚，開會連資料都不用還可以投票，笑死！月薪19萬結果是這種爛咖，你能忍嗎？你不簽，葉元之變身宇宙最強薪水小偷，還可以豁免不會再被罷免，讓我們一起加入終結薪水小偷之路，空氣瞬間變香，不簽？葉元之會在你夢裡上通告跟你說錢勒錢勒給我交出來，無腦投票，還嗆你違反立法院秩序！選罷法是誰過的？國民黨自己啦，結果現在抓到冒名連署在北檢哭哭，葉元之跟著一起「假哭假可憐」，我就問憑～啥～～～～讓我們解放通告小丑～從罷免葉元之開始，讓他回歸主業～板東再度抬頭挺胸！跟著你的宇宙小罷罷（就是我），讓我們一起開創「葉元之退休模式」之路吧！ ⚠️ ';
+                    marqueeSpan.style.animation = `urgent-marquee ${person.marqueeDuration}s linear infinite`;
+                    marqueeSpan.textContent = person.marqueeText;
                     marqueeInline.appendChild(marqueeSpan);
                     progressBarText.appendChild(marqueeInline);
                 }

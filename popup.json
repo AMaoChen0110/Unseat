@@ -1,20 +1,20 @@
 [
   {
     "type": 1,
-    "title": "告急罷免廖先翔",
-    "image": "images/popup/recall02.webp",
+    "title": "告急罷免顏寬恒",
+    "image": "images/popup/recall01.webp",
     "hashtag": [
-      "新北市",
-      "罷免廖先翔"
+      "臺中市",
+      "罷免顏寬恒"
     ]
   },
   {
     "type": 1,
-    "title": "告急罷免魯明哲",
-    "image": "images/popup/recall07.webp",
+    "title": "告急罷免楊瓊瓔",
+    "image": "images/popup/recall02.webp",
     "hashtag": [
-      "桃園市",
-      "罷免魯明哲"
+      "臺中市",
+      "罷免楊瓊瓔"
     ]
   },
   {
@@ -28,11 +28,20 @@
   },
   {
     "type": 1,
-    "title": "告急罷免楊瓊瓔",
+    "title": "告急罷免廖先翔",
     "image": "images/popup/recall04.webp",
     "hashtag": [
-      "臺中市",
-      "罷免楊瓊瓔"
+      "新北市",
+      "罷免廖先翔"
+    ]
+  },
+  {
+    "type": 1,
+    "title": "告急罷免魯明哲",
+    "image": "images/popup/recall05.webp",
+    "hashtag": [
+      "桃園市",
+      "罷免魯明哲"
     ]
   },
   {
@@ -43,16 +52,6 @@
       "新北市",
       "罷免張智倫",
       "罷免林德福"
-    ]
-  },
-  {
-    "type": 1,
-    "title": "告急罷免陳超明、邱鎮軍",
-    "image": "images/popup/recall05.webp",
-    "hashtag": [
-      "苗栗縣",
-      "罷免陳超明",
-      "罷免邱鎮軍"
     ]
   }
 ]

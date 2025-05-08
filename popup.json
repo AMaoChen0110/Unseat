@@ -1,6 +1,15 @@
 [
   {
     "type": 1,
+    "title": "告急罷免林沛祥",
+    "image": "images/popup/recall00.webp",
+    "hashtag": [
+      "基隆市",
+      "罷免林沛祥"
+    ]
+  },
+  {
+    "type": 1,
     "title": "告急罷免顏寬恒",
     "image": "images/popup/recall01.webp",
     "hashtag": [
@@ -24,15 +33,6 @@
     "hashtag": [
       "新竹縣",
       "罷免徐欣瑩"
-    ]
-  },
-  {
-    "type": 1,
-    "title": "告急罷免廖先翔",
-    "image": "images/popup/recall04.webp",
-    "hashtag": [
-      "新北市",
-      "罷免廖先翔"
     ]
   },
   {

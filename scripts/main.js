@@ -375,10 +375,10 @@ document.addEventListener('DOMContentLoaded', function () {
                         const tagInbox = document.createElement('div');
                         tagInbox.textContent = '持續收件中';
                         tagInbox.className = 'day-info-tag-Inbox';
-                        dayInfo.appendChild(tagInbox);
-                        // if (!['桃園市涂權吉'].includes(person.name)) {
-                        //     dayInfo.appendChild(tagInbox);
-                        // }
+                        //dayInfo.appendChild(tagInbox);
+                        if (!['新竹縣徐欣瑩', "苗栗縣陳超明", "苗栗縣邱鎮軍"].includes(person.name)) {
+                            dayInfo.appendChild(tagInbox);
+                        }
 
                         // const tagRoll = document.createElement('span');
                         // tagRoll.textContent = '+造冊天';
@@ -408,8 +408,12 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 }
 
-                if (person.name === "臺北市羅智強") {
-                    progressBarText.textContent = `收件數未更新`;
+                if (['新竹縣徐欣瑩', "苗栗縣陳超明", "苗栗縣邱鎮軍"].includes(person.name)) {
+                    progressBarText.textContent = `未達法定門檻`;
+                    progressBar.style.background = 'linear-gradient(90deg, #8e0000, #2e2e2e)'; // 深紅到暗灰黑
+                    progressBarText.style.color = '#ffebee'; // 淡粉白，搭配暗底顯眼且不刺眼
+                    // progressBar.style.background = 'linear-gradient(90deg, #d32f2f, #212121)';
+                    // progressBarText.style.color = '#fbe9e7';
                 }
 
                 if(person.marqueeText !== "") {
@@ -444,7 +448,7 @@ document.addEventListener('DOMContentLoaded', function () {
             urgentData = personData
                 .filter(item => {
                     const val = 100 - item.receiptThPos;
-                    return val >= 1 && val <= 100;
+                    return val >= 10 && val <= 100;
                 }) // 篩選 15~30 間
                 .sort((a, b) => b.receiptThPos - a.receiptThPos)                      // 依 receiptThPos 由大到小排序
                 .slice(0, 6)

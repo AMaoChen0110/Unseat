@@ -447,8 +447,14 @@ document.addEventListener('DOMContentLoaded', function () {
         if (urgentData.length === 0) {
             urgentData = personData
                 .filter(item => {
-                    const val = 100 - item.receiptThPos;
-                    return val >= 40 && val <= 100;
+                    // ✅ 指定 name 條件，例如：只包含「基隆市林沛祥」
+                    if (['基隆市林沛祥'].includes(item.name))
+                        return true;
+                    else
+                        return false;
+
+                    // const val = 100 - item.receiptThPos;
+                    // return val >= 15 && val <= 30;
                 }) // 篩選 15~30 間
                 .sort((a, b) => b.receiptThPos - a.receiptThPos)                      // 依 receiptThPos 由大到小排序
                 .slice(0, 6)

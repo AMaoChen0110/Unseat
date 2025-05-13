@@ -376,7 +376,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         tagInbox.textContent = '持續收件中';
                         tagInbox.className = 'day-info-tag-Inbox';
                         //dayInfo.appendChild(tagInbox);
-                        if (!['新竹縣徐欣瑩', "苗栗縣陳超明", "苗栗縣邱鎮軍"].includes(person.name)) {
+                        if (!['新竹縣徐欣瑩', "苗栗縣陳超明", "苗栗縣邱鎮軍", "彰化縣謝衣鳳"].includes(person.name)) {
                             dayInfo.appendChild(tagInbox);
                         }
 
@@ -408,7 +408,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 }
 
-                if (['新竹縣徐欣瑩', "苗栗縣陳超明", "苗栗縣邱鎮軍"].includes(person.name)) {
+                if (['新竹縣徐欣瑩', "苗栗縣陳超明", "苗栗縣邱鎮軍", "彰化縣謝衣鳳"].includes(person.name)) {
                     progressBarText.textContent = `未達法定門檻`;
                     progressBar.style.background = 'linear-gradient(90deg, #8e0000, #2e2e2e)'; // 深紅到暗灰黑
                     progressBarText.style.color = '#ffebee'; // 淡粉白，搭配暗底顯眼且不刺眼
@@ -448,7 +448,7 @@ document.addEventListener('DOMContentLoaded', function () {
             urgentData = personData
                 .filter(item => {
                     const val = 100 - item.receiptThPos;
-                    return val >= 10 && val <= 100;
+                    return val >= 40 && val <= 100;
                 }) // 篩選 15~30 間
                 .sort((a, b) => b.receiptThPos - a.receiptThPos)                      // 依 receiptThPos 由大到小排序
                 .slice(0, 6)

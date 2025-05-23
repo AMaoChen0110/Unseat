@@ -448,13 +448,13 @@ document.addEventListener('DOMContentLoaded', function () {
             urgentData = personData
                 .filter(item => {
                     // ✅ 指定 name 條件，例如：只包含「基隆市林沛祥」
-                    if (['基隆市林沛祥'].includes(item.name))
-                        return true;
-                    else
-                        return false;
+                    // if (['基隆市林沛祥'].includes(item.name))
+                    //     return true;
+                    // else
+                    //     return false;
 
-                    // const val = 100 - item.receiptThPos;
-                    // return val >= 15 && val <= 30;
+                    const val = 100 - item.receiptThPos;
+                    return val >= 10 && val <= 20;
                 }) // 篩選 15~30 間
                 .sort((a, b) => b.receiptThPos - a.receiptThPos)                      // 依 receiptThPos 由大到小排序
                 .slice(0, 6)

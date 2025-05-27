@@ -1,4 +1,15 @@
 [
+    {
+    "type": 1,
+    "title": "告急罷免支援收件",
+    "image": "images/popup/recall02.webp",
+    "hashtag": [
+      "罷免羅明才",
+      "罷免顏寬恒",
+      "罷免馬文君",
+      "罷免游顥"
+    ]
+  },
   {
     "type": 1,
     "title": "告急罷免林沛祥",
@@ -21,15 +32,6 @@
     "type": 1,
     "title": "告急罷免顏寬恒",
     "image": "images/popup/recall01.webp",
-    "hashtag": [
-      "臺中市",
-      "罷免顏寬恒"
-    ]
-  },
-  {
-    "type": 1,
-    "title": "告急罷免顏寬恒",
-    "image": "images/popup/recall02.webp",
     "hashtag": [
       "臺中市",
       "罷免顏寬恒"
